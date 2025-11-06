@@ -1,5 +1,15 @@
+header {
+  background-color: #BB9457;
+  border-radius: 100px;
+  margin: 15px;
+}
 header img {
   width: 200px;
+}
+header a {
+  text-decoration: none;
+  color: #432818;
+  list-style-type: none;
 }
 
 .black {
