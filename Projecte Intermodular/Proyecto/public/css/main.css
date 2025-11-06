@@ -9,6 +9,7 @@ header img {
 header a {
   text-decoration: none;
   color: #432818;
+  list-style-type: none;
 }
 
 .black {
