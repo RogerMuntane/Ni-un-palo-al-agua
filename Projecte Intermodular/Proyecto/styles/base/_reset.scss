@@ -1,0 +1,8 @@
+@use "../abstract/variables" as *;
+
+body {
+    background-color: $color-principal;
+    min-width: $vista-min;
+    max-width: $vista-max;
+    margin: auto;
+}

@@ -1,5 +1,14 @@
+header {
+  background-color: #BB9457;
+  border-radius: 100px;
+  margin: 15px;
+}
 header img {
   width: 200px;
+}
+header a {
+  text-decoration: none;
+  color: #432818;
 }
 
 .black {
@@ -8,6 +17,13 @@ header img {
 
 h1, h2, h3 {
   margin: 0;
+}
+
+body {
+  background-color: #432818;
+  min-width: 320px;
+  max-width: 1240px;
+  margin: auto;
 }
 
 @font-face {
