@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   background-color: #BB9457;
   border-radius: 100px;
@@ -20,13 +21,162 @@ h1, h2, h3 {
   margin: 0;
 }
 
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #432818;
   min-width: 320px;
   max-width: 1240px;
-  margin: auto;
+  margin: 0 auto;
+  font-family: "NunitoSans";
+  line-height: 1.6;
+  color: #FFE6A7;
+  overflow-x: hidden;
 }
 
+/* Reset d'encapçalaments */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "PlayfairDisplay";
+  font-weight: normal;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 27px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 13px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  color: white;
+}
+
+/* Reset de taules */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/* Classes auxiliars */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+  .container {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 728px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    padding: 0 10px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+}
 @font-face {
   font-family: "PlayfairDisplay", sans-serif;
   src: url(../../public/fonts/PlayfairDisplay.ttf);
