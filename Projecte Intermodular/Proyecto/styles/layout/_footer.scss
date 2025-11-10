@@ -29,9 +29,14 @@ footer {
         font-family: $font-titol;
         font-size: $titol-size-m;
         color: $color-amarillo;
-        font-weight: bold;
         margin: 0;
+
+        span {
+            font-weight: bold;
+
+        }
     }
+
 }
 
 // Direcció
@@ -87,8 +92,8 @@ footer {
         grid-template-columns: 1fr;
         text-align: center;
         gap: $espacio-m;
-        padding: $espacio-m $espacio-s; // Menys padding vertical
     }
+
 
     .footer_imatge,
     .footer_informacio,
