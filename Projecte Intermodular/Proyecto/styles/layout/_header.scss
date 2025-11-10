@@ -79,7 +79,6 @@ header {
 
     .buscador {
         display: flex;
-
     }
 
     .buscador:focus-within {
@@ -90,7 +89,7 @@ header {
     input {
         background-color: $color-principal;
         color: $color-amarillo;
-        width: 200px;
+        width: 100px;
         border: 0;
         outline: 0;
         margin: 0;
@@ -109,5 +108,25 @@ header {
     }
 
 
+}
+
+.header-tenda {
+
+    a {
+        font-size: $titol-size-xs;
+        padding: 5px 15px;
+    }
+
+    a:hover {
+        font-size: $titol-size-s;
+    }
+
+    .moonDarkMode {
+        width: 30px;
+    }
+
+    .buscador {
+        flex-grow: 2;
+    }
 
 }

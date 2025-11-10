@@ -63,7 +63,7 @@ header .buscador:focus-within {
 header input {
   background-color: #432818;
   color: #FFE6A7;
-  width: 200px;
+  width: 100px;
   border: 0;
   outline: 0;
   margin: 0;
@@ -78,6 +78,22 @@ header button {
   margin: 0;
   padding: 10px 20px;
   border-radius: 0 100px 100px 0;
+}
+
+.header-tenda a {
+  font-size: 12px;
+  padding: 5px 15px;
+}
+.header-tenda a:hover {
+  font-size: 13px;
+}
+.header-tenda .moonDarkMode {
+  width: 30px;
+}
+.header-tenda .buscador {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
 }
 
 .black {
