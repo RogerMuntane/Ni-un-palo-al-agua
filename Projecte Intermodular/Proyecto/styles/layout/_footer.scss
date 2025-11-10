@@ -53,18 +53,13 @@ footer {
     justify-self: center; // Centrat
     text-align: center;
 
-    p {
+    a {
         font-family: $font-parraf;
         font-size: $titol-size-m;
         color: $color-amarillo;
         margin: 0;
         font-weight: bold;
-
-        &:hover {
-            color: $color-rojo;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
+        text-decoration: none;
     }
 }
 
@@ -107,7 +102,7 @@ footer {
         order: 1;
 
         img {
-            width: 70px;
+            width: 150px;
         }
     }
 
@@ -137,11 +132,6 @@ footer {
         gap: $espacio-s;
     }
 
-    .footer_imatge {
-        img {
-            width: 60px;
-        }
-    }
 
     .footer_informacio {
         p {
