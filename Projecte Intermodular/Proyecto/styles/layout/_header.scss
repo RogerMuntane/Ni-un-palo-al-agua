@@ -1,17 +1,113 @@
 @use "../abstract/variables" as *;
 
 header {
-    img {
-        width: 200px;
+
+    //HEADER GENERAL
+
+    //Colores
+
+    background-color: $color-secundario;
+
+    //Borde
+
+    border-radius: 100px;
+    border: 2px solid $color-amarillo;
+
+    //Espaciado
+
+    margin: $espacio-xl;
+    padding-right: 50px;
+
+    //Flex
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    //Logo
+
+    .logo {
+        width: 150px;
+        float: left;
     }
 
-    background-color:$color-secundario;
-    border-radius: 100px;
-    margin: $espacio-s;
+    //Nav
+
+    li {
+        list-style-type: none;
+        float: left;
+        font-family: $font-parraf;
+        margin: $espacio-s;
+    }
+
 
     a {
         text-decoration: none;
-        color: $color-principal;
-        list-style-type: none;
+        color: $color-amarillo;
+        display: block;
+        padding: 10px 30px;
+        background-color: $color-principal;
+        border-radius: 100px;
+
+        border: 2px solid $color-amarillo;
+        transition: 0.5s;
+        font-size: $titol-size-l;
     }
+
+    a:hover {
+        color: rgb(194, 113, 38);
+        border: 2px solid rgb(194, 113, 38);
+        font-size: $titol-size-xl;
+    }
+
+    //Modo Oscuro
+
+    .moonDarkMode {
+        width: 40px;
+    }
+
+    //Menu Hamburguesa
+
+    span {
+        font-size: 45px;
+        user-select: none;
+    }
+
+    //HEADER TIENDA
+
+    //Buscador
+
+    .buscador {
+        display: flex;
+
+    }
+
+    .buscador:focus-within {
+        border: 2px solid $color-amarillo;
+        border-radius: 100px;
+    }
+
+    input {
+        background-color: $color-principal;
+        color: $color-amarillo;
+        width: 200px;
+        border: 0;
+        outline: 0;
+        margin: 0;
+        padding: 10px 30px;
+        border-radius: 100px 0 0 100px;
+        font-size: $titol-size-m;
+    }
+
+    button {
+        display: inline;
+        background-color: $color-amarillo;
+        border: 0;
+        margin: 0;
+        padding: 10px 20px;
+        border-radius: 0 100px 100px 0;
+    }
+
+
+
 }
