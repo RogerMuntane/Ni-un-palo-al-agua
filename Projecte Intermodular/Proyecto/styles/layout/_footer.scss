@@ -1,0 +1,164 @@
+@use "../abstract/variables" as *;
+
+footer {
+    background-color: $color-secundario;
+    padding: $espacio-s $espacio-m; // Menys padding vertical
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: $espacio-m;
+}
+
+.footer_imatge {
+    justify-self: center; // Centrat
+    text-align: center;
+
+    img {
+        width: 180px;
+        height: auto;
+    }
+}
+
+// Info grup de treball
+.footer_informacio {
+    justify-self: center; // Centrat
+    text-align: center;
+
+    p {
+        font-family: $font-titol;
+        font-size: $titol-size-m;
+        color: $color-amarillo;
+        margin: 0;
+
+        span {
+            font-weight: bold;
+
+        }
+    }
+
+}
+
+// Direcció
+.footer_direccio {
+    justify-self: center; // Centrat
+    text-align: center;
+
+    p {
+        font-family: $font-parraf;
+        font-size: $titol-size-m;
+        color: $color-amarillo;
+        margin: 0;
+        line-height: 1.4;
+    }
+}
+
+// Condicions legals
+.footer_condicions {
+    justify-self: center; // Centrat
+    text-align: center;
+
+    a {
+        font-family: $font-parraf;
+        font-size: $titol-size-m;
+        color: $color-amarillo;
+        margin: 0;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+
+// Copyright (ocupant tota l'amplada)
+.footer_copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: $espacio-s; // Menys marge
+    border-top: 1px solid $color-principal;
+    padding-top: $espacio-s;
+
+    p {
+        font-family: $font-parraf;
+        font-size: $titol-size-m;
+        font-weight: bold;
+        color: $color-amarillo;
+        margin: 0;
+
+    }
+}
+
+// Media Query per a Tablet
+@media (max-width: $vista-tablet) {
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: $espacio-m;
+    }
+
+
+    .footer_imatge,
+    .footer_informacio,
+    .footer_direccio,
+    .footer_condicions {
+        justify-self: center;
+        text-align: center;
+    }
+
+    .footer_imatge {
+        order: 1;
+
+        img {
+            width: 150px;
+        }
+    }
+
+    .footer_informacio {
+        order: 2;
+    }
+
+    .footer_direccio {
+        order: 3;
+    }
+
+    .footer_condicions {
+        order: 4;
+    }
+
+    .footer_copyright {
+        order: 5;
+        margin-top: $espacio-s;
+        padding-top: $espacio-s;
+    }
+}
+
+// Media Query per a Mòbil
+@media (max-width: $vista-mobil) {
+    footer {
+        padding: $espacio-s $espacio-xs; // Menys padding vertical
+        gap: $espacio-s;
+    }
+
+
+    .footer_informacio {
+        p {
+            font-size: $titol-size-s;
+        }
+    }
+
+    .footer_direccio {
+        p {
+            font-size: $titol-size-xs;
+        }
+    }
+
+    .footer_condicions {
+        p {
+            font-size: $titol-size-xs;
+        }
+    }
+
+    .footer_copyright {
+        p {
+            font-size: $titol-size-xs;
+        }
+    }
+}
