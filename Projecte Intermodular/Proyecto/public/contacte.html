@@ -7,9 +7,42 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+<body class="pagina-contacte">
+    <div class="contacte-container">
+        <form id="contacte" class="formulari-contacte">
+            <h1 class="titol-contacte">Contacte</h1>
 
-<body>
+            <!-- Camp Nom -->
+            <div class="contacte-camps">
+                <input type="text" name="nom" id="nom" required>
+                <label for="nom" class="text-camps">Nom</label>
+                <img src="Images/user.png" alt="Icon User" class="img-contacte">
+            </div>
 
+            <!-- Camp Correu Electronic -->
+            <div class="contacte-camps">
+                <input type="text" name="correu" id="correu" required>
+                <label for="correu" class="text-camps">Correu</label>
+                <img src="Images/message.png" alt="Icon Correu" class="img-contacte">
+            </div>
+
+            <!-- Camp Telèfon -->
+            <div class="contacte-camps">
+                <input type="text" name="telefon" id="telefon" required>
+                <label for="telefon" class="text-camps">Telefon</label>
+                <img src="Images/telephone.png" alt="Icon Phone" class="img-contacte">
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <button type="submit" class="button enviar">
+                    <span>Enviar</span>
+                </button>
+                <button type="reset" class="button reinicia">
+                    <span>Reinicia</span>
+                </button>
+            </div>
+        </form>
+    </div>
 </body>
-
 </html>
