@@ -1,3 +1,139 @@
+footer {
+  background-color: #BB9457;
+  padding: 15px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.footer_imatge {
+  justify-self: center;
+  text-align: center;
+}
+.footer_imatge img {
+  width: 180px;
+  height: auto;
+}
+
+.footer_informacio {
+  justify-self: center;
+  text-align: center;
+}
+.footer_informacio p {
+  font-family: "PlayfairDisplay";
+  font-size: 14px;
+  color: #FFE6A7;
+  margin: 0;
+}
+.footer_informacio p span {
+  font-weight: bold;
+}
+
+.footer_direccio {
+  justify-self: center;
+  text-align: center;
+}
+.footer_direccio p {
+  font-family: "NunitoSans";
+  font-size: 14px;
+  color: #FFE6A7;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer_condicions {
+  justify-self: center;
+  text-align: center;
+}
+.footer_condicions a {
+  font-family: "NunitoSans";
+  font-size: 14px;
+  color: #FFE6A7;
+  margin: 0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer_copyright {
+  grid-column: 1/-1;
+  text-align: center;
+  margin-top: 15px;
+  border-top: 1px solid #432818;
+  padding-top: 15px;
+}
+.footer_copyright p {
+  font-family: "NunitoSans";
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFE6A7;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer_imatge,
+  .footer_informacio,
+  .footer_direccio,
+  .footer_condicions {
+    justify-self: center;
+    text-align: center;
+  }
+  .footer_imatge {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .footer_imatge img {
+    width: 150px;
+  }
+  .footer_informacio {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .footer_direccio {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .footer_condicions {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  .footer_copyright {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+}
+@media (max-width: 728px) {
+  footer {
+    padding: 15px 10px;
+    gap: 15px;
+  }
+  .footer_informacio p {
+    font-size: 13px;
+  }
+  .footer_direccio p {
+    font-size: 12px;
+  }
+  .footer_condicions p {
+    font-size: 12px;
+  }
+  .footer_copyright p {
+    font-size: 12px;
+  }
+}
 header {
   background-color: #BB9457;
   border-radius: 100px;
