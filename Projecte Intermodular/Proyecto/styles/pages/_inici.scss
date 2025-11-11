@@ -1,0 +1,113 @@
+@use "../abstract/variables" as *;
+
+.hero {
+    position: relative;
+    height: 500px;
+    background-image: url(../../public/Images/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//per al filtre de la imatge
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: $color-amarillo;
+}
+
+.hero-content h1 {
+    font-size: $titol-size-4xl;
+    font-family: $font-titol;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    font-size: $titol-size-m;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #ff5252;
+}
+
+/* Ofertes del dia */
+.ofertes {
+    padding: 60px 20px;
+    background-color: $color-amarillo-claro;
+    text-align: center;
+}
+
+.ofertes h2 {
+    font-size: $titol-size-4xl;
+    margin-bottom: 40px;
+    color: $color-secundario;
+}
+
+/* Secció text i imatge */
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+}
+
+.text-content {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-amarillo;
+}
+
+.text-content h2 {
+    font-size: $titol-size-4xl;
+    margin-bottom: 20px;
+    color: $color-negre;
+}
+
+.text-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: $color-gris-fosc;
+}
+
+.image-content {
+    background-image: url(../../public/Images/obertf.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: $vista-tablet) {
+    .content-section {
+        grid-template-columns: 1fr;
+    }
+
+    .image-content {
+        height: 300px;
+    }
+
+    .text-content {
+        height: 300px;
+    }
+}
