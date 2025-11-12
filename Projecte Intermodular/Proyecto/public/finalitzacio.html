@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
+    <title>Tiquet de Compra</title>
+    <link rel="stylesheet" href="css/main.css"> </head>
+<body class="pagina-tiquet">
 
-<body>
+    <div class="tiquet-container">
 
+        <aside class="tiquet-resum">
+            <h2 class="titol-resum">Tiquet Compra</h2>
+
+            <div class="futur-tiquet">
+                </div>
+        </aside>
+
+        <main class="tiquet-detalls">
+            <form id="tiquet" class="formulari-tiquet">
+
+                <h1 class="titol-detalls">Detalls de la Compra</h1>
+
+                <div class="finalitzacio-camps">
+                    <input type="email" name="email" id="email" placeholder=" " required>
+                    <label for="email" class="text-camps">Email</label>
+                    <img src="" alt="">
+                </div>
+
+                <div class="finalitzacio-camps">
+                    <input type="text" name="adreca" id="adreca" placeholder=" " required>
+                    <label for="adreca" class="text-camps">Adreça</label>
+                    <img src="" alt="">
+                </div>
+
+                <div class="finalitzacio-camps">
+                    <input type="text" name="intolerancies" id="intolerancies" placeholder=" ">
+                    <label for="intolerancies" class="text-camps">Intolerancies</label>
+                    <img src="" alt="">
+                </div>
+
+                <div class="finalitzacio-camps">
+                    <input type="tel" name="telefon" id="telefon" placeholder=" " required>
+                    <label for="telefon" class="text-camps">Telèfon</label>
+                    <img src="" alt="">
+                </div>
+
+                <div class="finalitzacio-camps">
+                    <input type="text" name="extras" id="extras" placeholder=" ">
+                    <label for="extras" class="text-camps">Extras</label>
+                    <img src="" alt="">
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="button tornar"> <span>Tornar Inici</span>
+                    </button>
+                    <button type="submit" class="button finalitzar"> <span>Finalitzar compra</span>
+                    </button>
+                </div>
+            </form>
+        </main>
+
+    </div>
 </body>
-
 </html>

@@ -1,0 +1,206 @@
+@use "../abstract/variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Estils per la pàgina de finalitazio
+
+.pagina-tiquet{
+    font-family: $font-parraf;
+    background: linear-gradient(135deg, $color-principal 0%, $color-rojo 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+// Estils per el tiquet
+
+.tiquet-container{
+    width: 100%;
+    max-width: 1100px;
+    background-color: $color-secundario;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+// Dades
+
+.tiquet-resum {
+    padding: 20px;
+
+}
+
+.titol-resum {
+    color: $color-principal;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.futur-tiquet {
+    width: 100%;
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px $color-principal;
+    border-radius: 10px;
+}
+
+.tiquet-detalls {
+    padding: 20px;
+}
+
+.titol-detalls {
+    text-align: center;
+    color: $color-principal;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+// Estils per el form
+
+.finalitzacio-camps {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.finalitzacio-camps input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid $color-naranja;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s ease;
+    color: $color-principal;
+}
+
+.finalitzacio-camps input:focus {
+    border-bottom-color: $color-rojo;
+}
+
+.text-camps {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    color: $color-principal;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: $color-secundario;
+    padding: 0 5px;
+}
+
+.finalitzacio-camps input:focus ~ .text-camps,
+.finalitzacio-camps input:not(:placeholder-shown) ~ .text-camps {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: $color-naranja;
+}
+
+// Estils per les imatges
+
+.img-finalitzacio {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.contacte-camps input:focus ~ .img-finalitzacio {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.15);
+}
+
+// Estils per els botons
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-direction: column-reverse;
+}
+
+.button {
+    flex: 1;
+    padding: 14px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.finalitzar {
+    background: linear-gradient(135deg, $color-naranja 0%, $color-rojo 100%);
+    color: $color-amarillo;
+    box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+}
+
+.finalitzar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+}
+
+.tornar {
+    background: transparent;
+    color: $color-rojo;
+    border: 2px solid $color-rojo;
+}
+
+.tornar:hover {
+    background: $color-rojo;
+    color: $color-amarillo;
+    transform: translateY(-3px);
+}
+
+// Media Querry
+
+@media (min-width: 900px) {
+
+    .tiquet-container {
+        flex-direction: row;
+        padding: 40px;
+        align-items: center;
+    }
+
+    .tiquet-resum {
+        flex: 1;
+        padding-right: 40px;
+        padding-top: 0;
+    }
+
+    .tiquet-detalls {
+        flex: 1.5;
+        padding-left: 40px;
+        padding-top: 0;
+        border-left: 2px solid $color-naranja;
+    }
+
+    .titol-resum,
+    .titol-detalls {
+        text-align: left;
+    }
+
+    .buttons {
+        flex-direction: row-reverse;
+    }
+}
