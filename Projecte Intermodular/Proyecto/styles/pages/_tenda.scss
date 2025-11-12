@@ -3,12 +3,11 @@
 // Banner
 .tenda_banner {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../../public/Images/portada3.jpg') center/cover no-repeat;
+        url('../../public/Images/portada3.jpg') center/cover no-repeat; //Per al filtre fosc davant la imatge
     padding: $espacio-xl $espacio-m;
     text-align: center;
     color: $color-amarillo;
     height: 400px;
-
 
     .tenda_banner_content {
         margin: 0 auto;
@@ -18,7 +17,7 @@
             font-family: $font-titol;
             margin-bottom: $espacio-l;
             margin-top: 75px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); //Sombres
         }
 
         p {
@@ -27,8 +26,6 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
         }
     }
-
-
 }
 
 // Text Introductori
@@ -55,13 +52,10 @@
             line-height: 1.6;
         }
     }
-
-
 }
 
 // Categories
 .tenda_categories {
-    max-width: $vista-max;
     margin: 0 auto;
     padding: $espacio-s $espacio-m $espacio-xl;
     background-color: $color-amarillo;
@@ -100,26 +94,6 @@
             background-color: $color-principal;
             border: 2px solid $color-secundario;
             border-top: none;
-        }
-    }
-
-    @media (max-width: $vista-tablet) {
-        padding: 0 $espacio-s $espacio-xl;
-
-        .categoria .categoria_productes {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: $espacio-s;
-            padding: $espacio-l $espacio-s;
-        }
-    }
-
-    @media (max-width: $vista-mobil) {
-        padding: 0 $espacio-xs $espacio-xl;
-
-        .categoria .categoria_productes {
-            grid-template-columns: 1fr;
-            gap: $espacio-s;
-            padding: $espacio-m $espacio-xs;
         }
     }
 }
@@ -184,31 +158,11 @@
             transform: scale(0.98);
         }
     }
-
-    @media (max-width: $vista-mobil) {
-        img {
-            height: 150px;
-        }
-
-        h4 {
-            font-size: $titol-size-s;
-        }
-
-        .preu {
-            font-size: $titol-size-m;
-        }
-
-        .btn_comprar {
-            font-size: $titol-size-s;
-            padding: $espacio-xs $espacio-s;
-        }
-    }
 }
 
 @media (max-width: $vista-mobil) {
     .tenda_banner {
         padding: $espacio-l $espacio-s;
-
 
         .tenda_banner_content h1 {
             font-size: $titol-size-xl;
@@ -228,6 +182,25 @@
 
         .tenda_intro_content p {
             font-size: $titol-size-s;
+        }
+    }
+
+    .producte {
+        img {
+            height: 300px;
+        }
+
+        h4 {
+            font-size: $titol-size-s;
+        }
+
+        .preu {
+            font-size: $titol-size-m;
+        }
+
+        .btn_comprar {
+            font-size: $titol-size-s;
+            padding: $espacio-xs $espacio-s;
         }
     }
 }
