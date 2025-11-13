@@ -6,9 +6,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="tenda.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+    <header class="header-tenda">
+
+        <!-- Logo -->
+        <a href="inici.html" class="logo-link">
+            <img src="Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false">
+        </a>
+
+        <!-- Barra Buscadora -->
+        <div class="buscador buscador-header">
+            <input type="text" placeholder="Buscar Producte">
+            <button>&#128269;</button>
+        </div>
+
+        <!-- Nav -->
+        <ul class="nav-header">
+            <li>
+                <button class="boto-rodo boto-rodo-nav" onclick="modeFosc()">
+                    <img src="Images/luna.png" alt="Mode Fosc" class="icone-mode-fosc icones-nav" draggable="false">
+                </button>
+            </li>
+
+            <li>
+                <button href="administracio.html" class="boto-rodo boto-rodo-nav"
+                    onclick="location.href='administracio.html';">
+                    <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
+                </button>
+            </li>
+
+            <li><a href="contacte.html">Contacte</a></li>
+            <li><a href="carreto.html">&#128722;Carretó</a></li>
+            <li><a href="tenda.html">Tenda Online</a></li>
+        </ul>
+
+        <!-- Menu Hamburguesa -->
+        <span class="burger-header" onclick="desplegarBurger()">&#9776;</span>
+
+        <!-- Sidepanel -->
+        <div id="sidepanel" class="sidepanel">
+            <!-- Mode Fosc -->
+            <button class="boto-rodo" onclick="modeFosc()">
+                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            </button>
+            <!-- Boto de Tancament -->
+            <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
+            <br>
+            <!-- Barra Buscadora Sidepanel -->
+            <div class="buscador buscador-sidepanel">
+                <input type="text" placeholder="Buscar Producte">
+                <button>&#128269;</button>
+            </div>
+            <!-- Links -->
+            <a href="inici.html">Inici</a>
+            <a href="tenda.html">Tenda Online</a>
+            <a href="carreto.html">&#128722;Carretó</a>
+            <a href="contacte.html">Contacte</a>
+        </div>
+
+        <!-- Logo -->
+        <div id="overlaySidepanel" class="overlay-sidepanel" onclick="tancarSidepanel()"></div>
+
+    </header>
+
+
+
+
+
+
+
+
+    <!-- Banner -->
+    <section class="tenda_banner">
+        <div class="tenda_banner_content">
+            <h1>Benvingut a la nostra Tenda</h1>
+            <p>Descobreix els millors productes de la nostra cantina</p>
+        </div>
+    </section>
+
+    <!-- Text Introductori -->
+    <section class="tenda_intro">
+        <div class="tenda_intro_content">
+            <h2>Ofertes del dia</h2>
+            <p>A la nostra cantina trobaràs una gran varietat de productes elaborats amb ingredients de qualitat.
+                Des de bocadillos fins a begudes refrescants, tot pensat perquè gaudeixis d'una experiència gastronòmica
+                completa.</p>
+        </div>
+    </section>
+
+    <!-- Categories de Menjar -->
+    <section class="tenda_categories">
+        <h1>La nostra oferta</h1>
+        <!-- Categoria 1: Bocadillos -->
+        <div class="categoria">
+            <div class="categoria_header">
+                <h3>Bocadillos</h3>
+            </div>
+            <div class="categoria_productes">
+                <div class="producte">
+                    <img src="/public/Images/bocatajamon.jpg" alt="Bocadillo">
+                    <h4>Entrepa de pernil salat</h4>
+                    <p class="preu">3.50€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+                <div class="producte">
+                    <img src="../public/Images/bocadillo_butifarra.jpg" alt="Bocadillo">
+                    <h4>Entrepa de butifarra</h4>
+                    <p class="preu">4.50€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+                <div class="producte">
+                    <img src="../public/Images/bocadillo_mixt.jpg" alt="Bocadillo">
+                    <h4>Entrepa Mixt</h4>
+                    <p class="preu">4.00€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoria 2: Begudes -->
+        <div class="categoria">
+            <div class="categoria_header">
+                <h3>Begudes</h3>
+            </div>
+            <div class="categoria_productes">
+                <div class="producte">
+                    <img src="../public/Images/cocacola.jpg" alt="Beguda">
+                    <h4>Refresc</h4>
+                    <p class="preu">2.00€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+                <div class="producte">
+                    <img src="../public/Images/zumo-de-naranja.jpg" alt="Beguda">
+                    <h4>Suc Natural</h4>
+                    <p class="preu">2.50€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+                <div class="producte">
+                    <img src="../public/Images/solan2(1).jpg" alt="Beguda">
+                    <h4>Aigua Mineral</h4>
+                    <p class="preu">1.00€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoria 3: Postres -->
+        <div class="categoria">
+            <div class="categoria_header">
+                <h3>Postres</h3>
+            </div>
+            <div class="categoria_productes">
+                <div class="producte">
+                    <img src="../public/Images/pastel.jpg" alt="Postre">
+                    <h4>Pastís de Xocolata</h4>
+                    <p class="preu">3.00€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+                <div class="producte">
+                    <img src="../public/Images/iogurt.jpg" alt="Postre">
+                    <h4>Iogurt Natural</h4>
+                    <p class="preu">1.50€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+                <div class="producte">
+                    <img src="../public/Images/fruita.jpg" alt="Postre">
+                    <h4>Fruit del dia</h4>
+                    <p class="preu">2.00€</p>
+                    <button class="btn_comprar">Afegir al carret</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <div class="footer_imatge">
+            <img src="../public/Images/mini-logo.png" alt="Logo">
+        </div>
+
+        <div class="footer_informacio">
+            <p> <span>Autors:</span> <br>
+                Xarvier Ruiz <br>
+                Adria Salas <br>
+                Roger Muntané <br>
+            </p>
+        </div>
+
+        <div class="footer_direccio">
+            <p>Riera de Cirera, 57, 08304 Mataró, Barcelona</p>
+        </div>
+
+        <div class="footer_condicions">
+            <a href="condicionslegals.html">Condicions legals</a>
+        </div>
+
+        <div class="footer_copyright">
+            <p>© 2025 Ni un palo al agua. All Rights Reserved</p>
+        </div>
+    </footer>
+
 
 </body>
 

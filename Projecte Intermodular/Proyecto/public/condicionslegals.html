@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+
+        <!-- Logo -->
+        <a href="inici.html" class="logo-link">
+            <img src="Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false" usemap="#logo-map">
+        </a>
+
+        <!-- Nav -->
+        <ul class="nav-header">
+            <!-- Mode Fosc -->
+            <li>
+                <button class="boto-rodo" onclick="modeFosc()">
+                    <img src="Images/luna.png" alt="Mode Fosc" class="icone-mode-fosc icones-nav" draggable="false">
+                </button>
+            </li>
+            <!-- Links -->
+            <li>
+                <button href="administracio.html" class="boto-rodo" onclick="location.href='administracio.html';">
+                    <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
+                </button>
+            </li>
+            <li><a href="contacte.html">Contacte</a></li>
+            <li><a href="carreto.html">&#128722;Carretó</a></li>
+            <li><a href="tenda.html">Tenda Online</a></li>
+
+        </ul>
+
+        <!-- Menu Hamburguesa -->
+        <span class="burger-header" onclick="desplegarBurger()">&#9776;</span>
+
+
+        <!-- Sidepanel -->
+        <div id="sidepanel" class="sidepanel">
+            <!-- Mode Fosc -->
+            <button class="boto-rodo" onclick="modeFosc()">
+                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            </button>
+            <!-- Boto de Tancament -->
+            <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
+            <br>
+            <!-- Links -->
+            <a href="inici.html">Inici</a>
+            <a href="tenda.html">Tenda Online</a>
+            <a href="carreto.html">&#128722;Carretó</a>
+            <a href="contacte.html">Contacte</a>
+
+        </div>
+
+        <!-- Fons Negre Sidepanel -->
+        <div id="overlaySidepanel" class="overlay-sidepanel" onclick="tancarSidepanel()"></div>
+
+    </header>
+
+
+    <div class="general">
+        <div class="condicions-section">
+            <div class="condicions-header">
+                <h1>Condicions Legals</h1>
+                <hr>
+            </div>
+
+            <div class="condicions-content">
+                <!-- Secció 1: Condicions Generals -->
+                <section class="legal-section">
+                    <h2>1. Condicions Generals d'Ús</h2>
+                    <p>L'accés i utilització d'aquest lloc web i dels serveis de la cantina "Ni un Palo al Agua"
+                        impliquen l'acceptació plena i sense reserves de totes les condicions incloses en aquest
+                        avís legal.</p>
+                    <p>El restaurant es reserva el dret de modificar en qualsevol moment les condicions d'ús i
+                        les condicions particulars que resultin d'aplicació.</p>
+                </section>
+
+                <!-- Secció 2: Reservas i Cancel·lacions -->
+                <section class="legal-section">
+                    <h2>2. Política de Reserves i Cancel·lacions</h2>
+                    <h3>2.1. Reserves</h3>
+                    <p>Les reserves poden realitzar-se mitjançant la nostra pàgina web, telèfon o presencialment.
+                    </p>
+                    <p>Per a grups superiors a 8 persones, es requerirà una targeta de crèdit per garantir la
+                        reserva.
+                    </p>
+
+                    <h3>2.2. Cancel·lacions</h3>
+                    <p>Les cancel·lacions han de realitzar-se amb un mínim de 24 hores d'antelació.</p>
+                    <p>Per a cancel·lacions amb menys de 24 hores, s'aplicarà una taxa del 50% del consum estimat.
+                    </p>
+                </section>
+
+                <!-- Secció 3: Protecció de Dades -->
+                <section class="legal-section">
+                    <h2>3. Protecció de Dades Personals</h2>
+                    <p>D'acord amb el que estableix la Llei Orgànica 3/2018, de 5 de desembre, de Protecció de
+                        Dades Personals i garantia dels drets digitals, li informem que les seves dades personals
+                        seran tractades per a la gestió de reserves, enviament de comunicacions comercials i
+                        millora dels nostres serveis.</p>
+                    <p>Pot exercir els seus drets d'accés, rectificació, supressió, oposició, limitació del
+                        tractament i portabilitat mitjançant escript enviada a la nostra direcció postal o
+                        correu electrònic.</p>
+                </section>
+
+                <!-- Secció 4: Propietat Intel·lectual -->
+                <section class="legal-section">
+                    <h2>4. Propietat Intel·lectual i Industrial</h2>
+                    <p>Tots els continguts d'aquest lloc web, incloent text, imatges, logotips, i disseny,
+                        són propietat de "Ni un Palo al Agua" o s'utilitzen amb la corresponent llicència.</p>
+                    <p>Queda prohibit la reproducció, distribució o modificació dels continguts sense autorització
+                        prèvia per escrit.</p>
+                </section>
+
+                <!-- Secció 5: Llei Aplicable i Jurisdicció -->
+                <section class="legal-section">
+                    <h2>5. Llei Aplicable i Jurisdicció</h2>
+                    <p>Aquestes condicions es regeixen per la legislació espanyola.</p>
+                    <p>Per a qualsevol controvèrsia que pugui sorgir, les parts es sometran als Jutjats i
+                        Tribunals de Mataró, amb renúncia expressa a qualsevol altre fur.</p>
+                </section>
+
+                <!-- Secció 6: Contacte -->
+                <section class="legal-section">
+                    <h2>6. Contacte</h2>
+                    <p>Per a qualsevol qüestió relacionada amb aquestes condicions legals, pot contactar-nos a:</p>
+                    <div class="contact-info">
+                        <p><strong>Ni un Palo al Agua</strong></p>
+                        <p>Riera de Cirera, 57, 08304 Mataró, Barcelona</p>
+                        <p>Telèfon: +34 93 123 45 67</p>
+                        <p>Email: info@niunpaloalagua.cat</p>
+                    </div>
+                </section>
+
+                <div class="last-update">
+                    <p><strong>Última actualització:</strong> Gener 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

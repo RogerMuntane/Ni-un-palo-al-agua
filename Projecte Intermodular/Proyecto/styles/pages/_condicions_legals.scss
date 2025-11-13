@@ -1,0 +1,199 @@
+@use "../abstract/variables" as *;
+
+
+.general {
+    background-color: $color-amarillo;
+    border-radius: 8px;
+    padding: $espacio-s;
+    margin: $espacio-s auto;
+    width: 100%;
+}
+
+.condicions-section {
+    background-color: $color-principal;
+    padding: $espacio-xl;
+    min-height: 100px;
+    border-radius: 6px;
+
+    .condicions-header {
+        text-align: center;
+        margin-bottom: $espacio-xl;
+
+        h1 {
+            font-family: $font-titol;
+            font-size: $titol-size-3xl;
+            color: $color-amarillo;
+            margin-bottom: $espacio-s;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: $color-secundario;
+            width: 100px;
+            margin: 0 auto;
+        }
+    }
+
+    .condicions-content {
+        max-width: 800px;
+        margin: 0 auto;
+
+        .legal-section {
+            background-color: rgba($color-principal, 0.05);
+            padding: $espacio-l;
+            margin-bottom: $espacio-l;
+            border-radius: 8px;
+            border-left: 4px solid $color-secundario;
+
+            h2 {
+                font-family: $font-titol;
+                font-size: $titol-size-xl;
+                color: $color-secundario;
+                margin-bottom: $espacio-s;
+            }
+
+            h3 {
+                font-family: $font-titol;
+                font-size: $titol-size-l;
+                color: $color-amarillo;
+                margin: $espacio-m 0 $espacio-s 0;
+            }
+
+            p {
+                font-family: $font-parraf;
+                font-size: $titol-size-m;
+                color: $color-amarillo;
+                line-height: 1.6;
+                margin-bottom: $espacio-s;
+            }
+
+            .contact-info {
+                background-color: $color-principal;
+                padding: $espacio-m;
+                border-radius: 4px;
+                margin-top: $espacio-s;
+
+                p {
+                    margin-bottom: $espacio-xs;
+
+                    strong {
+                        color: $color-secundario;
+                    }
+                }
+            }
+
+            &:hover {
+                transform: translateY(-2px);
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .last-update {
+            text-align: center;
+            margin-top: $espacio-xl;
+            padding: $espacio-m;
+            background-color: $color-secundario;
+            border-radius: 8px;
+
+            p {
+                font-family: $font-parraf;
+                font-size: $titol-size-m;
+                color: $color-principal;
+                margin: 0;
+
+                strong {
+                    color: $color-rojo;
+                }
+            }
+        }
+    }
+}
+
+// Media Queries
+@media (max-width: $vista-tablet) {
+    .general {
+        padding: $espacio-xs;
+        margin: $espacio-xs auto;
+        max-width: calc(100% - #{$espacio-s});
+        border-radius: 6px;
+    }
+
+    .condicions-section {
+        padding: $espacio-l $espacio-m;
+
+        .condicions-header {
+            h1 {
+                font-size: $titol-size-xl;
+            }
+        }
+
+        .condicions-content {
+            .legal-section {
+                padding: $espacio-m;
+
+                h2 {
+                    font-size: $titol-size-l;
+                }
+
+                h3 {
+                    font-size: $titol-size-m;
+                }
+
+                p {
+                    font-size: $titol-size-s;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $vista-mobil) {
+    .general {
+        padding: 8px;
+        margin: 8px auto;
+        max-width: calc(100% - #{$espacio-xs});
+        border-radius: 4px;
+    }
+
+    .condicions-section {
+        padding: $espacio-m $espacio-s;
+
+        .condicions-header {
+            margin-bottom: $espacio-l;
+
+            h1 {
+                font-size: $titol-size-l;
+            }
+        }
+
+        .condicions-content {
+            .legal-section {
+                padding: $espacio-s;
+                margin-bottom: $espacio-m;
+
+                h2 {
+                    font-size: $titol-size-m;
+                }
+
+                h3 {
+                    font-size: $titol-size-s;
+                }
+
+                p {
+                    font-size: $titol-size-xs;
+                }
+            }
+
+            .last-update {
+                margin-top: $espacio-l;
+                padding: $espacio-s;
+
+                p {
+                    font-size: $titol-size-s;
+                }
+            }
+        }
+    }
+}
