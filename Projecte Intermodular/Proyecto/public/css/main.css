@@ -99,6 +99,7 @@ header a {
   font-size: 16px;
   border: none;
   border-bottom: 2px solid #99582A;
+  background-color: #BB9457;
   background: transparent;
   outline: none;
   -webkit-transition: border-color 0.3s ease;
@@ -110,7 +111,7 @@ header a {
   border-bottom-color: #6F1D1B;
 }
 
-.text-camps {
+.text-camps2 {
   position: absolute;
   left: 15px;
   top: 12px;
@@ -123,26 +124,39 @@ header a {
   padding: 0 5px;
 }
 
-.finalitzacio-camps input:not(:-moz-placeholder) ~ .text-camps {
+.finalitzacio-camps input:not(:-moz-placeholder) ~ .text-camps2 {
   top: -10px;
   left: 10px;
   font-size: 12px;
   color: #99582A;
 }
 
-.finalitzacio-camps input:not(:-ms-input-placeholder) ~ .text-camps {
+.finalitzacio-camps input:not(:-ms-input-placeholder) ~ .text-camps2 {
   top: -10px;
   left: 10px;
   font-size: 12px;
   color: #99582A;
 }
 
-.finalitzacio-camps input:focus ~ .text-camps,
-.finalitzacio-camps input:not(:placeholder-shown) ~ .text-camps {
+.finalitzacio-camps input:focus ~ .text-camps2,
+.finalitzacio-camps input:not(:placeholder-shown) ~ .text-camps2 {
   top: -10px;
   left: 10px;
   font-size: 12px;
   color: #99582A;
+}
+
+.finalitzacio-camps input:-webkit-autofill,
+.finalitzacio-camps input:-webkit-autofill:hover,
+.finalitzacio-camps input:-webkit-autofill:focus,
+.finalitzacio-camps input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #BB9457 inset !important;
+  box-shadow: 0 0 0px 1000px #BB9457 inset !important;
+  -webkit-text-fill-color: #432818 !important;
+  caret-color: #432818 !important;
+  border-bottom-color: #99582A !important;
+  -webkit-transition: background-color 9999s ease-in-out 0s;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 .img-finalitzacio {
@@ -158,7 +172,7 @@ header a {
   transition: all 0.3s ease;
 }
 
-.contacte-camps input:focus ~ .img-finalitzacio {
+.finalitzacio-camps input:focus ~ .img-finalitzacio {
   opacity: 1;
   -webkit-transform: translateY(-50%) scale(1.15);
           transform: translateY(-50%) scale(1.15);
@@ -256,6 +270,30 @@ header a {
             flex-direction: row-reverse;
   }
 }
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.error-msg.show {
+  display: block;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.finalitzacio-camps {
+  position: relative;
+  margin-bottom: 35px;
+}
+
 h1, h2, h3 {
   margin: 0;
 }

@@ -79,6 +79,7 @@
     font-size: 16px;
     border: none;
     border-bottom: 2px solid $color-naranja;
+    background-color: $color-secundario;
     background: transparent;
     outline: none;
     transition: border-color 0.3s ease;
@@ -89,7 +90,7 @@
     border-bottom-color: $color-rojo;
 }
 
-.text-camps {
+.text-camps2 {
     position: absolute;
     left: 15px;
     top: 12px;
@@ -101,12 +102,26 @@
     padding: 0 5px;
 }
 
-.finalitzacio-camps input:focus ~ .text-camps,
-.finalitzacio-camps input:not(:placeholder-shown) ~ .text-camps {
+.finalitzacio-camps input:focus ~ .text-camps2,
+.finalitzacio-camps input:not(:placeholder-shown) ~ .text-camps2 {
     top: -10px;
     left: 10px;
     font-size: 12px;
     color: $color-naranja;
+}
+
+
+// Cuando se auto complete no salga el estilo por defecto del navegador (que el input se ponga blanco)
+.finalitzacio-camps input:-webkit-autofill,
+.finalitzacio-camps input:-webkit-autofill:hover,
+.finalitzacio-camps input:-webkit-autofill:focus,
+.finalitzacio-camps input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px $color-secundario inset !important;
+    box-shadow: 0 0 0px 1000px $color-secundario inset !important;
+    -webkit-text-fill-color: $color-principal !important;
+    caret-color: $color-principal !important;
+    border-bottom-color: $color-naranja !important;
+    transition: background-color 9999s ease-in-out 0s;
 }
 
 // Estils per les imatges
@@ -122,7 +137,7 @@
     transition: all 0.3s ease;
 }
 
-.contacte-camps input:focus ~ .img-finalitzacio {
+.finalitzacio-camps input:focus ~ .img-finalitzacio {
     opacity: 1;
     transform: translateY(-50%) scale(1.15);
 }
@@ -203,4 +218,27 @@
     .buttons {
         flex-direction: row-reverse;
     }
+}
+
+// Estils per els errors
+
+.error-msg {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.error-msg.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.finalitzacio-camps {
+    position: relative;
+    margin-bottom: 35px;
 }
