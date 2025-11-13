@@ -246,10 +246,6 @@ header .boto-rodo:active.boto-rodo-nav {
 header .boto-rodo .icones-nav {
   width: 30px;
 }
-header .boto-rodo .icone-mode-fosc {
-  margin-bottom: 2px;
-  margin-right: 2px;
-}
 header .boto-rodo.boto-rodo:hover .icones-nav {
   -webkit-filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(70%) contrast(100%);
           filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(70%) contrast(100%);
@@ -257,6 +253,10 @@ header .boto-rodo.boto-rodo:hover .icones-nav {
 header .boto-rodo.boto-rodo-nav:active .icones-nav {
   -webkit-filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(90%) contrast(100%);
           filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(90%) contrast(100%);
+}
+header .boto-rodo .icone-mode-fosc {
+  margin-bottom: 2px;
+  margin-right: 2px;
 }
 header .burger-header {
   font-size: 45px;
@@ -291,24 +291,38 @@ header .sidepanel.active {
   width: 250px;
   opacity: 1;
 }
-header .sidepanel .boto-rodo {
+header .sidepanel .lluna-sidepanel {
   position: absolute;
   top: 50px;
-  right: 200px;
+  right: 180px;
   rotate: 0deg;
   scale: 1;
   -webkit-transition: rotate 1s ease-in-out, scale 0.3s ease;
   transition: rotate 1s ease-in-out, scale 0.3s ease;
 }
-header .sidepanel .boto-rodo:hover {
+header .sidepanel .lluna-sidepanel:hover {
   background-color: #FFE6A7;
   rotate: 360deg;
   scale: 1.08;
   -webkit-transition: rotate 1s ease-in-out, scale 0.3s ease;
   transition: rotate 1s ease-in-out, scale 0.3s ease;
 }
-header .sidepanel .boto-rodo:active {
+header .sidepanel .lluna-sidepanel:active {
   scale: 0.97;
+}
+header .sidepanel .perfil-sidepanel {
+  position: absolute;
+  top: 48px;
+  right: 120px;
+  scale: 1;
+  -webkit-transition: scale 0.3s ease;
+  transition: scale 0.3s ease;
+}
+header .sidepanel .perfil-sidepanel:hover {
+  background-color: #FFE6A7;
+  scale: 1.08;
+  -webkit-transition: scale 0.3s ease;
+  transition: scale 0.3s ease;
 }
 header .sidepanel .boto-tancar-sidepanel {
   position: absolute;
@@ -330,7 +344,7 @@ header .sidepanel .boto-tancar-sidepanel:hover {
 }
 header .sidepanel a {
   display: block;
-  padding: 15px 10px;
+  padding: 5px 10px;
   margin: 10px 0;
   border-radius: 50px;
   font-size: 14px;
@@ -473,17 +487,6 @@ header .overlay-sidepanel.active {
 }
 .header-tenda .nav-header li {
   margin: 7px;
-}
-.header-tenda .boto-rodo-nav {
-  width: 28px;
-  height: 28px;
-}
-.header-tenda .boto-rodo-nav .icones-nav {
-  width: 20px !important;
-}
-.header-tenda .boto-rodo-nav .icones-nav.icone-mode-fosc {
-  width: 22px !important;
-  margin-left: 0;
 }
 
 .black {
