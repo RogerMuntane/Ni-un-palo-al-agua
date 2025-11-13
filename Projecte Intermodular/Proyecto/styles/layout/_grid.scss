@@ -50,3 +50,44 @@
         object-fit: cover;
     }
 }
+
+
+//Grid carreto
+
+.carret {
+    .carret_content {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: $espacio-l;
+        align-items: start;
+    }
+
+    .carret_list {
+        display: grid;
+        gap: $espacio-m;
+    }
+
+    .carret_item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: $espacio-m;
+        align-items: center;
+    }
+
+    /* responsive layout: a mòbil una sola columna */
+    @media (max-width: $vista-mobil) {
+        .carret_content {
+            grid-template-columns: 1fr;
+            padding: 0 $espacio-xs;
+        }
+
+        .carret_item {
+            grid-template-columns: 1fr;
+        }
+
+        .carret_resum {
+            order: 99;
+            margin-top: $espacio-m;
+        }
+    }
+}

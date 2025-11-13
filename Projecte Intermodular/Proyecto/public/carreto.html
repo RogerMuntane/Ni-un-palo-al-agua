@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carretó - Ni un palo al agua</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- HEADER -->
     <header>
 
         <!-- Logo -->
@@ -64,7 +62,53 @@
 
     </header>
 
+    <main class="container carret">
+        <div class="general">
+            <h1>El teu carretó</h1>
 
+            <section class="carret_content">
+                <div class="carret_list">
+                    <!-- Exemple d'item: serà reemplaçat per JS -->
+                    <article class="carret_item producte" data-id="exemple-1">
+                        <img src="Images/bocadillo.png" alt="Producte">
+                        <div class="carret_detall">
+                            <h4>Nom del producte</h4>
+                            <p class="preu">3,50€</p>
+
+                            <div class="carret_controls">
+                                <button class="btn_minus" aria-label="restar">−</button>
+                                <span class="carret_qty">1</span>
+                                <button class="btn_plus" aria-label="sumar">+</button>
+                                <button class="btn_remove">Eliminar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Afegir més .carret_item segons sigui necessari -->
+                </div>
+
+                <aside class="carret_resum">
+                    <div class="resum_row">
+                        <span>Subtotal</span>
+                        <span class="resum_valor">0,00€</span>
+                    </div>
+                    <div class="resum_row">
+                        <span>Despeses d'enviament</span>
+                        <span class="resum_valor">0,00€</span>
+                    </div>
+                    <div class="resum_total">
+                        <strong>Total</strong>
+                        <strong class="resum_valor total_valor">0,00€</strong>
+                    </div>
+
+                    <button class="btn_primary btn_checkout">Anar a pagar</button>
+                    <button class="btn_secondary btn_vorar">Continuar comprant</button>
+                </aside>
+            </section>
+
+            <p class="carret_empty sr-only">El teu carret està buit.</p>
+        </div>
+    </main>
 
     <footer>
         <div class="footer_imatge">
@@ -91,7 +135,6 @@
             <p>© 2025 Ni un palo al agua. All Rights Reserved</p>
         </div>
     </footer>
-
 </body>
 
 </html>
