@@ -1,19 +1,33 @@
+@use "sass:color";
 @use "../abstract/variables" as *;
+
+//HEADER GENERAL
 
 header {
 
-    //HEADER GENERAL
+    //ATRIBUTS GENERALS
 
-    //Colores
+    font-family: $font-parraf;
+
+    //Efecte Sticky
+
+    position: sticky;
+    top: $espacio-m;
+
+    //Selecció d'Elements
+
+    user-select: none; //evita que es puguin seleccionar elements amb el ratolí
+
+    //Colors
 
     background-color: $color-secundario;
 
-    //Borde
+    //Vora
 
     border-radius: 100px;
     border: 2px solid $color-amarillo;
 
-    //Espaciado
+    //Espaciat
 
     margin: $espacio-xl;
     padding-right: 50px;
@@ -24,109 +38,478 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    //Logo
 
-    .logo {
-        width: 150px;
-        float: left;
+    //LOGO
+
+    //Link Asociat al Logo
+
+    .logo-link {
+        display: inline-block;
+        clip-path: circle(50%); //link circular
+        pointer-events: auto; //reacciona al cursor
+
+        //Imatge Del Logo
+
+        .logo {
+            width: 150px;
+            float: left;
+        }
     }
 
-    //Nav
 
-    li {
-        list-style-type: none;
-        float: left;
-        font-family: $font-parraf;
-        margin: $espacio-s;
+    //NAV
+
+    .nav-header {
+
+        padding: 0; //reset padding
+
+        //Lista Horizontal
+
+        li {
+            list-style-type: none;
+            float: right;
+            margin: $espacio-s;
+
+            //Aspecte Elements Nav
+
+            a {
+                text-decoration: none;
+                font-size: $titol-size-l;
+
+                color: $color-amarillo;
+                background-color: $color-principal;
+
+                display: block;
+                padding: $espacio-xs $espacio-xl;
+
+                border-radius: 100px;
+                border: 2px solid $color-amarillo;
+
+                transition: transform 0.3s ease;
+
+                //Aspecte en Hover
+
+                &:hover {
+                    box-shadow: 0 0 10px rgba($color-amarillo, 0.5);
+                    border-color: #b85c1b;
+                    color: #b85c1b;
+
+                    transform: scale(1.08);
+                }
+
+                //Aspecte en Click
+
+                &:active {
+                    color: color.adjust(#b85c1b, $lightness: 20%);
+                    border-color: color.adjust(#b85c1b, $lightness: 20%); //Ajustament al color per a que sigui més clar
+
+                    transform: scale(0.97);
+                }
+            }
+
+            //Responsive per Tablets i Mobils
+
+            @media(max-width: $vista-tablet) {
+                display: none; //ocultar nav
+
+            }
+        }
     }
 
 
-    a {
-        text-decoration: none;
-        color: $color-amarillo;
-        display: block;
-        padding: 10px 30px;
-        background-color: $color-principal;
-        border-radius: 100px;
+    //ICONA MODE FOSC
 
-        border: 2px solid $color-amarillo;
-        transition: 0.5s;
-        font-size: $titol-size-l;
-    }
+    //Botó Rodó
 
-    a:hover {
-        color: rgb(194, 113, 38);
-        border: 2px solid rgb(194, 113, 38);
-        font-size: $titol-size-xl;
-    }
-
-    //Modo Oscuro
-
-    .moonDarkMode {
+    .boto-rodo {
         width: 40px;
+        height: 40px;
+
+        border-radius: 50%; //cercle
+
+        background-color: $color-principal;
+        border: $color-amarillo 1px solid;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        padding-top: 5px; //padding per a que la imatge s'ajusti al botó
+
+        transition: transform 0.3s ease;
+
+        //Aspecte en hover
+
+        &:hover {
+            transform: scale(1.08);
+
+            border: #b85c1b 1px solid;
+        }
+
+        //Aspecte en Click
+
+        &:active {
+            transform: scale(0.97);
+
+            &.boto-rodo-nav {
+                border-color: color.adjust(#b85c1b, $lightness: 20%);
+            }
+        }
+
+        //Imatge de la Lluna
+
+        .icone-mode-fosc {
+            width: 30px;
+            margin-bottom: 2px;
+            margin-right: 2px; //marges per a que la lluna quedi centrada
+        }
+
+        //Aspecte en hover
+
+        &.boto-rodo:hover .icone-mode-fosc {
+            filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(70%) contrast(100%);
+            //propietats per a que la imatge quedi del color que volem
+        }
+
+        //Aspecte en Click
+
+        &.boto-rodo-nav:active .icone-mode-fosc {
+            filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(90%) contrast(100%);
+            //li pujem la brillantor al clickar
+        }
     }
+
+
+    //MENU DESPLEGABLE (MOBILS I TABLETS)
 
     //Menu Hamburguesa
 
-    span {
+    .burger-header {
         font-size: 45px;
-        user-select: none;
+
+        display: none;
+
+        color: $color-principal;
+
+        //Responsive per Tablets i Mobils
+
+        @media(max-width: $vista-tablet) {
+            display: contents; //mostrar menu desplegable
+
+        }
     }
 
-    //HEADER TIENDA
+    //Panel Lateral
 
-    //Buscador
+    .sidepanel {
+        width: 0; //per a la transició
+        height: 100vh; //100% de la altura visible de la finestra
 
-    .buscador {
-        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10; //capa superior per assegurar que estigui a sobre
+
+        overflow-x: hidden;
+
+        background-color: rgba($color-secundario, 0.75); //li donem transperencia
+        backdrop-filter: blur(6px); //efecte borros al fons
+
+        padding-top: 80px;
+        padding-inline: $espacio-m; //padding als costats
+
+        border-left: 2px solid $color-amarillo;
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.4);
+
+        opacity: 0; //per a que no es mostri
+
+        transition: width 0.4s ease, opacity 0.4s ease;
+
+        //Classe Activadora
+
+        &.active {
+            width: 250px;
+            opacity: 1;
+        }
+
+        //Botó Mode Fosc en Sidepanel
+
+        .boto-rodo {
+            position: absolute;
+            top: 50px;
+            right: 200px;
+
+            rotate: 0deg;
+            scale: 1; //reinci en sortir del hover
+
+            transition: rotate 1s ease-in-out, scale 0.3s ease;
+
+            //Aspecte en Hover
+
+            &:hover {
+                background-color: $color-amarillo;
+
+                rotate: 360deg;
+                scale: 1.08;
+                transition:
+                    rotate 1s ease-in-out,
+                    scale 0.3s ease;
+            }
+
+            //Aspecte en Clickar
+
+            &:active {
+                scale: 0.97;
+            }
+
+        }
+
+        //Botó per Tancar el Sidepanel
+
+        .boto-tancar-sidepanel {
+            position: absolute;
+            top: $espacio-xs;
+            right: $espacio-l;
+
+            font-size: 45px;
+            font-weight: bold;
+            color: $color-amarillo;
+
+            cursor: pointer;
+
+            transition: transform 0.3s ease, color 0.3s ease;
+
+            //Aspecte en Hover
+
+            &:hover {
+                color: #b85c1b;
+                transform: rotate(90deg);
+            }
+        }
+
+        //Llista de Links
+
+        a {
+            display: block;
+            padding: $espacio-s $espacio-xs;
+            margin: $espacio-xs 0;
+            border-radius: 50px;
+
+            font-size: $titol-size-m;
+            text-decoration: none;
+
+            color: $color-amarillo;
+            background-color: rgba($color-principal, 0.75);
+
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+            //Aspecte en Hover
+
+            &:hover {
+                background-color: $color-amarillo;
+                color: $color-principal;
+                box-shadow: 0 0 10px rgba($color-amarillo, 0.4);
+
+                transform: translateX(5px);
+            }
+
+            //Aspecte en Clickar
+
+            &:active {
+                transform: scale(0.97);
+            }
+        }
+
     }
 
-    .buscador:focus-within {
-        border: 2px solid $color-amarillo;
-        border-radius: 100px;
-    }
+    //Fons Negre Sidepanel
 
-    input {
-        background-color: $color-principal;
-        color: $color-amarillo;
-        width: 100px;
-        border: 0;
-        outline: 0;
-        margin: 0;
-        padding: 10px 30px;
-        border-radius: 100px 0 0 100px;
-        font-size: $titol-size-m;
-    }
+    .overlay-sidepanel {
+        position: fixed;
 
-    button {
-        display: inline;
-        background-color: $color-amarillo;
-        border: 0;
-        margin: 0;
-        padding: 10px 20px;
-        border-radius: 0 100px 100px 0;
-    }
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
+        opacity: 0;
 
+        pointer-events: none; //per a que no interfereixi amb els elements del fons
+
+        transition: opacity 0.3s ease;
+
+        //Classe Activadora
+
+        &.active {
+            opacity: 1;
+
+            pointer-events: all;
+        }
+    }
 
 }
 
+
+
+
+
+
+
+
+//HEADER TIENDA
+
 .header-tenda {
 
-    a {
-        font-size: $titol-size-xs;
-        padding: 5px 15px;
-    }
+    //BUSCADOR
 
-    a:hover {
-        font-size: $titol-size-s;
-    }
-
-    .moonDarkMode {
-        width: 30px;
-    }
+    //Barra Buscadora
 
     .buscador {
-        flex-grow: 2;
+
+        align-items: center;
+
+        border: 2px solid transparent;
+        border-radius: 100px;
+
+        overflow: hidden;
+        transition: width 1s ease, border-color 0.4s ease;
+
+        //Quadre de Text
+
+        input {
+            color: $color-amarillo;
+            font-size: $titol-size-m;
+
+            width: 100%;
+
+            border: none;
+
+            outline: none;
+
+            margin: 0;
+            padding: $espacio-xs $espacio-xl;
+
+            transition: width 1s ease;
+
+            //Aspecte Placeholder
+
+            &::placeholder {
+                color: $color-amarillo;
+                opacity: 0.5;
+            }
+        }
+
+        //Botó de Cerca
+
+        button {
+            background-color: $color-amarillo;
+            color: $color-principal;
+
+            border: none;
+            border-radius: 0px 100px 100px 0px;
+
+            padding: $espacio-xs $espacio-m;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+            //Aspecte en Hover
+
+            &:hover {
+                background-color: color.adjust($color-amarillo, $lightness: -10%);
+            }
+
+            //Aspecte en Clickar
+
+            &:active {
+                background-color: color.adjust($color-amarillo, $lightness: -20%);
+                transform: scale(0.95);
+            }
+        }
+
+        //Vora en fer Focus en el Quadre de Text
+
+        &:has(input:focus) {
+            border-color: $color-amarillo;
+
+        }
+
+        //Aspectes Únics del Buscador en el Header
+
+        &.buscador-header {
+            display: flex;
+            width: 220px;
+            margin-left: 2%;
+            margin-right: auto;
+
+            //Quadre de Text en el Buscador del Header
+
+            input {
+                background-color: $color-principal;
+            }
+
+            //Responsive per Mobils
+
+            @media(max-width: $vista-mobil) {
+
+                display: none; //oculta la barra buscadora del header
+
+            }
+        }
+
+        //Aspectes Únics del Buscador en el Sidepanel
+
+        &.buscador-sidepanel {
+            display: none;
+            width: 100%;
+            margin: $espacio-m auto;
+
+            //Quadre de Text en el Buscador del Sidepanel
+
+            input {
+                background-color: rgba($color-principal, 0.8);
+            }
+
+            //Responsive per Mobils Buscador Sidepanel
+
+            @media (max-width: $vista-mobil) {
+
+                display: flex; //mostra el buscador en el sidepanel
+            }
+        }
+
     }
 
+
+    //NAV
+
+    .nav-header {
+
+        text-align: right;
+
+        //elements més petits i comprimits per a que quepiga el buscador
+        a {
+            font-size: $titol-size-s;
+            padding: 7.5px $espacio-m;
+        }
+
+        li {
+            margin: 7px;
+        }
+
+    }
+
+
+    //MODE FOSC ICONA
+
+    //més petit, en consonància amb el nav
+    .boto-rodo-nav {
+        width: 28px;
+        height: 28px;
+
+        .icone-mode-fosc {
+            width: 20px !important;
+        }
+    }
 }

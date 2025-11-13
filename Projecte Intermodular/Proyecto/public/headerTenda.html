@@ -4,30 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ni Un Palo Al Agua</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="../script.js" defer></script>
 </head>
 
 <body>
+
+
     <!-- HEADER -->
-    <header>
+    <header class="header-tenda">
 
         <!-- Logo -->
         <a href="inici.html" class="logo-link">
-            <img src="Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false" usemap="#logo-map">
+            <img src="Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false">
         </a>
+
+        <!-- Barra Buscadora -->
+        <div class="buscador buscador-header">
+            <input type="text" placeholder="Buscar Producte">
+            <button>&#128269;</button>
+        </div>
 
         <!-- Nav -->
         <ul class="nav-header">
-            <!-- Mode Fosc -->
             <li>
-                <button class="boto-rodo">
+                <button class="boto-rodo boto-rodo-nav">
                     <img src="Images/luna.png" alt="Mode Fosc" class="icone-mode-fosc" draggable="false"
                         onclick="modeFosc()">
                 </button>
             </li>
-            <!-- Links -->
             <li><a href="contacte.html">Contacte</a></li>
             <li><a href="carreto.html">&#128722;Carretó</a></li>
             <li><a href="tenda.html">Tenda Online</a></li>
@@ -36,7 +42,6 @@
 
         <!-- Menu Hamburguesa -->
         <span class="burger-header" onclick="desplegarBurger()">&#9776;</span>
-
 
         <!-- Sidepanel -->
         <div id="sidepanel" class="sidepanel">
@@ -48,6 +53,11 @@
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
             <br>
+            <!-- Barra Buscadora Sidepanel -->
+            <div class="buscador buscador-sidepanel">
+                <input type="text" placeholder="Buscar Producte">
+                <button>&#128269;</button>
+            </div>
             <!-- Links -->
             <a href="inici.html">Inici</a>
             <a href="tenda.html">Tenda Online</a>
@@ -55,7 +65,7 @@
             <a href="contacte.html">Contacte</a>
         </div>
 
-        <!-- Fons Negre Sidepanel -->
+        <!-- Logo -->
         <div id="overlaySidepanel" class="overlay-sidepanel" onclick="tancarSidepanel()"></div>
 
     </header>
