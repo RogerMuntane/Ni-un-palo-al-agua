@@ -533,6 +533,7 @@ header .overlay-sidepanel.active {
   text-align: center;
   color: #FFE6A7;
   height: 400px;
+  border-radius: 50px 50px 0px 0px;
 }
 .tenda_banner .tenda_banner_content {
   margin: 0 auto;
