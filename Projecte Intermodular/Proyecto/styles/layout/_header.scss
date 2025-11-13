@@ -160,22 +160,25 @@ header {
 
         //Imatge de la Lluna
 
-        .icone-mode-fosc {
+        .icones-nav {
             width: 30px;
+        }
+
+        .icone-mode-fosc {
             margin-bottom: 2px;
             margin-right: 2px; //marges per a que la lluna quedi centrada
         }
 
         //Aspecte en hover
 
-        &.boto-rodo:hover .icone-mode-fosc {
+        &.boto-rodo:hover .icones-nav {
             filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(70%) contrast(100%);
             //propietats per a que la imatge quedi del color que volem
         }
 
         //Aspecte en Click
 
-        &.boto-rodo-nav:active .icone-mode-fosc {
+        &.boto-rodo-nav:active .icones-nav {
             filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(90%) contrast(100%);
             //li pujem la brillantor al clickar
         }
@@ -508,8 +511,13 @@ header {
         width: 28px;
         height: 28px;
 
-        .icone-mode-fosc {
+        .icones-nav {
             width: 20px !important;
+
+            &.icone-mode-fosc {
+                width: 22px !important;
+                margin-left: 0;
+            }
         }
     }
 }

@@ -105,16 +105,18 @@ header .boto-rodo:active {
 header .boto-rodo:active.boto-rodo-nav {
   border-color: rgb(229.7914691943, 143.8957345972, 83.2085308057);
 }
-header .boto-rodo .icone-mode-fosc {
+header .boto-rodo .icones-nav {
   width: 30px;
+}
+header .boto-rodo .icone-mode-fosc {
   margin-bottom: 2px;
   margin-right: 2px;
 }
-header .boto-rodo.boto-rodo:hover .icone-mode-fosc {
+header .boto-rodo.boto-rodo:hover .icones-nav {
   -webkit-filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(70%) contrast(100%);
           filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(70%) contrast(100%);
 }
-header .boto-rodo.boto-rodo-nav:active .icone-mode-fosc {
+header .boto-rodo.boto-rodo-nav:active .icones-nav {
   -webkit-filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(90%) contrast(100%);
           filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(90%) contrast(100%);
 }
@@ -338,8 +340,12 @@ header .overlay-sidepanel.active {
   width: 28px;
   height: 28px;
 }
-.header-tenda .boto-rodo-nav .icone-mode-fosc {
+.header-tenda .boto-rodo-nav .icones-nav {
   width: 20px !important;
+}
+.header-tenda .boto-rodo-nav .icones-nav.icone-mode-fosc {
+  width: 22px !important;
+  margin-left: 0;
 }
 
 .black {
