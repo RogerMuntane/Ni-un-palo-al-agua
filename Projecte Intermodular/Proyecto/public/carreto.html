@@ -62,9 +62,12 @@
 
     </header>
 
+
     <main class="container carret">
-        <div class="general">
-            <h1>El teu carretó</h1>
+        <div class="carreto_senser">
+            <div class="carret_header">
+                <h1>El teu carretó</h1>
+            </div>
 
             <section class="carret_content">
                 <div class="carret_list">
@@ -79,12 +82,10 @@
                                 <button class="btn_minus" aria-label="restar">−</button>
                                 <span class="carret_qty">1</span>
                                 <button class="btn_plus" aria-label="sumar">+</button>
-                                <button class="btn_remove">Eliminar</button>
+                                <button class="btn_remove" onclick="eliminarProducte(this)">🗑️ Eliminar</button>
                             </div>
                         </div>
                     </article>
-
-                    <!-- Afegir més .carret_item segons sigui necessari -->
                 </div>
 
                 <aside class="carret_resum">
@@ -101,14 +102,20 @@
                         <strong class="resum_valor total_valor">0,00€</strong>
                     </div>
 
-                    <button class="btn_primary btn_checkout">Anar a pagar</button>
-                    <button class="btn_secondary btn_vorar">Continuar comprant</button>
+                    <button class="btn_primary btn_checkout" onclick="location.href='finalitzacio.html'">Anar a
+                        pagar</button>
+
+                    <button class="btn_secondary btn_vorar" onclick="location.href='tenda.html'">Continuar
+                        comprant</button>
+
+                    <button class="btn_secondary btn_buidar_carret" onclick="buidarCarret()">Buidar carretó</button>
                 </aside>
             </section>
 
             <p class="carret_empty sr-only">El teu carret està buit.</p>
         </div>
     </main>
+
 
     <footer>
         <div class="footer_imatge">

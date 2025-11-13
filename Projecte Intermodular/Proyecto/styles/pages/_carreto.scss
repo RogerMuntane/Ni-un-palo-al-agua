@@ -1,29 +1,58 @@
 @use "../abstract/variables" as *;
 
-.general {
+.carreto_senser {
     background-color: $color-naranja;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+    min-height: 700px;
+    height: auto;
+    border-radius: 50px 50px 0px 0px;
 }
 
 .carret {
     padding: $espacio-l 0;
-    margin: 0px;
 
-    h1 {
-        font-family: $font-titol;
-        font-size: $titol-size-3xl;
-        color: $color-amarillo;
-        text-align: center;
-        margin-bottom: $espacio-l;
+    .carret_header {
+        padding: 0 $espacio-m;
+        max-width: $vista-max;
+        margin: 0 auto $espacio-l;
+
+        h1 {
+            padding-top: $espacio-m;
+            font-family: $font-titol;
+            font-size: $titol-size-4xl;
+            color: $color-amarillo;
+            text-align: center;
+            margin: 0;
+            flex: 1;
+        }
+
+        .btn_buidar_carret {
+            background: $color-rojo;
+            color: $color-amarillo;
+            padding: $espacio-s $espacio-m;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: $titol-size-m;
+            font-family: $font-parraf;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+
+            &:hover {
+                background: darken($color-rojo, 10%);
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
     }
 
     .carret_content {
         max-width: $vista-max;
-        margin: 0;
-        padding: 0;
-        width: 100%;
+        margin: 0 auto;
+        padding: 0 $espacio-m;
     }
 
     .carret_item {
@@ -31,6 +60,7 @@
         border: 2px solid $color-secundario;
         padding: $espacio-m;
         border-radius: 8px;
+        position: relative;
 
         img {
             width: 100%;
@@ -40,51 +70,59 @@
             border-radius: 6px;
         }
 
-        .carret_detall {
-            display: flex;
-            flex-direction: column;
-            gap: $espacio-s;
+        h4 {
+            font-family: $font-titol;
+            color: $color-amarillo;
+            margin: 0;
+            font-size: $titol-size-m;
+        }
 
-            h4 {
-                font-family: $font-titol;
-                color: $color-amarillo;
-                margin: 0;
+        .preu {
+            color: $color-naranja;
+            font-weight: bold;
+            font-size: $titol-size-l;
+        }
+
+        .carret_controls {
+            button {
+                border-radius: 6px;
+                border: none;
+                cursor: pointer;
                 font-size: $titol-size-m;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.08);
+                }
             }
 
-            .preu {
-                color: $color-naranja;
+            .btn_minus,
+            .btn_plus {
+                background: $color-secundario;
+                color: $color-amarillo;
+                padding: $espacio-xs;
                 font-weight: bold;
-                font-size: $titol-size-l;
+                min-width: 36px;
             }
 
-            .carret_controls {
-                display: flex;
-                gap: $espacio-s;
-                align-items: center;
-                margin-top: auto;
+            .btn_remove {
+                background: transparent;
+                color: $color-rojo;
+                padding: $espacio-xs $espacio-s;
+                margin-left: auto;
+                font-weight: bold;
+                font-size: $titol-size-s;
 
-                button {
-                    background: $color-secundario;
-                    color: $color-amarillo;
-                    border-radius: 6px;
-                    padding: $espacio-xs;
-                    border: none;
-                    cursor: pointer;
-                    font-size: $titol-size-m;
+                &:hover {
+                    color: darken($color-rojo, 15%);
                 }
+            }
 
-                .btn_remove {
-                    background: transparent;
-                    color: $color-rojo;
-                    margin-left: $espacio-s;
-                }
-
-                .carret_qty {
-                    min-width: 28px;
-                    text-align: center;
-                    font-weight: bold;
-                }
+            .carret_qty {
+                min-width: 28px;
+                text-align: center;
+                font-weight: bold;
+                color: $color-amarillo;
             }
         }
     }
@@ -94,9 +132,6 @@
         border: 2px solid $color-secundario;
         padding: $espacio-m;
         border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        gap: $espacio-m;
         height: fit-content;
 
         .resum_row {
@@ -115,7 +150,8 @@
             padding-top: $espacio-s;
         }
 
-        .btn_primary {
+        .btn_primary,
+        .btn_secondary {
             background: $color-naranja;
             color: $color-amarillo;
             padding: $espacio-s $espacio-m;
@@ -123,15 +159,18 @@
             border: none;
             cursor: pointer;
             font-weight: bold;
-        }
+            font-size: $titol-size-m;
+            font-family: $font-parraf;
+            transition: all 0.3s ease;
 
-        .btn_secondary {
-            background: transparent;
-            color: $color-amarillo;
-            padding: $espacio-s $espacio-m;
-            border-radius: 6px;
-            border: 2px solid rgba(255, 255, 255, 0.04);
-            cursor: pointer;
+            &:hover {
+                background: darken($color-naranja, 10%);
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
         }
     }
 
@@ -142,12 +181,33 @@
     }
 }
 
-/* Nota: Responsive layout per a mòbil (canvis visuals) es troba a _grid.scss */
 @media (max-width: $vista-mobil) {
     .carret {
+        .carret_header {
+            padding: 0 $espacio-xs;
+
+            h1 {
+                font-size: $titol-size-xl;
+            }
+
+            .btn_buidar_carret {
+                padding: $espacio-xs $espacio-s;
+                font-size: $titol-size-s;
+            }
+        }
+
         .carret_item {
             img {
                 height: 220px;
+            }
+        }
+
+        .carret_resum {
+
+            .btn_primary,
+            .btn_secondary {
+                padding: $espacio-xs $espacio-s;
+                font-size: $titol-size-s;
             }
         }
     }

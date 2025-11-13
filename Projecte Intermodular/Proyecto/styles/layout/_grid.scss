@@ -53,8 +53,14 @@
 
 
 //Grid carreto
-
 .carret {
+    .carret_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $espacio-m;
+    }
+
     .carret_content {
         display: grid;
         grid-template-columns: 1fr 360px;
@@ -74,11 +80,35 @@
         align-items: center;
     }
 
+    .carret_detall {
+        display: flex;
+        flex-direction: column;
+        gap: $espacio-s;
+    }
+
+    .carret_controls {
+        display: flex;
+        gap: $espacio-s;
+        align-items: center;
+        margin-top: auto;
+        flex-wrap: wrap;
+    }
+
+    .carret_resum {
+        display: flex;
+        flex-direction: column;
+        gap: $espacio-m;
+    }
+
     /* responsive layout: a mòbil una sola columna */
-    @media (max-width: $vista-mobil) {
+    @media (max-width: $vista-tablet) {
+        .carret_header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         .carret_content {
             grid-template-columns: 1fr;
-            padding: 0 $espacio-xs;
         }
 
         .carret_item {
