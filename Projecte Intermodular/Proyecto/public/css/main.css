@@ -889,6 +889,7 @@ header .overlay-sidepanel.active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border-radius: 50px 50px 0px 0px;
 }
 
 .hero::before {
@@ -899,6 +900,7 @@ header .overlay-sidepanel.active {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50px 50px 0px 0px;
 }
 
 .hero-content {
