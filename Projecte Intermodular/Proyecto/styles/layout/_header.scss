@@ -29,7 +29,7 @@ header {
 
     //Espaciat
 
-    margin: $espacio-xl;
+    margin: $espacio-xl 0px;
     padding-right: 50px;
 
     //Flex
@@ -158,18 +158,13 @@ header {
             }
         }
 
-        //Imatge de la Lluna
+        //Icones de Perfil i Mode Fosc
 
         .icones-nav {
             width: 30px;
         }
 
-        .icone-mode-fosc {
-            margin-bottom: 2px;
-            margin-right: 2px; //marges per a que la lluna quedi centrada
-        }
-
-        //Aspecte en hover
+        //Aspecte en Hover
 
         &.boto-rodo:hover .icones-nav {
             filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(70%) contrast(100%);
@@ -182,6 +177,14 @@ header {
             filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(90%) contrast(100%);
             //li pujem la brillantor al clickar
         }
+
+        //Imatge de la Lluna
+
+        .icone-mode-fosc {
+            margin-bottom: 2px;
+            margin-right: 2px; //marges per a que la lluna quedi centrada
+        }
+
     }
 
 
@@ -239,15 +242,16 @@ header {
 
         //Botó Mode Fosc en Sidepanel
 
-        .boto-rodo {
+        .lluna-sidepanel {
             position: absolute;
             top: 50px;
-            right: 200px;
+            right: 180px;
 
             rotate: 0deg;
             scale: 1; //reinci en sortir del hover
 
             transition: rotate 1s ease-in-out, scale 0.3s ease;
+
 
             //Aspecte en Hover
 
@@ -266,6 +270,26 @@ header {
             &:active {
                 scale: 0.97;
             }
+        }
+
+        //Botó Pefil en Sidepanel
+
+        .perfil-sidepanel {
+            position: absolute;
+            top: 48px;
+            right: 120px;
+            scale: 1; //reinci en sortir del hover
+
+            transition: scale 0.3s ease;
+
+            &:hover {
+                background-color: $color-amarillo;
+
+                scale: 1.08;
+                transition:
+                    scale 0.3s ease;
+            }
+
 
         }
 
@@ -296,7 +320,7 @@ header {
 
         a {
             display: block;
-            padding: $espacio-s $espacio-xs;
+            padding: 5px $espacio-xs;
             margin: $espacio-xs 0;
             border-radius: 50px;
 
@@ -501,23 +525,5 @@ header {
             margin: 7px;
         }
 
-    }
-
-
-    //MODE FOSC ICONA
-
-    //més petit, en consonància amb el nav
-    .boto-rodo-nav {
-        width: 28px;
-        height: 28px;
-
-        .icones-nav {
-            width: 20px !important;
-
-            &.icone-mode-fosc {
-                width: 22px !important;
-                margin-left: 0;
-            }
-        }
     }
 }
