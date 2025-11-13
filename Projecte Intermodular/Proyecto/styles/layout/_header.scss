@@ -5,6 +5,8 @@
 
 header {
 
+    z-index: 5;
+
     //ATRIBUTS GENERALS
 
     font-family: $font-parraf;
@@ -12,7 +14,7 @@ header {
     //Efecte Sticky
 
     position: sticky;
-    top: $espacio-m;
+    top: 0;
 
     //Selecció d'Elements
 
