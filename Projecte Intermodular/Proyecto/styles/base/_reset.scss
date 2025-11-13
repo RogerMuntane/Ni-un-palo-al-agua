@@ -1,8 +1,167 @@
 @use "../abstract/variables" as *;
+@use "../abstract/variables" as *;
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: $color-principal;
     min-width: $vista-min;
     max-width: $vista-max;
-    margin: auto;
+    margin: 0 auto;
+    font-family: $font-parraf;
+    line-height: 1.6;
+    color: $color-amarillo;
+    overflow-x: hidden;
+}
+
+/* Reset d'encapçalaments */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-titol;
+    font-weight: normal;
+    line-height: 1.3;
+    margin-bottom: $espacio-s;
+}
+
+h1 {
+    font-size: $titol-size-3xl;
+}
+
+h2 {
+    font-size: $titol-size-xl;
+}
+
+h3 {
+    font-size: $titol-size-l;
+}
+
+h4 {
+    font-size: $titol-size-m;
+}
+
+h5 {
+    font-size: $titol-size-s;
+}
+
+h6 {
+    font-size: $titol-size-xs;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-hover;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+
+    &:hover {
+        color: $color-hover;
+    }
+}
+
+/* Reset de taules */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Classes auxiliars */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: $vista-max;
+    margin: 0 auto;
+    padding: 0 $espacio-m;
+}
+
+@media (max-width: $vista-tablet) {
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 $espacio-s;
+    }
+}
+
+@media (max-width: $vista-mobil) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 $espacio-xs;
+    }
+
+    h1 {
+        font-size: $titol-size-xl;
+    }
+
+    h2 {
+        font-size: $titol-size-l;
+    }
+
+    h3 {
+        font-size: $titol-size-m;
+    }
 }
