@@ -1093,6 +1093,7 @@ header .overlay-sidepanel.active {
   min-height: 700px;
   height: auto;
   border-radius: 50px 50px 0px 0px;
+  padding-bottom: 50px;
 }
 
 .carret {
@@ -1129,7 +1130,7 @@ header .overlay-sidepanel.active {
   white-space: nowrap;
 }
 .carret .carret_header .btn_buidar_carret:hover {
-  background: rgb(69.9782608696, 18.2826086957, 17.0217391304);
+  background: #6F1D1B;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -1189,7 +1190,7 @@ header .overlay-sidepanel.active {
   min-width: 36px;
 }
 .carret .carret_item .carret_controls .btn_remove {
-  background: transparent;
+  background: #FFE6A7;
   color: #6F1D1B;
   padding: 10px 15px;
   margin-left: auto;
@@ -1197,7 +1198,7 @@ header .overlay-sidepanel.active {
   font-size: 13px;
 }
 .carret .carret_item .carret_controls .btn_remove:hover {
-  color: rgb(49.4673913043, 12.9239130435, 12.0326086957);
+  color: #6F1D1B;
 }
 .carret .carret_item .carret_controls .carret_qty {
   min-width: 28px;
@@ -1252,7 +1253,7 @@ header .overlay-sidepanel.active {
 }
 .carret .carret_resum .btn_primary:hover,
 .carret .carret_resum .btn_secondary:hover {
-  background: rgb(112.9846153846, 64.9846153846, 31.0153846154);
+  background: #6F1D1B;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -1267,24 +1268,31 @@ header .overlay-sidepanel.active {
   margin-top: 25px;
 }
 
-@media (max-width: 728px) {
+@media (max-width: 1024px) {
   .carret .carret_header {
-    padding: 0 10px;
+    padding-top: 10px;
+    text-align: center;
   }
   .carret .carret_header h1 {
-    font-size: 22px;
+    text-align: center;
   }
   .carret .carret_header .btn_buidar_carret {
     padding: 10px 15px;
     font-size: 13px;
   }
   .carret .carret_item img {
-    height: 220px;
+    height: 220px !important;
   }
   .carret .carret_resum .btn_primary,
   .carret .carret_resum .btn_secondary {
     padding: 10px 15px;
     font-size: 13px;
+  }
+  .carret .carret_resum .btn_primary:hover,
+  .carret .carret_resum .btn_secondary:hover {
+    background: #6F1D1B;
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
   }
 }
 * {
