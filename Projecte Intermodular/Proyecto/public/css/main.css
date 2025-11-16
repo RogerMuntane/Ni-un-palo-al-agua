@@ -759,7 +759,7 @@ header .overlay-sidepanel.active {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.producte_oferta .producte_oferta_preu {
+.producte_oferta .preu {
   font-size: 20px;
   font-family: "PlayfairDisplay";
   color: #99582A;
@@ -833,7 +833,7 @@ header .overlay-sidepanel.active {
   .producte_oferta .producte_oferta_nom {
     font-size: 13px;
   }
-  .producte_oferta .producte_oferta_preu {
+  .producte_oferta .preu {
     font-size: 14px;
   }
   .producte_oferta .btn_comprar {

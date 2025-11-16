@@ -80,7 +80,7 @@ function mostrarRecomanacio(){
 
         const preu = document.createElement("p");
         preu.textContent = producte.preu.toFixed(2) + "€";
-        preu.className = "producte_oferta_preu";
+        preu.className = "preu";
 
         const btn = document.createElement("button");
         btn.textContent = "Afegir al carret";
