@@ -9,6 +9,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50px 50px 0px 0px;
+
 }
 
 //per al filtre de la imatge
@@ -20,6 +22,7 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50px 50px 0px 0px;
 
 }
 
