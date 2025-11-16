@@ -10,7 +10,6 @@
     align-items: center;
     justify-content: center;
     border-radius: 50px 50px 0px 0px;
-
 }
 
 //per al filtre de la imatge
@@ -23,7 +22,6 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50px 50px 0px 0px;
-
 }
 
 .hero-content {
@@ -43,16 +41,22 @@
 .hero-btn {
     display: inline-block;
     padding: 15px 40px;
-    background-color: #ff6b6b;
-    color: white;
+    background-color: $color-rojo;
+    color: $color-amarillo;
     text-decoration: none;
     font-size: $titol-size-m;
+    font-family: $font-parraf;
     border-radius: 5px;
-    transition: background-color 0.3s;
-}
+    transition: all 0.3s ease;
 
-.hero-btn:hover {
-    background-color: #ff5252;
+    &:hover {
+        background-color: $color-rojo;
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
 }
 
 /* Ofertes del dia */
@@ -70,47 +74,125 @@
 
 /* Secció text i imatge */
 .content-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     min-height: 400px;
 }
 
 .text-content {
     padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: $color-amarillo;
-}
 
-.text-content h2 {
-    font-size: $titol-size-4xl;
-    margin-bottom: 20px;
-    color: $color-negre;
-}
+    h2 {
+        font-size: $titol-size-4xl;
+        margin-bottom: 20px;
+        color: $color-negre;
+    }
 
-.text-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: $color-gris-fosc;
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: $color-gris-fosc;
+    }
 }
 
 .image-content {
+    min-height: 400px;
     background-image: url(../../public/Images/obertf.jpeg);
     background-size: cover;
     background-position: center;
 }
 
-@media (max-width: $vista-tablet) {
-    .content-section {
-        grid-template-columns: 1fr;
+/* Llistat Ofertes */
+.llistat_ofertes {
+    max-width: $vista-max;
+    margin: 0 auto;
+    padding: 0 $espacio-m;
+}
+
+.producte_oferta {
+    background-color: $color-principal;
+    border: 2px solid $color-secundario;
+    border-radius: 8px;
+    padding: $espacio-m;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        border-color: $color-amarillo;
     }
 
+    .producte_oferta_imatge {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: $espacio-m;
+    }
+
+    .producte_oferta_nom {
+        font-family: $font-titol;
+        color: $color-amarillo;
+        font-size: $titol-size-m;
+        margin: 0 0 $espacio-s;
+    }
+
+    .producte_oferta_preu {
+        font-family: $font-titol;
+        color: $color-naranja;
+        font-size: $titol-size-l;
+        font-weight: bold;
+        margin: 0 0 $espacio-m;
+    }
+
+    .btn_comprar_oferta {
+        background-color: $color-naranja;
+        color: $color-amarillo;
+        border: none;
+        padding: $espacio-s $espacio-m;
+        font-size: $titol-size-m;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: $font-parraf;
+
+        &:hover {
+            background-color: $color-rojo;
+            transform: scale(1.03);
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}
+
+@media (max-width: $vista-mobil) {
     .image-content {
         height: 300px;
     }
 
     .text-content {
-        height: 300px;
+        padding: 40px 20px;
+    }
+
+    .producte_oferta {
+        .producte_oferta_imatge {
+            height: 350px;
+        }
+
+        .producte_oferta_nom {
+            font-size: $titol-size-s;
+        }
+
+        .producte_oferta_preu {
+            font-size: $titol-size-m;
+        }
+
+        .btn_comprar_oferta {
+            padding: $espacio-xs $espacio-s;
+            font-size: $titol-size-s;
+        }
     }
 }

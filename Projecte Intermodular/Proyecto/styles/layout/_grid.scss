@@ -50,3 +50,39 @@
         object-fit: cover;
     }
 }
+
+
+/* Inici - ofertes del dia */
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.llistat_ofertes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: $espacio-l;
+}
+
+.producte_oferta {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive layout per a inici */
+@media (max-width: $vista-tablet) {
+    .content-section {
+        grid-template-columns: 1fr;
+    }
+
+    .llistat_ofertes {
+        grid-template-columns: 1fr;
+        gap: $espacio-m;
+    }
+}
