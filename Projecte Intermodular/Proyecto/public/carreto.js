@@ -82,6 +82,7 @@ function posar_ofertes() {
 
     } else {
         contenidor.innerHTML="<h3>No hi ha elements al carreto</h3>"
+        actualitzarResum()
     }
 }
 
@@ -109,14 +110,19 @@ function buidarCarret() {
     if (confirm('Estàs segur que vols buidar el carret?')) {
         localStorage.removeItem('carret')
         posar_ofertes()
+        actualitzarResum()
     }
 }
 
 function actualitzarResum() {
     const productes = obtenir_localSorage()
     const subtotal = productes.reduce((sum, p) => sum + (p.price * p.quantity), 0)
-    const envio = 5.00
-    const total = subtotal + envio
+    let envio = 0
+    let total=0
+    if (subtotal!=0){
+        envio=5.00
+        total = subtotal + envio
+    }
 
     document.querySelector('.carret_resum .resum_row:nth-child(1) .resum_valor').textContent = subtotal.toFixed(2) + '€'
     document.querySelector('.carret_resum .resum_row:nth-child(2) .resum_valor').textContent = envio.toFixed(2) + '€'
