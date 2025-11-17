@@ -1,0 +1,166 @@
+// Creacio d'un nou fitxer login.scss perquè sigui més visible i no hes barregi amb els altres formularis.
+@use "../abstract/variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-parraf;
+}
+
+.pagina-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, $color-principal 0%, $color-rojo 100%);
+}
+
+.login-camps {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
+    background: rgba($color-principal, 0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    color: $color-amarillo;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.camps-texts {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.camps-texts input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: $color-amarillo;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid $color-amarillo;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.camps-texts label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: $color-amarillo;
+    opacity: 0.7;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.camps-texts input:focus ~ label,
+.camps-texts input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: $color-naranja;
+    opacity: 1;
+}
+
+.enllazos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.recorda {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: $color-amarillo;
+    opacity: 0.8;
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.recorda input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+
+    background-color: transparent;
+    border: 2px solid $color-amarillo;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+
+    &:hover {
+        border-color: $color-naranja;
+    }
+}
+
+.recorda input[type="checkbox"]:checked {
+    background-color: $color-naranja;
+    border-color: $color-naranja;
+}
+
+.recorda input[type="checkbox"]:checked::before {
+    content: '✔';
+    display: block;
+    color: $color-amarillo;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 13px;
+}
+
+
+.oblidat, .registrar a {
+    color: $color-amarillo;
+    text-decoration: none;
+    &:hover {
+        color: $color-naranja;
+        text-decoration: underline;
+    }
+}
+
+.registrar {
+    text-align: center;
+    margin-top: 25px;
+    color: $color-amarillo;
+    font-size: 14px;
+}
+
+.button-login {
+    width: 100%;
+    padding: 14px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    background: linear-gradient(135deg, $color-naranja 0%, $color-rojo 100%);
+    color: $color-amarillo;
+    box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+    }
+}
