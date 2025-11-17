@@ -65,28 +65,40 @@
         width: 100%;
         object-fit: cover;
     }
+}
 
 
+/* Inici - ofertes del dia */
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.llistat_ofertes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: $espacio-l;
+}
+
+.producte_oferta {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive layout per a inici */
+@media (max-width: $vista-tablet) {
+    .content-section {
+        grid-template-columns: 1fr;
+    }
 
     .llistat_ofertes {
-        grid-template-columns: 1fr !important;
-        display: grid;
-        grid-auto-rows: auto;
-        gap: $espacio-s;
-        padding: $espacio-m $espacio-xs;
-    }
-
-    /* assegurar que cap producte ocupa més d'una columna */
-    .llistat_ofertes .producte_oferta {
-        grid-column: auto !important;
-        width: 100%;
-        display: block;
-        margin-bottom: $espacio-s;
-    }
-
-    .llistat_ofertes .producte_oferta .producte_oferta_imatge {
-        height: 300px;
-        width: 100%;
-        object-fit: cover;
+        grid-template-columns: 1fr;
+        gap: $espacio-m;
     }
 }
