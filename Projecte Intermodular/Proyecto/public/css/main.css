@@ -1502,6 +1502,197 @@ header .overlay-sidepanel.active {
   margin-bottom: 35px;
 }
 
+.pagina-contacte {
+  font-family: "NunitoSans";
+  background: linear-gradient(135deg, #432818 0%, #6F1D1B 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.contacte-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.formulari-contacte {
+  background: #BB9457;
+  padding: 40px 35px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.titol-contacte {
+  text-align: center;
+  color: #432818;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.contacte-camps {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.contacte-camps input {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #99582A;
+  background: transparent;
+  outline: none;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+  color: #432818;
+}
+
+.contacte-camps input:focus {
+  border-bottom-color: #6F1D1B;
+}
+
+.text-camps {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  color: #432818;
+  font-size: 16px;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: #BB9457;
+  padding: 0 5px;
+}
+
+.contacte-camps input:focus ~ .text-camps,
+.contacte-camps input:valid ~ .text-camps {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #99582A;
+}
+
+.img-contacte {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contacte-camps input:focus ~ .img-contacte {
+  opacity: 1;
+  -webkit-transform: translateY(-50%) scale(1.15);
+          transform: translateY(-50%) scale(1.15);
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 14px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.enviar {
+  background: linear-gradient(135deg, #99582A 0%, #6F1D1B 100%);
+  color: #FFE6A7;
+  -webkit-box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+          box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+}
+
+.enviar:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+          box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+}
+
+.enviar:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 3px 10px rgba(153, 88, 42, 0.5);
+          box-shadow: 0 3px 10px rgba(153, 88, 42, 0.5);
+}
+
+.reinicia {
+  background: #BB9457;
+  color: #6F1D1B;
+  border: 2px solid #6F1D1B;
+}
+
+.reinicia:hover {
+  background: #6F1D1B;
+  color: #FFE6A7;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 6px 20px rgba(153, 88, 42, 0.3);
+          box-shadow: 0 6px 20px rgba(153, 88, 42, 0.3);
+}
+
+.reinicia:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .formulari-contacte {
+    padding: 30px 20px;
+  }
+  .titol-contacte {
+    font-size: 26px;
+  }
+  .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.contacte-camps input:-webkit-autofill,
+.contacte-camps input:-webkit-autofill:hover,
+.contacte-camps input:-webkit-autofill:focus,
+.contacte-camps input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #BB9457 inset !important;
+  box-shadow: 0 0 0px 1000px #BB9457 inset !important;
+  -webkit-text-fill-color: #432818 !important;
+  caret-color: #432818 !important;
+  border-bottom-color: #99582A !important;
+  -webkit-transition: background-color 9999s ease-in-out 0s;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 * {
   margin: 0;
   padding: 0;
