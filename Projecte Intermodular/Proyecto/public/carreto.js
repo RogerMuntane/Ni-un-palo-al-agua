@@ -81,9 +81,7 @@ function posar_ofertes() {
         actualitzarResum()
 
     } else {
-        const missatge = document.createElement("h3")
-        missatge.textContent = "No hi ha elements al carreto"
-        contenidor.appendChild(missatge)
+        contenidor.innerHTML="<h3>No hi ha elements al carreto</h3>"
     }
 }
 
