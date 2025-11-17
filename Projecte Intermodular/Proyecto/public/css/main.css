@@ -539,26 +539,6 @@ header .overlay-sidepanel.active {
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .llistat_ofertes {
-    grid-template-columns: 1fr !important;
-    display: grid;
-    grid-auto-rows: auto;
-    gap: 15px;
-    padding: 20px 10px;
-  }
-  /* assegurar que cap producte ocupa més d'una columna */
-  .llistat_ofertes .producte_oferta {
-    grid-column: auto !important;
-    width: 100%;
-    display: block;
-    margin-bottom: 15px;
-  }
-  .llistat_ofertes .producte_oferta .producte_oferta_imatge {
-    height: 300px;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
 }
 /* Inici - ofertes del dia */
 .content-section {
@@ -1158,7 +1138,9 @@ header .overlay-sidepanel.active {
 .llistat_ofertes {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 6px;
 }
 
 .producte_oferta {
