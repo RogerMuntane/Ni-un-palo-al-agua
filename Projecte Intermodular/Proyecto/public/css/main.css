@@ -505,6 +505,17 @@ header .overlay-sidepanel.active {
   .producte img {
     height: 300px;
   }
+  .llistat_ofertes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 25px 15px;
+  }
+  .producte_oferta:nth-child(3) {
+    grid-column: 1/3;
+  }
+  .producte_oferta .producte_oferta_imatge {
+    height: 300px;
+  }
 }
 @media (max-width: 728px) {
   /* fer la selecció exacta i forçar una sola columna */
@@ -523,6 +534,26 @@ header .overlay-sidepanel.active {
     margin-bottom: 15px;
   }
   .tenda_categories .categoria .categoria_productes .producte img {
+    height: 300px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .llistat_ofertes {
+    grid-template-columns: 1fr !important;
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 15px;
+    padding: 20px 10px;
+  }
+  /* assegurar que cap producte ocupa més d'una columna */
+  .llistat_ofertes .producte_oferta {
+    grid-column: auto !important;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+  }
+  .llistat_ofertes .producte_oferta .producte_oferta_imatge {
     height: 300px;
     width: 100%;
     -o-object-fit: cover;
@@ -610,6 +641,7 @@ header .overlay-sidepanel.active {
 }
 .tenda_intro .tenda_intro_content h2 {
   font-size: 22px;
+  font-weight: bold;
   font-family: "PlayfairDisplay";
   color: #FFE6A7;
   margin-bottom: 20px;
@@ -726,6 +758,84 @@ header .overlay-sidepanel.active {
           transform: scale(0.98);
 }
 
+.llistat_ofertes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px 20px;
+  background-color: #432818;
+  border: 2px solid #BB9457;
+  margin-top: 20px;
+}
+
+.producte_oferta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #432818;
+  border: 2px solid #BB9457;
+  padding: 20px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.producte_oferta:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  border-color: #FFE6A7;
+}
+.producte_oferta .producte_oferta_imatge {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 20px;
+}
+.producte_oferta .producte_oferta_nom {
+  font-size: 14px;
+  font-family: "PlayfairDisplay";
+  color: #FFE6A7;
+  margin: 15px 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.producte_oferta .preu {
+  font-size: 20px;
+  font-family: "PlayfairDisplay";
+  color: #99582A;
+  margin: 15px 0;
+  font-weight: bold;
+}
+.producte_oferta .btn_comprar {
+  background-color: #99582A;
+  color: #FFE6A7;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-family: "NunitoSans";
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  font-weight: bold;
+  border: none;
+}
+.producte_oferta .btn_comprar:hover {
+  background-color: #FFE6A7;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  color: #432818;
+}
+.producte_oferta .btn_comprar:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
 @media (max-width: 728px) {
   .tenda_banner {
     padding: 25px 15px;
@@ -755,6 +865,23 @@ header .overlay-sidepanel.active {
     font-size: 14px;
   }
   .producte .btn_comprar {
+    font-size: 13px;
+    padding: 10px 15px;
+  }
+  .llistat_ofertes {
+    padding: 20px 15px;
+    gap: 15px;
+  }
+  .producte_oferta .producte_oferta_imatge {
+    height: 300px;
+  }
+  .producte_oferta .producte_oferta_nom {
+    font-size: 13px;
+  }
+  .producte_oferta .preu {
+    font-size: 14px;
+  }
+  .producte_oferta .btn_comprar {
     font-size: 13px;
     padding: 10px 15px;
   }
@@ -1391,6 +1518,204 @@ header .overlay-sidepanel.active {
 .finalitzacio-camps {
   position: relative;
   margin-bottom: 35px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "NunitoSans";
+}
+
+.pagina-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #432818 0%, #6F1D1B 100%);
+}
+
+.login-camps {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  padding: 40px;
+  background: rgba(67, 40, 24, 0.5);
+  -webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+h2 {
+  text-align: center;
+  color: #FFE6A7;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.camps-texts {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.camps-texts input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #FFE6A7;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #FFE6A7;
+  outline: none;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+
+.camps-texts label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #FFE6A7;
+  opacity: 0.7;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.camps-texts input:not(:-moz-placeholder) ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #99582A;
+  opacity: 1;
+}
+
+.camps-texts input:not(:-ms-input-placeholder) ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #99582A;
+  opacity: 1;
+}
+
+.camps-texts input:focus ~ label,
+.camps-texts input:not(:placeholder-shown) ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #99582A;
+  opacity: 1;
+}
+
+.enllazos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.recorda {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  color: #FFE6A7;
+  opacity: 0.8;
+}
+.recorda label {
+  cursor: pointer;
+}
+
+.recorda input[type=checkbox] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid #FFE6A7;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.recorda input[type=checkbox]:hover {
+  border-color: #99582A;
+}
+
+.recorda input[type=checkbox]:checked {
+  background-color: #99582A;
+  border-color: #99582A;
+}
+
+.recorda input[type=checkbox]:checked::before {
+  content: "✔";
+  display: block;
+  color: #FFE6A7;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 13px;
+}
+
+.oblidat, .registrar a {
+  color: #FFE6A7;
+  text-decoration: none;
+}
+.oblidat:hover, .registrar a:hover {
+  color: #99582A;
+  text-decoration: underline;
+}
+
+.registrar {
+  text-align: center;
+  margin-top: 25px;
+  color: #FFE6A7;
+  font-size: 14px;
+}
+
+.button-login {
+  width: 100%;
+  padding: 14px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #99582A 0%, #6F1D1B 100%);
+  color: #FFE6A7;
+  -webkit-box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+          box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+}
+.button-login:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+          box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
 }
 
 h1, h2, h3 {
