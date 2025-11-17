@@ -1278,6 +1278,204 @@ header .overlay-sidepanel.active {
   margin-bottom: 35px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "NunitoSans";
+}
+
+.pagina-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #432818 0%, #6F1D1B 100%);
+}
+
+.login-camps {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  padding: 40px;
+  background: rgba(67, 40, 24, 0.5);
+  -webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+h2 {
+  text-align: center;
+  color: #FFE6A7;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.camps-texts {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.camps-texts input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #FFE6A7;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #FFE6A7;
+  outline: none;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+
+.camps-texts label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #FFE6A7;
+  opacity: 0.7;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.camps-texts input:not(:-moz-placeholder) ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #99582A;
+  opacity: 1;
+}
+
+.camps-texts input:not(:-ms-input-placeholder) ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #99582A;
+  opacity: 1;
+}
+
+.camps-texts input:focus ~ label,
+.camps-texts input:not(:placeholder-shown) ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #99582A;
+  opacity: 1;
+}
+
+.enllazos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.recorda {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  color: #FFE6A7;
+  opacity: 0.8;
+}
+.recorda label {
+  cursor: pointer;
+}
+
+.recorda input[type=checkbox] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid #FFE6A7;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.recorda input[type=checkbox]:hover {
+  border-color: #99582A;
+}
+
+.recorda input[type=checkbox]:checked {
+  background-color: #99582A;
+  border-color: #99582A;
+}
+
+.recorda input[type=checkbox]:checked::before {
+  content: "✔";
+  display: block;
+  color: #FFE6A7;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 13px;
+}
+
+.oblidat, .registrar a {
+  color: #FFE6A7;
+  text-decoration: none;
+}
+.oblidat:hover, .registrar a:hover {
+  color: #99582A;
+  text-decoration: underline;
+}
+
+.registrar {
+  text-align: center;
+  margin-top: 25px;
+  color: #FFE6A7;
+  font-size: 14px;
+}
+
+.button-login {
+  width: 100%;
+  padding: 14px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #99582A 0%, #6F1D1B 100%);
+  color: #FFE6A7;
+  -webkit-box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+          box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+}
+.button-login:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+          box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+}
+
 h1, h2, h3 {
   margin: 0;
 }
