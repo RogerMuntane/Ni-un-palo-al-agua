@@ -105,7 +105,9 @@
 .llistat_ofertes {
     max-width: $vista-max;
     margin: 0 auto;
-    padding: 0 $espacio-m;
+    padding-top: $espacio-m;
+    padding-bottom: $espacio-m;
+    border-radius: 6px;
 }
 
 .producte_oferta {
