@@ -215,3 +215,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 }); // Tancament del DOMContentLoaded
+
+
+//Mostrar tiquets per pantralla
+function obtenir_productes(){
+    const STORAGE_KEY ="carret"
+
+    try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)||[])
+    } catch {
+        return []
+    }
+}
+
+function carregar_productes(){
+    const productes = obtenir_productes()
+
+    const contenidor = document.querySelectorAll(".futur-tiquet")
+
+    if(productes.length!=0){
+        productes.forEach(element => {
+            const paragraf = document.createElement("p")
+            const nom = element.name
+            const preu = element.price
+            const quantitat = element.quantity
+
+            paragraf.textContent= "Nom del producte:",nom," Preu:",preu," Quantitat",quantitat 
+            contenidor.appendChild(paragraf)
+        });
+    }else{
+        contenidor.innerHTML="<h3>No hi ha elements al carreto</h3>"
+    }
+}
+
+addEventListener("DOMContentLoaded",carregar_productes)
