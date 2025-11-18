@@ -7,6 +7,7 @@
     <title>Carretó - Ni un palo al agua</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="carreto.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -25,6 +26,7 @@
                     <img src="Images/luna.png" alt="Mode Fosc" class="icone-mode-fosc icones-nav" draggable="false">
                 </button>
             </li>
+            <!-- Links -->
             <li>
                 <button class="boto-rodo" onclick="location.href='login.html';">
                     <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
@@ -43,8 +45,12 @@
         <!-- Sidepanel -->
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
-            <button class="boto-rodo" onclick="modeFosc()">
+            <button class="boto-rodo lluna-sidepanel" onclick="modeFosc()">
                 <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            </button>
+            <!-- Perfil -->
+            <button class="boto-rodo perfil-sidepanel" onclick="modeFosc()">
+                <img src="Images/perfil.png" alt="Mode Fosc" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>

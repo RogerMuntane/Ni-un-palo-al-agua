@@ -498,6 +498,13 @@ header .overlay-sidepanel.active {
   grid-template-columns: 1fr 1fr;
 }
 
+.llistat_ofertes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 25px;
+}
+
 @media (max-width: 1024px) {
   .content-section {
     grid-template-columns: 1fr;
@@ -546,6 +553,17 @@ header .overlay-sidepanel.active {
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .llistat_ofertes {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+    grid-auto-rows: auto;
+    gap: 15px;
+    padding: 20px 10px;
+  }
+  .producte_oferta {
+    grid-column: 1 !important;
+    width: 100%;
   }
 }
 .carret {
