@@ -82,16 +82,21 @@
     padding: 60px;
     background-color: $color-amarillo;
 
+
     h2 {
         font-size: $titol-size-4xl;
         margin-bottom: 20px;
         color: $color-negre;
+        align-items: center;
+        justify-content: center;
     }
 
     p {
         font-size: 18px;
         line-height: 1.6;
         color: $color-gris-fosc;
+        align-items: center;
+        justify-content: center;
     }
 }
 
