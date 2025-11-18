@@ -1,0 +1,53 @@
+{
+    "xavierruizboix50@gmail.com": {
+        "carret": [
+            {
+                "id": "2",
+                "name": "Entrepa de butifarra",
+                "price": 4.5,
+                "image": "Images\/bocadillo_butifarra.jpg",
+                "quantity": 2
+            },
+            {
+                "id": "6",
+                "name": "Iogurt Natural",
+                "price": 1.5,
+                "image": "Images\/iogurt.jpg",
+                "quantity": 1
+            },
+            {
+                "id": "4",
+                "name": "Suc Natural",
+                "price": 2.5,
+                "image": "Images\/zumo-de-naranja.jpg",
+                "quantity": 3
+            }
+        ],
+        "ultima_actualizacion": "2025-11-18 14:41:59",
+        "historial": [
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 2
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 3
+                }
+            ]
+        ]
+    }
+}

@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => errorElement.style.display = 'none', 300);
     }
 
-    formulari.addEventListener('submit', function(event) {
+    formulari.addEventListener('submit', function (event) {
         let formulariCorrecte = true;
 
         // Validar Email
@@ -115,6 +115,35 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             ocultarError(extras, errorExtras);
         }
+
+        //Introduir LocalStorage al Hidden Input
+
+        let carret = []
+
+        try {
+            const carretData = localStorage.getItem("carret");
+            if (carretData) {
+                carret = JSON.parse(carretData);
+
+                // Validar que sea un array
+                if (!Array.isArray(carret)) {
+                    console.warn("Los datos del carrito no son un array válido");
+                    carret = [];
+                }
+            }
+        } catch (error) {
+            console.error("Error al parsear el carrito:", error);
+            // Opcional: mostrar mensaje al usuario
+            alert("Error al cargar los datos del carrito");
+            carret = [];
+        }
+
+        document.getElementById("localData").value = JSON.stringify(carret);
+
+        console.log("Carrito enviado:", carret);
+        console.log("localData value:", document.getElementById("localData").value);
+        console.log("Formulari correcte:", formulariCorrecte);
+
 
         // Es para l'enviament si alguna cosa ha fallat
         if (!formulariCorrecte) {
@@ -217,9 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
 }); // Tancament del DOMContentLoaded
 
 
-function total_guardat(total){
+function total_guardat(total) {
     const STORAGE_KEY = "total_compra";
-    
+
     try {
         localStorage.setItem(STORAGE_KEY, total.toString());
     } catch (error) {
@@ -229,8 +258,8 @@ function total_guardat(total){
 
 
 //Mostrar tiquets per pantralla
-function obtenir_productes(){
-    const STORAGE_KEY ="carret"
+function obtenir_productes() {
+    const STORAGE_KEY = "carret"
 
     try {
         const data = localStorage.getItem(STORAGE_KEY)
@@ -240,11 +269,11 @@ function obtenir_productes(){
     }
 }
 
-function carregar_productes(){
+function carregar_productes() {
     const productes = obtenir_productes()
     const contenidor = document.querySelector(".futur-tiquet")
-    
-    if(productes.length != 0){
+
+    if (productes.length != 0) {
         let total = 5//Per els costos de enviament
         contenidor.innerHTML = ''
         productes.forEach(element => {
@@ -258,12 +287,12 @@ function carregar_productes(){
             paragraf.innerHTML = `Nom: ${nom} | Preu: ${preu}€ | Quantitat: ${quantitat}<br>Subtotal: ${subtotal.toFixed(2)}€`;
             contenidor.appendChild(paragraf)
         });
-        
+
         const final = document.createElement("p")
         final.textContent = `Total: ${total.toFixed(2)}€`
-        contenidor.appendChild(final) 
+        contenidor.appendChild(final)
         total_guardat(total)
-        
+
     } else {
         contenidor.innerHTML = "<h3>No hi ha elements al carret</h3>"
     }
