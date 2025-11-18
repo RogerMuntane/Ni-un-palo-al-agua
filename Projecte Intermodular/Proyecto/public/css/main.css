@@ -493,9 +493,15 @@ header .overlay-sidepanel.active {
   background-color: black;
 }
 
+.categoria_productes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 @media (max-width: 1024px) {
   .tenda_categories .categoria .categoria_productes {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 15px;
     padding: 25px 15px;
   }
@@ -638,7 +644,7 @@ header .overlay-sidepanel.active {
 }
 .tenda_categories .categoria .categoria_productes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 30px 20px;
   background-color: #432818;
