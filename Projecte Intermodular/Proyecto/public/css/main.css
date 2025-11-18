@@ -1536,6 +1536,10 @@ header .overlay-sidepanel.active {
   border: 2px #432818;
   border-radius: 10px;
 }
+.futur-tiquet p {
+  margin: 15px;
+  color: #99582A;
+}
 
 .tiquet-detalls {
   padding: 20px;

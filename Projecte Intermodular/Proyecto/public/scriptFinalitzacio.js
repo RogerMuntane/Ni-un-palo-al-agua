@@ -217,12 +217,24 @@ document.addEventListener('DOMContentLoaded', () => {
 }); // Tancament del DOMContentLoaded
 
 
+function total_guardat(total){
+    const STORAGE_KEY = "total_compra";
+    
+    try {
+        localStorage.setItem(STORAGE_KEY, total.toString());
+    } catch (error) {
+        console.error("Error guardant el total:", error);
+    }
+}
+
+
 //Mostrar tiquets per pantralla
 function obtenir_productes(){
     const STORAGE_KEY ="carret"
 
     try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY)||[])
+        const data = localStorage.getItem(STORAGE_KEY)
+        return data ? JSON.parse(data) : []
     } catch {
         return []
     }
@@ -230,22 +242,31 @@ function obtenir_productes(){
 
 function carregar_productes(){
     const productes = obtenir_productes()
-
-    const contenidor = document.querySelectorAll(".futur-tiquet")
-
-    if(productes.length!=0){
+    const contenidor = document.querySelector(".futur-tiquet")
+    
+    if(productes.length != 0){
+        let total = 5//Per els costos de enviament
+        contenidor.innerHTML = ''
         productes.forEach(element => {
             const paragraf = document.createElement("p")
             const nom = element.name
             const preu = element.price
             const quantitat = element.quantity
+            const subtotal = preu * quantitat
+            total += subtotal
 
-            paragraf.textContent= "Nom del producte:",nom," Preu:",preu," Quantitat",quantitat 
+            paragraf.innerHTML = `Nom: ${nom} | Preu: ${preu}€ | Quantitat: ${quantitat}<br>Subtotal: ${subtotal.toFixed(2)}€`;
             contenidor.appendChild(paragraf)
         });
-    }else{
-        contenidor.innerHTML="<h3>No hi ha elements al carreto</h3>"
+        
+        const final = document.createElement("p")
+        final.textContent = `Total: ${total.toFixed(2)}€`
+        contenidor.appendChild(final) 
+        total_guardat(total)
+        
+    } else {
+        contenidor.innerHTML = "<h3>No hi ha elements al carret</h3>"
     }
 }
 
-addEventListener("DOMContentLoaded",carregar_productes)
+addEventListener("DOMContentLoaded", carregar_productes)
