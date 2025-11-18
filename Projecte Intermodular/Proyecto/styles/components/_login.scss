@@ -22,7 +22,7 @@
     max-width: 400px;
     padding: 40px;
     background: rgba($color-principal, 0.5);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -65,8 +65,8 @@ h2 {
     transition: all 0.3s ease;
 }
 
-.camps-texts input:focus ~ label,
-.camps-texts input:not(:placeholder-shown) ~ label {
+.camps-texts input:focus~label,
+.camps-texts input:not(:placeholder-shown)~label {
     top: -20px;
     font-size: 12px;
     color: $color-naranja;
@@ -127,9 +127,11 @@ h2 {
 }
 
 
-.oblidat, .registrar a {
+.oblidat,
+.registrar a {
     color: $color-amarillo;
     text-decoration: none;
+
     &:hover {
         color: $color-naranja;
         text-decoration: underline;
@@ -162,5 +164,77 @@ h2 {
     &:hover {
         transform: translateY(-3px);
         box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+    }
+}
+
+/* Error message */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: $espacio-s;
+    padding: $espacio-m $espacio-l;
+    margin-bottom: $espacio-l;
+    background: linear-gradient(135deg, rgba($color-rojo, 0.95) 0%, rgba($color-rojo, 0.85) 100%);
+    border-left: 4px solid $color-amarillo;
+    border-radius: 8px;
+    color: $color-amarillo;
+    font-size: $titol-size-m;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba($color-rojo, 0.4);
+    animation: slideIn 0.4s ease;
+
+    strong {
+        font-size: $titol-size-l;
+        color: $color-amarillo;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: $vista-mobil) {
+    .login-camps {
+        width: 95%;
+        padding: 30px 20px;
+        max-width: 350px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .camps-texts input {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .camps-texts label {
+        font-size: 14px;
+    }
+
+    .button-login {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .error-message {
+        padding: $espacio-s $espacio-m;
+        font-size: $titol-size-s;
+        gap: 8px;
+
+        strong {
+            font-size: $titol-size-m;
+        }
     }
 }

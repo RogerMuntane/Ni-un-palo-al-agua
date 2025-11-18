@@ -17,7 +17,17 @@
         <span></span>
 
         <h2>Login</h2>
-        <form method="post" action="../public/php/login.php">
+
+        <?php
+        session_start();
+        if (isset($_SESSION['error'])) {
+            echo "<div class='error-message'>";
+            echo "<strong>Error:</strong> " . htmlspecialchars($_SESSION['error']);
+            echo "</div>";
+            unset($_SESSION['error']);
+        }
+        ?>
+        <form method="post" action="../public/php/validarUsuari.php">
             <div class="camps-texts">
                 <input type="email" name="email" id="email" required placeholder=" ">
                 <label for="email">Email</label>
@@ -41,6 +51,16 @@
         </form>
     </div>
 
+
+    <!-- <?php
+            session_start();
+            if (isset($_SESSION['error'])) {
+                echo "<div style='color: red; padding: 10px; background: #ffe6e6;'>";
+                echo "Error: " . htmlspecialchars($_SESSION['error']);
+                echo "</div>";
+                unset($_SESSION['error']); // Netejar després de mostrar
+            }
+            ?> -->
 </body>
 
 </html>

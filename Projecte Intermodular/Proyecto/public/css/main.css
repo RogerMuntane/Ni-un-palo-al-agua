@@ -2142,11 +2142,13 @@ h2 {
   line-height: 13px;
 }
 
-.oblidat, .registrar a {
+.oblidat,
+.registrar a {
   color: #FFE6A7;
   text-decoration: none;
 }
-.oblidat:hover, .registrar a:hover {
+.oblidat:hover,
+.registrar a:hover {
   color: #99582A;
   text-decoration: underline;
 }
@@ -2182,6 +2184,88 @@ h2 {
           box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
 }
 
+/* Error message */
+.error-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, rgba(111, 29, 27, 0.95) 0%, rgba(111, 29, 27, 0.85) 100%);
+  border-left: 4px solid #FFE6A7;
+  border-radius: 8px;
+  color: #FFE6A7;
+  font-size: 14px;
+  font-weight: 600;
+  -webkit-box-shadow: 0 4px 12px rgba(111, 29, 27, 0.4);
+          box-shadow: 0 4px 12px rgba(111, 29, 27, 0.4);
+  -webkit-animation: slideIn 0.4s ease;
+          animation: slideIn 0.4s ease;
+}
+.error-message strong {
+  font-size: 20px;
+  color: #FFE6A7;
+}
+@-webkit-keyframes slideIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 728px) {
+  .login-camps {
+    width: 95%;
+    padding: 30px 20px;
+    max-width: 350px;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .camps-texts input {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+  .camps-texts label {
+    font-size: 14px;
+  }
+  .button-login {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .error-message {
+    padding: 15px 20px;
+    font-size: 13px;
+    gap: 8px;
+  }
+  .error-message strong {
+    font-size: 14px;
+  }
+}
 h1, h2, h3 {
   margin: 0;
 }
