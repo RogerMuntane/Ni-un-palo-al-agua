@@ -119,9 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
         //Introduir LocalStorage al Hidden Input
 
         let carret = []
+        let total = 0;
 
         try {
             const carretData = localStorage.getItem("carret");
+            const totalData = localStorage.getItem("total_compra");
             if (carretData) {
                 carret = JSON.parse(carretData);
 
@@ -131,14 +133,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     carret = [];
                 }
             }
+            if (totalData) {
+                total = JSON.parse(totalData);
+            }
+            localStorage.clear();
         } catch (error) {
             console.error("Error al parsear el carrito:", error);
             // Opcional: mostrar mensaje al usuario
             alert("Error al cargar los datos del carrito");
             carret = [];
+            total = 0;
         }
 
-        document.getElementById("localData").value = JSON.stringify(carret);
+        document.getElementById("carretData").value = JSON.stringify(carret);
+        document.getElementById("totalData").value = total;
 
         console.log("Carrito enviado:", carret);
         console.log("localData value:", document.getElementById("localData").value);
