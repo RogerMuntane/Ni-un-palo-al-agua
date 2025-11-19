@@ -278,32 +278,59 @@ function obtenir_productes() {
 }
 
 function carregar_productes() {
-    const productes = obtenir_productes()
-    const contenidor = document.querySelector(".futur-tiquet")
+    const productes = obtenir_productes();
+    const contenidor = document.querySelector(".futur-tiquet");
 
-    if (productes.length != 0) {
-        let total = 5//Per els costos de enviament
-        contenidor.innerHTML = ''
+    if (productes.length !== 0) {
+        let total = 5; // Costos d'enviament
+        contenidor.innerHTML = '';
+
         productes.forEach(element => {
-            const paragraf = document.createElement("p")
-            const nom = element.name
-            const preu = element.price
-            const quantitat = element.quantity
-            const subtotal = preu * quantitat
-            total += subtotal
+            // Crear contenidor compacte per cada producte
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "tiquet-item";
 
-            paragraf.innerHTML = `Nom: ${nom} | Preu: ${preu}€ | Quantitat: ${quantitat}<br>Subtotal: ${subtotal.toFixed(2)}€`;
-            contenidor.appendChild(paragraf)
+            // Nom del producte
+            const nomDiv = document.createElement("div");
+            nomDiv.className = "tiquet-nom";
+            nomDiv.textContent = element.name;
+
+            // Detalls compactes
+            const detallsDiv = document.createElement("div");
+            detallsDiv.className = "tiquet-detalls";
+            detallsDiv.innerHTML = `
+                <span>${element.price.toFixed(2)}€</span>
+                <span>x${element.quantity}</span>
+            `;
+
+            // Subtotal
+            const subtotal = element.price * element.quantity;
+            const subtotalDiv = document.createElement("div");
+            subtotalDiv.className = "tiquet-subtotal";
+            subtotalDiv.textContent = `${subtotal.toFixed(2)}€`;
+
+            // Afegir tot al item
+            itemDiv.appendChild(nomDiv);
+            itemDiv.appendChild(detallsDiv);
+            itemDiv.appendChild(subtotalDiv);
+
+            // Afegir item al contenidor
+            contenidor.appendChild(itemDiv);
+
+            total += subtotal;
         });
 
-        const final = document.createElement("p")
-        final.textContent = `Total: ${total.toFixed(2)}€`
-        contenidor.appendChild(final)
-        total_guardat(total)
+        // Total final
+        const totalDiv = document.createElement("div");
+        totalDiv.className = "tiquet-total";
+        totalDiv.textContent = `TOTAL: ${total.toFixed(2)}€`;
+        contenidor.appendChild(totalDiv);
+
+        total_guardat(total);
 
     } else {
-        contenidor.innerHTML = "<h3>No hi ha elements al carret</h3>"
+        contenidor.innerHTML = "<h3>No hi ha elements al carret</h3>";
     }
 }
 
-addEventListener("DOMContentLoaded", carregar_productes)
+addEventListener("DOMContentLoaded", carregar_productes);
