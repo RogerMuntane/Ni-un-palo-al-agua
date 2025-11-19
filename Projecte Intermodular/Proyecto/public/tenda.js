@@ -152,7 +152,7 @@ function obtenerDatosProducto(productEl) {
 function afegirProductoAlCarret(productEl) {
     const product = obtenerDatosProducto(productEl);
     const cart = obtenerCarret();
-    
+
     const existing = cart.find(item => item.id === product.id);
     if (existing) {
         existing.quantity = (existing.quantity || 1) + 1;
@@ -177,10 +177,10 @@ function inicializarCarretListeners() {
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.btn_comprar');
         if (!btn) return;
-        
+
         const productEl = btn.closest('.producte');
         if (!productEl) return;
-        
+
         afegirProductoAlCarret(productEl);
         mostrarFeedbackBoton(btn);
     });
@@ -190,4 +190,92 @@ function inicializarCarretListeners() {
 document.addEventListener("DOMContentLoaded", () =>{
     inicializarCarretListeners()
     mostrarRecomanacio()
+});
+
+// Buscador de productes
+
+document.addEventListener('keyup', e => {
+    // Comprovar si s'està escrivint en algun dels buscadors
+    if (!e.target.matches('#buscador') && !e.target.matches('#buscador-sidepanel')) {
+        return;
+    }
+
+    // Elements
+    const buscador = document.getElementById('buscador');
+    const buscadorSidepanel = document.getElementById('buscador-sidepanel');
+    const seccioRecomenats = document.querySelector('.tenda_intro');
+    const titolOferta = document.querySelector('.oferta');
+
+    // Text del buscador
+    const target = e.target;
+    const cerca = target.value.toLowerCase().trim();
+
+    if (target.id === 'buscador' && buscadorSidepanel) {
+        buscadorSidepanel.value = cerca;
+    } else if (target.id === 'buscador-sidepanel' && buscador) {
+        buscador.value = cerca;
+    }
+
+    // FILTRAR PRODUCTES
+    document.querySelectorAll('.producte, .producte_oferta').forEach(producte => {
+        let nomProducteElement;
+
+        if (producte.classList.contains('producte')) {
+            nomProducteElement = producte.querySelector('h4');
+        } else if (producte.classList.contains('producte_oferta')) {
+            nomProducteElement = producte.querySelector('.producte_oferta_nom');
+        }
+
+        if (!nomProducteElement) {
+            producte.classList.add('filtro');
+            return;
+        }
+
+        const producteCercaText = nomProducteElement.textContent.toLowerCase().trim();
+
+        // Mostrar o amagar segons coincidència
+        if (cerca === "" || producteCercaText.includes(cerca)) {
+            producte.classList.remove('filtro');
+        } else {
+            producte.classList.add('filtro');
+        }
+    });
+
+    // AMAGAR CATEGORIES BUIDES
+    document.querySelectorAll('.categoria').forEach(categoria => {
+        const productesVisibles = categoria.querySelectorAll('.producte:not(.filtro)').length;
+
+        const categoriaHeader = categoria.querySelector('.categoria_header');
+        const categoriaProductes = categoria.querySelector('.categoria_productes');
+
+        if (productesVisibles === 0 && cerca !== "") {
+            categoria.classList.add('filtro');
+            if (categoriaHeader) categoriaHeader.classList.add('filtro');
+            if (categoriaProductes) categoriaProductes.classList.add('filtro');
+        } else {
+            categoria.classList.remove('filtro');
+            if (categoriaHeader) categoriaHeader.classList.remove('filtro');
+            if (categoriaProductes) categoriaProductes.classList.remove('filtro');
+        }
+    });
+
+    // CONTROLAR TÍTOL (LA NOSTRA OFERTA)
+    if (titolOferta) {
+        const categoriesVisibles = document.querySelectorAll('.categoria:not(.filtro)').length;
+
+        if (cerca !== "" && categoriesVisibles === 0) {
+            titolOferta.classList.add('filtro');
+        } else {
+            titolOferta.classList.remove('filtro');
+        }
+    }
+
+    // AMAGAR/MOSTRAR SECCIÓ RECOMANATS
+    if (seccioRecomenats) {
+        if (cerca !== "") {
+            seccioRecomenats.classList.add('filtro');
+        } else {
+            seccioRecomenats.classList.remove('filtro');
+        }
+    }
 });

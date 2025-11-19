@@ -847,6 +847,20 @@ header .overlay-sidepanel.active {
     padding: 10px 15px;
   }
 }
+.filtro {
+  display: none !important;
+}
+
+.tenda_categories .categoria.filtro,
+.tenda_intro .llistat_ofertes.filtro,
+.tenda_intro.filtro, .categoria_header {
+  display: none !important;
+}
+
+.categoria.filtro {
+  display: none !important;
+}
+
 .general {
   background-color: #FFE6A7;
   border-radius: 8px;
