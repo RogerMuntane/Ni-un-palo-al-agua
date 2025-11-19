@@ -2195,7 +2195,7 @@ h2 {
   gap: 15px;
   padding: 20px 25px;
   margin-bottom: 25px;
-  background: linear-gradient(135deg, rgba(111, 29, 27, 0.95) 0%, rgba(111, 29, 27, 0.85) 100%);
+  background: #6F1D1B;
   border-left: 4px solid #FFE6A7;
   border-radius: 8px;
   color: #FFE6A7;

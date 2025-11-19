@@ -174,7 +174,7 @@ h2 {
     gap: $espacio-s;
     padding: $espacio-m $espacio-l;
     margin-bottom: $espacio-l;
-    background: linear-gradient(135deg, rgba($color-rojo, 0.95) 0%, rgba($color-rojo, 0.85) 100%);
+    background: $color-rojo;
     border-left: 4px solid $color-amarillo;
     border-radius: 8px;
     color: $color-amarillo;

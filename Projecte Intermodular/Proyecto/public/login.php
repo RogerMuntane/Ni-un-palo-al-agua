@@ -37,13 +37,6 @@
                 <label for="password">Contrasenya</label>
             </div>
 
-            <div class="enllazos">
-                <div class="recorda">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Recorda'm</label>
-                </div>
-                <a href="#" class="oblidat">Has oblidat la contrasenya?</a>
-            </div>
             <button type="submit" class="button-login">
                 <span>Entrar</span>
             </button>
