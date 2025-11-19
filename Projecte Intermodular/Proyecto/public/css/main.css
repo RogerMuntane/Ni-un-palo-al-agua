@@ -1477,13 +1477,6 @@ header .overlay-sidepanel.active {
             transform: scale(1.01);
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .pagina-tiquet {
   font-family: "NunitoSans";
   background: linear-gradient(135deg, #432818 0%, #6F1D1B 100%);
@@ -1530,15 +1523,85 @@ header .overlay-sidepanel.active {
 }
 
 .futur-tiquet {
-  width: 100%;
-  min-height: 200px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px #432818;
-  border-radius: 10px;
+  background-color: rgba(67, 40, 24, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
 }
-.futur-tiquet p {
-  margin: 15px;
+.futur-tiquet h3 {
+  text-align: center;
+  color: #BB9457;
+  font-family: "PlayfairDisplay";
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.futur-tiquet .tiquet-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  margin-bottom: 0px;
+  background-color: #FFE6A7;
+  border-left: 3px solid #99582A;
+}
+.futur-tiquet .tiquet-item:last-child {
+  margin-bottom: 0;
+}
+.futur-tiquet .tiquet-item .tiquet-nom {
+  font-family: "PlayfairDisplay";
+  font-size: 13px;
+  color: #432818;
+  font-weight: bold;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+.futur-tiquet .tiquet-item .tiquet-detalls {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  font-family: "NunitoSans";
+  font-size: 12px;
+  color: #6F1D1B;
+  padding-top: 18px;
+}
+.futur-tiquet .tiquet-item .tiquet-subtotal {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  font-family: "PlayfairDisplay";
+  font-size: 13px;
   color: #99582A;
+  font-weight: bold;
+}
+.futur-tiquet .tiquet-total {
+  background: #99582A;
+  color: #FFE6A7;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  font-family: "PlayfairDisplay";
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .tiquet-detalls {
@@ -1698,41 +1761,23 @@ header .overlay-sidepanel.active {
           transform: translateY(-3px);
 }
 
-@media (min-width: 900px) {
-  .tiquet-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding: 40px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+@media (max-width: 728px) {
+  .futur-tiquet {
+    padding: 15px;
   }
-  .tiquet-resum {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    padding-right: 40px;
-    padding-top: 0;
+  .futur-tiquet .tiquet-item {
+    padding: 10px;
   }
-  .tiquet-detalls {
-    -webkit-box-flex: 1.5;
-        -ms-flex: 1.5;
-            flex: 1.5;
-    padding-left: 40px;
-    padding-top: 0;
-    border-left: 2px solid #99582A;
+  .futur-tiquet .tiquet-item .tiquet-nom {
+    font-size: 12px;
   }
-  .titol-resum,
-  .titol-detalls {
-    text-align: left;
+  .futur-tiquet .tiquet-item .tiquet-detalls,
+  .futur-tiquet .tiquet-item .tiquet-subtotal {
+    font-size: 12px;
   }
-  .buttons {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+  .futur-tiquet .tiquet-total {
+    font-size: 14px;
+    padding: 15px;
   }
 }
 .error-msg {
@@ -1923,7 +1968,7 @@ header .overlay-sidepanel.active {
           transform: translateY(-1px);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 728px) {
   .formulari-contacte {
     padding: 30px 20px;
   }
@@ -1948,14 +1993,6 @@ header .overlay-sidepanel.active {
   border-bottom-color: #99582A !important;
   -webkit-transition: background-color 9999s ease-in-out 0s;
   transition: background-color 9999s ease-in-out 0s;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: "NunitoSans";
 }
 
 .pagina-login {
@@ -2108,11 +2145,13 @@ h2 {
   line-height: 13px;
 }
 
-.oblidat, .registrar a {
+.oblidat,
+.registrar a {
   color: #FFE6A7;
   text-decoration: none;
 }
-.oblidat:hover, .registrar a:hover {
+.oblidat:hover,
+.registrar a:hover {
   color: #99582A;
   text-decoration: underline;
 }
@@ -2148,6 +2187,42 @@ h2 {
           box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
 }
 
+@media (min-width: 1024px) {
+  .tiquet-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 40px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .tiquet-resum {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding-right: 40px;
+    padding-top: 0;
+  }
+  .tiquet-detalls {
+    -webkit-box-flex: 1.5;
+        -ms-flex: 1.5;
+            flex: 1.5;
+    padding-left: 40px;
+    padding-top: 0;
+  }
+  .titol-resum,
+  .titol-detalls {
+    text-align: left;
+  }
+  .buttons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
 h1, h2, h3 {
   margin: 0;
 }

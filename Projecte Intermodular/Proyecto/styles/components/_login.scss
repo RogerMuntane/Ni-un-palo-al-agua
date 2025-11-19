@@ -1,12 +1,9 @@
 // Creacio d'un nou fitxer login.scss perquè sigui més visible i no hes barregi amb els altres formularis.
+
+@use "sass:color";
 @use "../abstract/variables" as *;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $font-parraf;
-}
+
 
 .pagina-login {
     display: flex;
@@ -22,7 +19,7 @@
     max-width: 400px;
     padding: 40px;
     background: rgba($color-principal, 0.5);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -65,8 +62,8 @@ h2 {
     transition: all 0.3s ease;
 }
 
-.camps-texts input:focus ~ label,
-.camps-texts input:not(:placeholder-shown) ~ label {
+.camps-texts input:focus~label,
+.camps-texts input:not(:placeholder-shown)~label {
     top: -20px;
     font-size: 12px;
     color: $color-naranja;
@@ -127,9 +124,11 @@ h2 {
 }
 
 
-.oblidat, .registrar a {
+.oblidat,
+.registrar a {
     color: $color-amarillo;
     text-decoration: none;
+
     &:hover {
         color: $color-naranja;
         text-decoration: underline;
@@ -162,5 +161,37 @@ h2 {
     &:hover {
         transform: translateY(-3px);
         box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+    }
+}
+
+
+
+
+@media (min-width: $vista-tablet) {
+    .tiquet-container {
+        flex-direction: row;
+        padding: 40px;
+        align-items: center;
+    }
+
+    .tiquet-resum {
+        flex: 1;
+        padding-right: 40px;
+        padding-top: 0;
+    }
+
+    .tiquet-detalls {
+        flex: 1.5;
+        padding-left: 40px;
+        padding-top: 0;
+    }
+
+    .titol-resum,
+    .titol-detalls {
+        text-align: left;
+    }
+
+    .buttons {
+        flex-direction: row-reverse;
     }
 }

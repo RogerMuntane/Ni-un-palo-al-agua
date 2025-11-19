@@ -1,13 +1,7 @@
 @use "../abstract/variables" as *;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 // Estils per la pàgina de finalitazio
-
 .pagina-tiquet {
     font-family: $font-parraf;
     background: linear-gradient(135deg, $color-principal 0%, $color-rojo 100%);
@@ -47,17 +41,76 @@
 }
 
 .futur-tiquet {
-    width: 100%;
-    min-height: 200px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px $color-principal;
-    border-radius: 10px;
+    background-color: rgba($color-principal, 0.05);
+    border-radius: 8px;
+    padding: $espacio-m;
+    margin-bottom: $espacio-l;
 
-    p {
-        margin: $espacio-s;
-        color: $color-naranja;
+    h3 {
+        text-align: center;
+        color: $color-secundario;
+        font-family: $font-titol;
+        font-size: $titol-size-l;
+        margin-bottom: $espacio-m;
+    }
+
+    .tiquet-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $espacio-xs;
+        margin-bottom: 0px;
+        background-color: $color-amarillo;
+        border-left: 3px solid $color-naranja;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .tiquet-nom {
+            font-family: $font-titol;
+            font-size: $titol-size-s;
+            color: $color-principal;
+            font-weight: bold;
+            flex: 2;
+        }
+
+        .tiquet-detalls {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            font-family: $font-parraf;
+            font-size: $titol-size-xs;
+            color: $color-rojo;
+            padding-top: 18px;
+        }
+
+        .tiquet-subtotal {
+            flex: 1;
+            text-align: right;
+            font-family: $font-titol;
+            font-size: $titol-size-s;
+            color: $color-naranja;
+            font-weight: bold;
+        }
+    }
+
+    .tiquet-total {
+        background: $color-naranja;
+        color: $color-amarillo;
+        border-radius: 6px;
+        padding: $espacio-m;
+        margin-top: $espacio-m;
+        text-align: center;
+        font-family: $font-titol;
+        font-size: $titol-size-l;
+        font-weight: bold;
     }
 }
+
+
 
 .tiquet-detalls {
     padding: 20px;
@@ -194,34 +247,28 @@
 
 // Media Querry
 
-@media (min-width: 900px) {
+// Media Query Mòbil
+@media (max-width: $vista-mobil) {
+    .futur-tiquet {
+        padding: $espacio-s;
 
-    .tiquet-container {
-        flex-direction: row;
-        padding: 40px;
-        align-items: center;
-    }
+        .tiquet-item {
+            padding: $espacio-xs;
 
-    .tiquet-resum {
-        flex: 1;
-        padding-right: 40px;
-        padding-top: 0;
-    }
+            .tiquet-nom {
+                font-size: $titol-size-xs;
+            }
 
-    .tiquet-detalls {
-        flex: 1.5;
-        padding-left: 40px;
-        padding-top: 0;
-        border-left: 2px solid $color-naranja;
-    }
+            .tiquet-detalls,
+            .tiquet-subtotal {
+                font-size: $titol-size-xs;
+            }
+        }
 
-    .titol-resum,
-    .titol-detalls {
-        text-align: left;
-    }
-
-    .buttons {
-        flex-direction: row-reverse;
+        .tiquet-total {
+            font-size: $titol-size-m;
+            padding: $espacio-s;
+        }
     }
 }
 
@@ -392,7 +439,7 @@
     transform: translateY(-1px);
 }
 
-@media (max-width: 480px) {
+@media (max-width: $vista-mobil) {
     .formulari-contacte {
         padding: 30px 20px;
     }
