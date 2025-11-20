@@ -1,0 +1,908 @@
+{
+    "xavierruizboix50@gmail.com": {
+        "carret": [
+            {
+                "id": "2",
+                "name": "Entrepa de butifarra",
+                "price": 4.5,
+                "image": "Images\/bocadillo_butifarra.jpg",
+                "quantity": 1
+            },
+            {
+                "id": "4",
+                "name": "Suc Natural",
+                "price": 2.5,
+                "image": "Images\/zumo-de-naranja.jpg",
+                "quantity": 1
+            }
+        ],
+        "total": 12,
+        "ultima_actualizacion": "2025-11-19 17:32:49",
+        "historial": [
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "entrepa-de-pernil-salat",
+                    "name": "Entrepa de pernil salat",
+                    "price": 3.5,
+                    "image": "\/public\/Images\/bocatajamon.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "entrepa-de-pernil-salat",
+                    "name": "Entrepa de pernil salat",
+                    "price": 3.5,
+                    "image": "\/public\/Images\/bocatajamon.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-de-butifarra",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "..\/public\/Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-mixt",
+                    "name": "Entrepa Mixt",
+                    "price": 4,
+                    "image": "..\/public\/Images\/bocadillo_mixt.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "entrepa-de-pernil-salat",
+                    "name": "Entrepa de pernil salat",
+                    "price": 3.5,
+                    "image": "\/public\/Images\/bocatajamon.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-de-butifarra",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "..\/public\/Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-mixt",
+                    "name": "Entrepa Mixt",
+                    "price": 4,
+                    "image": "..\/public\/Images\/bocadillo_mixt.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "entrepa-de-pernil-salat",
+                    "name": "Entrepa de pernil salat",
+                    "price": 3.5,
+                    "image": "\/public\/Images\/bocatajamon.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-de-butifarra",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "..\/public\/Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-mixt",
+                    "name": "Entrepa Mixt",
+                    "price": 4,
+                    "image": "..\/public\/Images\/bocadillo_mixt.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "entrepa-de-pernil-salat",
+                    "name": "Entrepa de pernil salat",
+                    "price": 3.5,
+                    "image": "\/public\/Images\/bocatajamon.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-de-butifarra",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "..\/public\/Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-mixt",
+                    "name": "Entrepa Mixt",
+                    "price": 4,
+                    "image": "..\/public\/Images\/bocadillo_mixt.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "entrepa-de-pernil-salat",
+                    "name": "Entrepa de pernil salat",
+                    "price": 3.5,
+                    "image": "\/public\/Images\/bocatajamon.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-de-butifarra",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "..\/public\/Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-mixt",
+                    "name": "Entrepa Mixt",
+                    "price": 4,
+                    "image": "..\/public\/Images\/bocadillo_mixt.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 2
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                }
+            ]
+        ]
+    },
+    "xavierruizboix10@gmail.com": {
+        "carret": [
+            {
+                "id": "2",
+                "name": "Entrepa de butifarra",
+                "price": 4.5,
+                "image": "Images\/bocadillo_butifarra.jpg",
+                "quantity": 2
+            },
+            {
+                "id": "4",
+                "name": "Suc Natural",
+                "price": 2.5,
+                "image": "Images\/zumo-de-naranja.jpg",
+                "quantity": 1
+            },
+            {
+                "id": "6",
+                "name": "Iogurt Natural",
+                "price": 1.5,
+                "image": "Images\/iogurt.jpg",
+                "quantity": 1
+            }
+        ],
+        "total": 18,
+        "ultima_actualizacion": "2025-11-18 18:55:03",
+        "historial": [
+            [
+                {
+                    "id": "2",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 2
+                },
+                {
+                    "id": "4",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "6",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "Images\/iogurt.jpg",
+                    "quantity": 1
+                }
+            ]
+        ]
+    }
+}

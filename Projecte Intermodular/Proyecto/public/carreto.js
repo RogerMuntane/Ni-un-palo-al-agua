@@ -3,7 +3,7 @@ function obtenir_localSorage() {
 
     try {
         return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-    } catch {
+    } catch (error){
         return []
     }
 }
