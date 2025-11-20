@@ -81,7 +81,7 @@ function posar_ofertes() {
         actualitzarResum()
 
     } else {
-        contenidor.innerHTML="<h3>No hi ha elements al carreto</h3>"
+        contenidor.innerHTML="<h4>No hi ha elements al carreto</h4>"
         actualitzarResum()
     }
 }
