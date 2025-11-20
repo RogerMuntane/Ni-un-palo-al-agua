@@ -2058,9 +2058,11 @@ header .overlay-sidepanel.active {
   }
 }
 .error-msg {
-  color: red;
+  color: rgb(172.5326086957, 45.0760869565, 41.9673913043);
   font-size: 12px;
-  margin-top: 5px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
   display: none;
   opacity: 0;
   -webkit-transform: translateY(-5px);
@@ -2076,9 +2078,8 @@ header .overlay-sidepanel.active {
           transform: translateY(0);
 }
 
-.finalitzacio-camps {
+.finalitzacio-camps, .img-contacte {
   position: relative;
-  margin-bottom: 35px;
 }
 
 .pagina-contacte {
