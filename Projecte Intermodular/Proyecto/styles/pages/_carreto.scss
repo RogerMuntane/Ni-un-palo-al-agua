@@ -1,0 +1,223 @@
+@use "../abstract/variables" as *;
+
+.carreto_senser {
+    background-color: $color-naranja;
+    min-height: 700px;
+    height: auto;
+    border-radius: 50px 50px 0px 0px;
+    padding-bottom: 50px;
+}
+
+.carret {
+    padding: $espacio-l 0;
+
+    .carret_header {
+        padding: 0 $espacio-m;
+        max-width: $vista-max;
+        margin: 0 auto $espacio-l;
+
+        h1 {
+            padding-top: $espacio-m;
+            font-family: $font-titol;
+            font-size: $titol-size-4xl;
+            color: $color-amarillo;
+            text-align: center;
+            margin: 0;
+            flex: 1;
+        }
+
+        .btn_buidar_carret {
+            background: $color-rojo;
+            color: $color-amarillo;
+            padding: $espacio-s $espacio-m;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: $titol-size-m;
+            font-family: $font-parraf;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+
+            &:hover {
+                background: $color-rojo;
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+    }
+
+    .carret_content {
+        max-width: $vista-max;
+        margin: 0 auto;
+        padding: 0 $espacio-m;
+    }
+
+    .carret_item {
+        background-color: $color-principal;
+        border: 2px solid $color-secundario;
+        padding: $espacio-m;
+        border-radius: 8px;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            max-height: 110px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        h4 {
+            font-family: $font-titol;
+            color: $color-amarillo;
+            margin: 0;
+            font-size: $titol-size-m;
+        }
+
+        .preu {
+            color: $color-naranja;
+            font-weight: bold;
+            font-size: $titol-size-l;
+        }
+
+        .carret_controls {
+            button {
+                border-radius: 6px;
+                border: none;
+                cursor: pointer;
+                font-size: $titol-size-m;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.08);
+                }
+            }
+
+            .btn_minus,
+            .btn_plus {
+                background: $color-secundario;
+                color: $color-amarillo;
+                padding: $espacio-xs;
+                font-weight: bold;
+                min-width: 36px;
+            }
+
+            .btn_remove {
+                background: $color-amarillo;
+                color: $color-rojo;
+                padding: $espacio-xs $espacio-s;
+                margin-left: auto;
+                font-weight: bold;
+                font-size: $titol-size-s;
+
+                &:hover {
+                    color: $color-rojo;
+                }
+            }
+
+            .carret_qty {
+                min-width: 28px;
+                text-align: center;
+                font-weight: bold;
+                color: $color-amarillo;
+            }
+        }
+    }
+
+    .carret_resum {
+        background-color: $color-principal;
+        border: 2px solid $color-secundario;
+        padding: $espacio-m;
+        border-radius: 8px;
+        height: fit-content;
+
+        .resum_row {
+            display: flex;
+            justify-content: space-between;
+            color: $color-amarillo;
+        }
+
+        .resum_total {
+            display: flex;
+            justify-content: space-between;
+            font-size: $titol-size-l;
+            font-weight: bold;
+            color: $color-naranja;
+            border-top: 1px dashed rgba(255, 255, 255, 0.06);
+            padding-top: $espacio-s;
+        }
+
+        .btn_primary,
+        .btn_secondary {
+            background: $color-naranja;
+            color: $color-amarillo;
+            padding: $espacio-s $espacio-m;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: $titol-size-m;
+            font-family: $font-parraf;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: $color-rojo;
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+    }
+
+    .carret_empty {
+        text-align: center;
+        color: $color-amarillo;
+        margin-top: $espacio-l;
+    }
+}
+
+@media (max-width: $vista-tablet) {
+    .carret {
+        .carret_header {
+            padding-top: $espacio-xs;
+            text-align: center;
+
+            h1 {
+                text-align: center;
+            }
+
+            .btn_buidar_carret {
+                padding: $espacio-xs $espacio-s;
+                font-size: $titol-size-s;
+            }
+        }
+
+        .carret_item {
+            img {
+                height: 220px !important;
+            }
+        }
+
+        .carret_resum {
+
+            .btn_primary,
+            .btn_secondary {
+                padding: $espacio-xs $espacio-s;
+                font-size: $titol-size-s;
+
+                &:hover {
+                    background: $color-rojo;
+                    transform: scale(1.01);
+                }
+            }
+        }
+    }
+
+
+}

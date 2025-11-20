@@ -4,7 +4,24 @@
     background-color: black;
 }
 
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.llistat_ofertes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $espacio-m;
+    padding: $espacio-l;
+}
+
 @media (max-width: $vista-tablet) {
+    .content-section {
+        grid-template-columns: 1fr;
+    }
+
     .tenda_categories {
         .categoria .categoria_productes {
             grid-template-columns: repeat(2, 1fr);
@@ -19,6 +36,22 @@
 
     .producte {
         img {
+            height: 300px;
+        }
+    }
+
+    .llistat_ofertes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $espacio-s;
+        padding: $espacio-l $espacio-s;
+    }
+
+    .producte_oferta {
+        &:nth-child(3) {
+            grid-column: 1 / 3;
+        }
+
+        .producte_oferta_imatge {
             height: 300px;
         }
     }
@@ -48,5 +81,89 @@
         height: 300px;
         width: 100%;
         object-fit: cover;
+    }
+
+    .llistat_ofertes {
+        grid-template-columns: 1fr !important;
+        display: grid !important;
+        grid-auto-rows: auto;
+        gap: $espacio-s;
+        padding: $espacio-m $espacio-xs;
+    }
+
+    .producte_oferta {
+        grid-column: 1 !important;
+        width: 100%;
+    }
+}
+
+
+//Grid carreto
+.carret {
+    .carret_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $espacio-m;
+    }
+
+    .carret_content {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: $espacio-l;
+        align-items: start;
+    }
+
+    .carret_list {
+        display: grid;
+        gap: $espacio-m;
+    }
+
+    .carret_item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: $espacio-m;
+        align-items: center;
+    }
+
+    .carret_detall {
+        display: flex;
+        flex-direction: column;
+        gap: $espacio-s;
+    }
+
+    .carret_controls {
+        display: flex;
+        gap: $espacio-s;
+        align-items: center;
+        margin-top: auto;
+        flex-wrap: wrap;
+    }
+
+    .carret_resum {
+        display: flex;
+        flex-direction: column;
+        gap: $espacio-m;
+    }
+
+    /* responsive layout: a mòbil una sola columna */
+    @media (max-width: $vista-tablet) {
+        .carret_header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .carret_content {
+            grid-template-columns: 1fr;
+        }
+
+        .carret_item {
+            grid-template-columns: 1fr;
+        }
+
+        .carret_resum {
+            order: 99;
+            margin-top: $espacio-m;
+        }
     }
 }

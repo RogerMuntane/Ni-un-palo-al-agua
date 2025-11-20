@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="script.js" defer></script>
+    <script src="inici.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
             </li>
             <!-- Links -->
             <li>
-                <button href="administracio.html" class="boto-rodo" onclick="location.href='administracio.html';">
+                <button class="boto-rodo" onclick="location.href='login.php';">
                     <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
                 </button>
             </li>
@@ -45,8 +46,12 @@
         <!-- Sidepanel -->
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
-            <button class="boto-rodo" onclick="modeFosc()">
+            <button class="boto-rodo lluna-sidepanel" onclick="modeFosc()">
                 <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            </button>
+            <!-- Perfil -->
+            <button class="boto-rodo perfil-sidepanel" onclick="modeFosc()">
+                <img src="Images/perfil.png" alt="Mode Fosc" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
@@ -74,8 +79,10 @@
 
     <!-- Ofertes del dia -->
     <section class="ofertes">
-        <h2>Ofertes del dia</h2>
-        <!-- Aquí anirien les ofertes -->
+        <h2>Promoció del dia</h2>
+        <div class="llistat_ofertes">
+
+        </div>
     </section>
 
     <!-- Text sobre compres amb imatge al costat -->
