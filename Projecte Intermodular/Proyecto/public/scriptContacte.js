@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nom = document.getElementById('nom');
     const correu = document.getElementById('correu');
     const telefon = document.getElementById('telefon');
+    const enviar = contacte.querySelector('button[type="submit"]');
 
     // Missatge error
     const errorNom = document.getElementById('nom-error');
@@ -18,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const telefonRegex = /^\d{9}$/;
 
     // Funciones de validacions
+
     function nomValid(stringNom) {
-        stringNom =  nom.trim();
+        stringNom = stringNom.trim();
         if (stringNom.length === 0)
             return false;
         if (symbolsRegex.test(stringNom))
@@ -39,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return telefonRegex.test(stringTelefon);
     }
 
-    // Funcions per ensenayar els errors i ocultarlos
+    // Funcions per ensenyar/ocultar errors
+
     function mostrarError(entrada, error) {
         entrada.classList.add('error');
         error.style.display = 'block';
@@ -52,7 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => error.style.display = 'none', 300);
     }
 
-    // Validació quan es fa submit
+    // Si es correcte enviar sino no es pot enviar el formulari
+    function validarEstatFormulari() {
+        const nomEsValid = nomValid(nom.value);
+        const correuEsValid = correuValid(correu.value);
+        const telefonEsValid = telefonValid(telefon.value);
+
+        if (nomEsValid && correuEsValid && telefonEsValid) {
+            enviar.disabled = false;
+        } else {
+            enviar.disabled = true;
+        }
+    }
+
     contacte.addEventListener('submit', function(event) {
         let formulariCorrecte = true;
 
@@ -86,40 +101,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Funcio per para el text si supera la longitud maxima
+    // Funció per controlar la longitud del text
     function controlarLongitud(inputElement) {
         if (inputElement.value.length > MAX_LENGTH) {
             inputElement.value = inputElement.value.substring(0, MAX_LENGTH);
         }
     }
 
+    // Validacions en temps real
+
     nom.addEventListener('input', () => {
         controlarLongitud(nom);
-        const stringNom = nom.value.trim();
-        if (nomValid(stringNom) || stringNom.length === 0) {
+        const stringNom = nom.value;
+        if (nomValid(stringNom) || stringNom.trim().length === 0) {
             ocultarError(nom, errorNom);
         } else {
             mostrarError(nom, errorNom);
         }
-    });
-    nom.addEventListener('blur', () => {
-        const stringNom = nom.value.trim();
-        if (stringNom.length === 0 || !nomValid(stringNom)) {
-            if (stringNom.length > 0) { // Només mostra error si s'ha escrit quelcom invàlid
-                mostrarError(nom, errorNom);
-            }
-        }
+        validarEstatFormulari();
     });
 
     correu.addEventListener('input', () => {
         controlarLongitud(correu);
-        const stringCorreu = correu.value.trim();
-        if (correuValid(stringCorreu) || stringCorreu.length === 0) {
+        const stringCorreu = correu.value;
+        if (correuValid(stringCorreu) || stringCorreu.trim().length === 0) {
             ocultarError(correu, errorCorreu);
         } else {
             mostrarError(correu, errorCorreu);
         }
+        validarEstatFormulari();
     });
+
+    telefon.addEventListener('input', () => {
+        controlarLongitud(telefon);
+        const stringTelefon = telefon.value;
+        if (telefonValid(stringTelefon) || stringTelefon.trim().length === 0) {
+            ocultarError(telefon, errorTelefon);
+        } else {
+            mostrarError(telefon, errorTelefon);
+        }
+        validarEstatFormulari();
+    });
+
+    nom.addEventListener('blur', () => {
+        const stringNom = nom.value.trim();
+        if (stringNom.length > 0 && !nomValid(stringNom)) {
+            mostrarError(nom, errorNom);
+        }
+    });
+
     correu.addEventListener('blur', () => {
         const stringCorreu = correu.value.trim();
         if (stringCorreu.length > 0 && !correuValid(stringCorreu)) {
@@ -127,19 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    telefon.addEventListener('input', () => {
-        controlarLongitud(telefon);
-        const stringTelefon = telefon.value.trim();
-        if (telefonValid(stringTelefon) || stringTelefon.length === 0) {
-            ocultarError(telefon, errorTelefon);
-        } else {
-            mostrarError(telefon, errorTelefon);
-        }
-    });
     telefon.addEventListener('blur', () => {
         const stringTelefon = telefon.value.trim();
         if (stringTelefon.length > 0 && !telefonValid(stringTelefon)) {
             mostrarError(telefon, errorTelefon);
         }
     });
+
+    validarEstatFormulari();
+
 });
