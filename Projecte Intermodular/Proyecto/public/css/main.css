@@ -493,7 +493,6 @@ header .overlay-sidepanel.active {
   background-color: black;
 }
 
-<<<<<<< Updated upstream
 .content-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -731,172 +730,6 @@ header .overlay-sidepanel.active {
 .tenda_categories .categoria .categoria_header h3 {
   font-size: 22px;
   font-family: "PlayfairDisplay";
-=======
-.general {
-  background-color: #FFE6A7;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 15px auto;
-  width: 100%;
-}
-
-.condicions-section {
-  background-color: #432818;
-  padding: 30px;
-  min-height: 100px;
-  border-radius: 6px;
-}
-.condicions-section .condicions-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-.condicions-section .condicions-header h1 {
-  font-family: "PlayfairDisplay";
-  font-size: 27px;
-  color: #FFE6A7;
-  margin-bottom: 15px;
-}
-.condicions-section .condicions-header hr {
-  border: none;
-  height: 2px;
-  background-color: #BB9457;
-  width: 100px;
-  margin: 0 auto;
-}
-.condicions-section .condicions-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.condicions-section .condicions-content .legal-section {
-  background-color: rgba(67, 40, 24, 0.05);
-  padding: 25px;
-  margin-bottom: 25px;
-  border-radius: 8px;
-  border-left: 4px solid #BB9457;
-}
-.condicions-section .condicions-content .legal-section h2 {
-  font-family: "PlayfairDisplay";
-  font-size: 22px;
-  color: #BB9457;
-  margin-bottom: 15px;
-}
-.condicions-section .condicions-content .legal-section h3 {
-  font-family: "PlayfairDisplay";
-  font-size: 20px;
-  color: #FFE6A7;
-  margin: 20px 0 15px 0;
-}
-.condicions-section .condicions-content .legal-section p {
-  font-family: "NunitoSans";
-  font-size: 14px;
-  color: #FFE6A7;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-.condicions-section .condicions-content .legal-section .contact-info {
-  background-color: rgb(97.0395604396, 57.9340659341, 34.7604395604);
-  padding: 20px;
-  border-radius: 4px;
-  margin-top: 15px;
-}
-.condicions-section .condicions-content .legal-section .contact-info p {
-  margin-bottom: 10px;
-}
-.condicions-section .condicions-content .legal-section .contact-info p strong {
-  color: #BB9457;
-}
-.condicions-section .condicions-content .legal-section:hover {
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-.condicions-section .condicions-content .last-update {
-  text-align: center;
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #BB9457;
-  border-radius: 8px;
-}
-.condicions-section .condicions-content .last-update p {
-  font-family: "NunitoSans";
-  font-size: 14px;
-  color: #432818;
-  margin: 0;
-}
-.condicions-section .condicions-content .last-update p strong {
-  color: #6F1D1B;
-}
-
-@media (max-width: 1024px) {
-  .general {
-    padding: 10px;
-    margin: 10px auto;
-    max-width: calc(100% - 15px);
-    border-radius: 6px;
-  }
-  .condicions-section {
-    padding: 25px 20px;
-  }
-  .condicions-section .condicions-header h1 {
-    font-size: 22px;
-  }
-  .condicions-section .condicions-content .legal-section {
-    padding: 20px;
-  }
-  .condicions-section .condicions-content .legal-section h2 {
-    font-size: 20px;
-  }
-  .condicions-section .condicions-content .legal-section h3 {
-    font-size: 14px;
-  }
-  .condicions-section .condicions-content .legal-section p {
-    font-size: 13px;
-  }
-}
-@media (max-width: 728px) {
-  .general {
-    padding: 8px;
-    margin: 8px auto;
-    max-width: calc(100% - 10px);
-    border-radius: 4px;
-  }
-  .condicions-section {
-    padding: 20px 15px;
-  }
-  .condicions-section .condicions-header {
-    margin-bottom: 25px;
-  }
-  .condicions-section .condicions-header h1 {
-    font-size: 20px;
-  }
-  .condicions-section .condicions-content .legal-section {
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-  .condicions-section .condicions-content .legal-section h2 {
-    font-size: 14px;
-  }
-  .condicions-section .condicions-content .legal-section h3 {
-    font-size: 13px;
-  }
-  .condicions-section .condicions-content .legal-section p {
-    font-size: 12px;
-  }
-  .condicions-section .condicions-content .last-update {
-    margin-top: 25px;
-    padding: 15px;
-  }
-  .condicions-section .condicions-content .last-update p {
-    font-size: 13px;
-  }
-}
-* {
->>>>>>> Stashed changes
   margin: 0;
   color: #FFE6A7;
 }
@@ -2703,20 +2536,6 @@ h2 {
 }
 h1, h2, h3 {
   margin: 0;
-}
-
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 *,
