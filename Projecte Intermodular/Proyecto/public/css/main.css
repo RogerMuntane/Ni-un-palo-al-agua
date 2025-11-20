@@ -2464,40 +2464,74 @@ h2 {
           box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
 }
 
-@media (min-width: 1024px) {
-  .tiquet-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding: 40px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+/* Error message */
+.error-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  background: #6F1D1B;
+  border-left: 4px solid #FFE6A7;
+  border-radius: 8px;
+  color: #FFE6A7;
+  font-size: 14px;
+  font-weight: 600;
+  -webkit-box-shadow: 0 4px 12px rgba(111, 29, 27, 0.4);
+          box-shadow: 0 4px 12px rgba(111, 29, 27, 0.4);
+  -webkit-animation: slideIn 0.4s ease;
+          animation: slideIn 0.4s ease;
+}
+.error-message strong {
+  font-size: 20px;
+  color: #FFE6A7;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
-  .tiquet-resum {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    padding-right: 40px;
-    padding-top: 0;
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
-  .tiquet-detalls {
-    -webkit-box-flex: 1.5;
-        -ms-flex: 1.5;
-            flex: 1.5;
-    padding-left: 40px;
-    padding-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 728px) {
+  .login-camps {
+    width: 95%;
+    padding: 30px 20px;
+    max-width: 350px;
   }
-  .titol-resum,
-  .titol-detalls {
-    text-align: left;
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
-  .buttons {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+  .camps-texts input {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+  .camps-texts label {
+    font-size: 14px;
+  }
+  .button-login {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .error-message {
+    padding: 15px 20px;
+    font-size: 13px;
+    gap: 8px;
+  }
+  .error-message strong {
+    font-size: 14px;
   }
 }
 h1, h2, h3 {
