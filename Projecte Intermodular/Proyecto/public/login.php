@@ -27,10 +27,11 @@
             unset($_SESSION['error']);
         }
         ?>
-        <form method="post" action="../public/php/validarUsuari.php">
+        <form method="post" action="../public/php/validarUsuari.php" id="login">
             <div class="camps-texts">
                 <input type="email" name="email" id="email" required placeholder=" ">
                 <label for="email">Email</label>
+                <small class="error-msg" id="email-error">El format de l'email no és vàlid</small>
             </div>
             <div class="camps-texts">
                 <input type="password" name="password" id="password" required placeholder=" ">
