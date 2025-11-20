@@ -164,34 +164,74 @@ h2 {
     }
 }
 
+/* Error message */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: $espacio-s;
+    padding: $espacio-m $espacio-l;
+    margin-bottom: $espacio-l;
+    background: $color-rojo;
+    border-left: 4px solid $color-amarillo;
+    border-radius: 8px;
+    color: $color-amarillo;
+    font-size: $titol-size-m;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba($color-rojo, 0.4);
+    animation: slideIn 0.4s ease;
 
-
-
-@media (min-width: $vista-tablet) {
-    .tiquet-container {
-        flex-direction: row;
-        padding: 40px;
-        align-items: center;
+    strong {
+        font-size: $titol-size-l;
+        color: $color-amarillo;
     }
 
-    .tiquet-resum {
-        flex: 1;
-        padding-right: 40px;
-        padding-top: 0;
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: $vista-mobil) {
+    .login-camps {
+        width: 95%;
+        padding: 30px 20px;
+        max-width: 350px;
     }
 
-    .tiquet-detalls {
-        flex: 1.5;
-        padding-left: 40px;
-        padding-top: 0;
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
     }
 
-    .titol-resum,
-    .titol-detalls {
-        text-align: left;
+    .camps-texts input {
+        font-size: 14px;
+        padding: 8px 0;
     }
 
-    .buttons {
-        flex-direction: row-reverse;
+    .camps-texts label {
+        font-size: 14px;
+    }
+
+    .button-login {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .error-message {
+        padding: $espacio-s $espacio-m;
+        font-size: $titol-size-s;
+        gap: 8px;
+
+        strong {
+            font-size: $titol-size-m;
+        }
     }
 }
