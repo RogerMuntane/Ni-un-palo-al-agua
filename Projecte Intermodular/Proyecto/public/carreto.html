@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carretó - Ni un palo al agua</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="script.js" defer></script>
+    <script src="carreto.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- HEADER -->
     <header>
 
         <!-- Logo -->
@@ -28,9 +29,8 @@
             </li>
             <!-- Links -->
             <li>
-                <button href="administracio.html" class="boto-rodo" onclick="location.href='administracio.html';">
+                <button class="boto-rodo" onclick="location.href='login.php';">
                     <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
-                    <a href="login.html"></a>
                 </button>
             </li>
             <li><a href="contacte.html">Contacte</a></li>
@@ -46,8 +46,12 @@
         <!-- Sidepanel -->
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
-            <button class="boto-rodo" onclick="modeFosc()">
+            <button class="boto-rodo lluna-sidepanel" onclick="modeFosc()">
                 <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            </button>
+            <!-- Perfil -->
+            <button class="boto-rodo perfil-sidepanel" onclick="modeFosc()">
+                <img src="Images/perfil.png" alt="Mode Fosc" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
@@ -65,6 +69,44 @@
 
     </header>
 
+
+    <main class="container carret">
+        <div class="carreto_senser">
+            <div class="carret_header">
+                <h1>El teu carretó</h1>
+            </div>
+
+            <section class="carret_content">
+                <div class="carret_list">
+                </div>
+
+                <aside class="carret_resum">
+                    <div class="resum_row">
+                        <span>Subtotal</span>
+                        <span class="resum_valor">0,00€</span>
+                    </div>
+                    <div class="resum_row">
+                        <span>Despeses d'enviament</span>
+                        <span class="resum_valor">0,00€</span>
+                    </div>
+                    <div class="resum_total">
+                        <strong>Total</strong>
+                        <strong class="resum_valor total_valor">0,00€</strong>
+                    </div>
+
+                    <button class="btn_primary btn_checkout" onclick="location.href='finalitzacio.html'">Anar a
+                        pagar</button>
+
+                    <button class="btn_secondary btn_vorar" onclick="location.href='tenda.html'">Continuar
+                        comprant</button>
+
+                    <button class="btn_secondary btn_buidar_carret" onclick="buidarCarret()">Buidar carretó</button>
+                </aside>
+            </section>
+
+            <p class="carret_empty sr-only">El teu carret està buit.</p>
+        </div>
+    </main>
 
 
     <footer>
@@ -92,7 +134,6 @@
             <p>© 2025 Ni un palo al agua. All Rights Reserved</p>
         </div>
     </footer>
-
 </body>
 
 </html>

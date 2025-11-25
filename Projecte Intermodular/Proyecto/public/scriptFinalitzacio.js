@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => errorElement.style.display = 'none', 300);
     }
 
-    formulari.addEventListener('submit', function(event) {
+    formulari.addEventListener('submit', function (event) {
         let formulariCorrecte = true;
 
         // Validar Email
@@ -115,6 +115,43 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             ocultarError(extras, errorExtras);
         }
+
+        //Introduir LocalStorage al Hidden Input
+
+        let carret = []
+        let total = 0;
+
+        try {
+            const carretData = localStorage.getItem("carret");
+            const totalData = localStorage.getItem("total_compra");
+            if (carretData) {
+                carret = JSON.parse(carretData);
+
+                // Validar que sea un array
+                if (!Array.isArray(carret)) {
+                    console.warn("Los datos del carrito no son un array válido");
+                    carret = [];
+                }
+            }
+            if (totalData) {
+                total = JSON.parse(totalData);
+            }
+            localStorage.clear();
+        } catch (error) {
+            console.error("Error al parsear el carrito:", error);
+            // Opcional: mostrar mensaje al usuario
+            alert("Error al cargar los datos del carrito");
+            carret = [];
+            total = 0;
+        }
+
+        document.getElementById("carretData").value = JSON.stringify(carret);
+        document.getElementById("totalData").value = total;
+
+        console.log("Carrito enviado:", carret);
+        console.log("localData value:", document.getElementById("localData").value);
+        console.log("Formulari correcte:", formulariCorrecte);
+
 
         // Es para l'enviament si alguna cosa ha fallat
         if (!formulariCorrecte) {
@@ -215,3 +252,85 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 }); // Tancament del DOMContentLoaded
+
+
+function total_guardat(total) {
+    const STORAGE_KEY = "total_compra";
+
+    try {
+        localStorage.setItem(STORAGE_KEY, total.toString());
+    } catch (error) {
+        console.error("Error guardant el total:", error);
+    }
+}
+
+
+//Mostrar tiquets per pantralla
+function obtenir_productes() {
+    const STORAGE_KEY = "carret"
+
+    try {
+        const data = localStorage.getItem(STORAGE_KEY)
+        return data ? JSON.parse(data) : []
+    } catch {
+        return []
+    }
+}
+
+function carregar_productes() {
+    const productes = obtenir_productes();
+    const contenidor = document.querySelector(".futur-tiquet");
+
+    if (productes.length !== 0) {
+        let total = 5; // Costos d'enviament
+        contenidor.innerHTML = '';
+
+        productes.forEach(element => {
+            // Crear contenidor compacte per cada producte
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "tiquet-item";
+
+            // Nom del producte
+            const nomDiv = document.createElement("div");
+            nomDiv.className = "tiquet-nom";
+            nomDiv.textContent = element.name;
+
+            // Detalls compactes
+            const detallsDiv = document.createElement("div");
+            detallsDiv.className = "tiquet-esp";
+            detallsDiv.innerHTML = `
+                <span>${element.price.toFixed(2)}€</span>
+                <span>x${element.quantity}</span>
+            `;
+
+            // Subtotal
+            const subtotal = element.price * element.quantity;
+            const subtotalDiv = document.createElement("div");
+            subtotalDiv.className = "tiquet-subtotal";
+            subtotalDiv.textContent = `${subtotal.toFixed(2)}€`;
+
+            // Afegir tot al item
+            itemDiv.appendChild(nomDiv);
+            itemDiv.appendChild(detallsDiv);
+            itemDiv.appendChild(subtotalDiv);
+
+            // Afegir item al contenidor
+            contenidor.appendChild(itemDiv);
+
+            total += subtotal;
+        });
+
+        // Total final
+        const totalDiv = document.createElement("div");
+        totalDiv.className = "tiquet-total";
+        totalDiv.textContent = `TOTAL: ${total.toFixed(2)}€`;
+        contenidor.appendChild(totalDiv);
+
+        total_guardat(total);
+
+    } else {
+        contenidor.innerHTML = "<h3>No hi ha elements al carret</h3>";
+    }
+}
+
+addEventListener("DOMContentLoaded", carregar_productes);

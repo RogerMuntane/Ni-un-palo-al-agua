@@ -5,6 +5,7 @@
     min-height: 700px;
     height: auto;
     border-radius: 50px 50px 0px 0px;
+    padding-bottom: 50px;
 }
 
 .carret {
@@ -39,7 +40,7 @@
             white-space: nowrap;
 
             &:hover {
-                background: darken($color-rojo, 10%);
+                background: $color-rojo;
                 transform: scale(1.05);
             }
 
@@ -106,7 +107,7 @@
             }
 
             .btn_remove {
-                background: transparent;
+                background: $color-amarillo;
                 color: $color-rojo;
                 padding: $espacio-xs $espacio-s;
                 margin-left: auto;
@@ -114,7 +115,7 @@
                 font-size: $titol-size-s;
 
                 &:hover {
-                    color: darken($color-rojo, 15%);
+                    color: $color-rojo;
                 }
             }
 
@@ -164,7 +165,7 @@
             transition: all 0.3s ease;
 
             &:hover {
-                background: darken($color-naranja, 10%);
+                background: $color-rojo;
                 transform: scale(1.05);
             }
 
@@ -181,13 +182,14 @@
     }
 }
 
-@media (max-width: $vista-mobil) {
+@media (max-width: $vista-tablet) {
     .carret {
         .carret_header {
-            padding: 0 $espacio-xs;
+            padding-top: $espacio-xs;
+            text-align: center;
 
             h1 {
-                font-size: $titol-size-xl;
+                text-align: center;
             }
 
             .btn_buidar_carret {
@@ -198,7 +200,7 @@
 
         .carret_item {
             img {
-                height: 220px;
+                height: 220px !important;
             }
         }
 
@@ -208,7 +210,14 @@
             .btn_secondary {
                 padding: $espacio-xs $espacio-s;
                 font-size: $titol-size-s;
+
+                &:hover {
+                    background: $color-rojo;
+                    transform: scale(1.01);
+                }
             }
         }
     }
+
+
 }

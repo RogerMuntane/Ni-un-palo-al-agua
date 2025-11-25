@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- HEADER -->
     <header class="header-tenda">
 
         <!-- Logo -->
@@ -33,10 +34,8 @@
             </li>
 
             <li>
-                <button href="administracio.html" class="boto-rodo boto-rodo-nav"
-                    onclick="location.href='administracio.html';">
+                <button class="boto-rodo boto-rodo-nav" onclick="location.href='login.php';">
                     <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
-                    <a href="login.html"></a>
                 </button>
             </li>
 
@@ -51,8 +50,12 @@
         <!-- Sidepanel -->
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
-            <button class="boto-rodo" onclick="modeFosc()">
+            <button class="boto-rodo lluna-sidepanel" onclick="modeFosc()">
                 <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            </button>
+            <!-- Perfil -->
+            <button class="boto-rodo perfil-sidepanel" onclick="modeFosc()">
+                <img src="Images/perfil.png" alt="Pefil" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
@@ -67,6 +70,8 @@
             <a href="tenda.html">Tenda Online</a>
             <a href="carreto.html">&#128722;Carretó</a>
             <a href="contacte.html">Contacte</a>
+
+
         </div>
 
         <!-- Logo -->
@@ -112,7 +117,7 @@
             <div class="categoria_productes">
                 <div class="producte">
                     <img src="/public/Images/bocatajamon.jpg" alt="Bocadillo">
-                    <h4>Entrepa de pernil salat</h4>
+                    <h4>Entrepa de pernil</h4>
                     <p class="preu">3.50€</p>
                     <button class="btn_comprar">Afegir al carret</button>
                 </div>

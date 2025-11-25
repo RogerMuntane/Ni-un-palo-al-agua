@@ -152,7 +152,7 @@ function obtenerDatosProducto(productEl) {
 function afegirProductoAlCarret(productEl) {
     const product = obtenerDatosProducto(productEl);
     const cart = obtenerCarret();
-
+    
     const existing = cart.find(item => item.id === product.id);
     if (existing) {
         existing.quantity = (existing.quantity || 1) + 1;
@@ -177,10 +177,10 @@ function inicializarCarretListeners() {
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.btn_comprar');
         if (!btn) return;
-
+        
         const productEl = btn.closest('.producte');
         if (!productEl) return;
-
+        
         afegirProductoAlCarret(productEl);
         mostrarFeedbackBoton(btn);
     });
@@ -195,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 // Buscador de productes
 
 document.addEventListener('keyup', e => {
-<<<<<<< Updated upstream
     // Comprovar si s'està escrivint en algun dels buscadors
     if (!e.target.matches('#buscador') && !e.target.matches('#buscador-sidepanel')) {
         return;
@@ -277,90 +276,6 @@ document.addEventListener('keyup', e => {
             seccioRecomenats.classList.add('filtro');
         } else {
             seccioRecomenats.classList.remove('filtro');
-=======
-
-    // Buscadors
-    const buscador = document.getElementById('.buscador');
-    const buscadorSidepanel = document.getElementById('.buscador-sidepanel');
-
-    const seccioRecomenats = document.querySelector('.tenda_intro');
-    const titolOferta = document.querySelector('.oferta');
-
-    // matches per buscar una coincidencia dintre d'una cadena de text
-    if (e.target.matches('#buscador') || e.target.matches('#buscador-sidepanel')) {
-
-        const target = e.target;
-        const cerca = target.value.toLowerCase().trim();
-
-        if (target.id === 'buscador' && buscadorSidepanel) {
-            buscadorSidepanel.value = cerca;
-        } else if (target.id === 'buscador-sidepanel' && buscador) {
-            buscador.value = cerca;
-        }
-
-        // Agafar tots els productes de la pagina
-        document.querySelectorAll('.producte, .producte_oferta').forEach(producte => {
-            let nomProducteElement; // Canviat el nom de la variable per evitar confusió amb el text
-
-            if (producte.classList.contains('producte')) {
-                //Seleccionar el titol del producte
-                nomProducteElement = producte.querySelector('h4');
-            } else if (producte.classList.contains('producte_oferta')) {
-                //Seleccionar l'element amb la classe producte_oferta
-                nomProducteElement = producte.querySelector('.producte_oferta_nom');
-            }
-
-            // Si no es troba ningun element, saltem el producte
-            if (!nomProducteElement) {
-                producte.classList.add('filtro');
-                return;
-            }
-
-            const producteCercaText = nomProducteElement.textContent.toLocaleLowerCase().trim(); // Només el text
-
-            if (producteCercaText.includes(cerca)) {
-                producte.classList.remove('filtro'); // Mostra el producte
-            } else {
-                titolOferta.classList.add('filtro');
-                producte.classList.add('filtro'); // Amaga el producte
-            }
-
-            if (cerca === "") {
-                producte.classList.remove('filtro');
-            }
-        });
-
-        // Amagar les categorias si no hi ha ningun producte que coincideixi
-        document.querySelectorAll('.categoria').forEach(categoria => {
-            let producteVisible = categoria.querySelectorAll('.producte:not(.filtro)').length;
-
-            const categoriaHeader = document.querySelector('.categoria_header');
-            const categoriaProducte = document.querySelector('.categoria_productes');
-
-            if (producteVisible === 0 && cerca !== "") {
-                categoria.classList.add('filtro');
-                if (categoriaHeader) {
-                    categoriaHeader.classList.add('filtro');
-                }
-                if (categoriaProducte) {
-                    categoriaProducte.classList.add('filtro');
-                }
-            } else {
-                categoria.classList.remove('filtro');
-                categoriaHeader.classList.remove('filtro');
-                categoriaProducte.classList.remove('filtro');
-            }
-        });
-
-        if (seccioRecomenats) {
-            if (cerca !== "") {
-                // Si es cerca amagar
-                seccioRecomenats.classList.add('filtro');
-            } else {
-                // Si la cerca es buida tornar a mostra
-                seccioRecomenats.classList.remove('filtro');
-            }
->>>>>>> Stashed changes
         }
     }
 });
