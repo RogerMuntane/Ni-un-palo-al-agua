@@ -19,7 +19,7 @@ foreach ($infoJson as $dades => $sessio) {
         $usuari_trobat = true;
         if ($contrasenya == $sessio["contrasenya"]) {
             echo "Sessió iniciada correctament";
-            header("Location: /../public/administracio.html");
+            header("Location: /../public/administracio.php");
             $es_correcte = true;
         } else {
             session_start();
@@ -39,7 +39,17 @@ if (!$usuari_trobat) {
     ];
     $infoJson[] = $usuari_afegit;
     echo "Usuari registrat correctament";
-    header("Location: /../public/administracio.html");
+    header("Location: /../public/administracio.php");
 }
 
 file_put_contents($path, json_encode($infoJson, JSON_PRETTY_PRINT));
+
+$ch = curl_init("pagina2.php");
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, ['dato' => $valor]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$resposta = curl_exec($ch);
+unset($ch);
+
+echo $resposta;
