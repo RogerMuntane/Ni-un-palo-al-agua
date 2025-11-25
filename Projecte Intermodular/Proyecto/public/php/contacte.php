@@ -30,4 +30,5 @@ if (!$existeix) {
     file_put_contents($path, json_encode($contactes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
+
 header("Location: /../public/inici.html");
