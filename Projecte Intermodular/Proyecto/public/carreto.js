@@ -3,7 +3,7 @@ function obtenir_localSorage() {
 
     try {
         return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-    } catch {
+    } catch (error){
         return []
     }
 }
@@ -81,7 +81,7 @@ function posar_ofertes() {
         actualitzarResum()
 
     } else {
-        contenidor.innerHTML="<h3>No hi ha elements al carreto</h3>"
+        contenidor.innerHTML="<h4>No hi ha elements al carreto</h4>"
         actualitzarResum()
     }
 }
