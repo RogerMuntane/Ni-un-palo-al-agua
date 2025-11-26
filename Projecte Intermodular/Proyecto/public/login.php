@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="scriptLogin.js" defer></script>
 </head>
 
 <body class="pagina-login">
@@ -27,7 +28,7 @@
             unset($_SESSION['error']);
         }
         ?>
-        <form method="post" action="../public/php/validarUsuari.php" id="login">
+        <form method="post" action="../public/php/validarUsuari.php" id="login" novalidate>
             <div class="camps-texts">
                 <input type="email" name="email" id="email" required placeholder=" ">
                 <label for="email">Email</label>
@@ -37,10 +38,11 @@
                 <input type="password" name="password" id="password" required placeholder=" ">
                 <label for="password">Contrasenya</label>
             </div>
-
+            <small class="error-msg" id="form-buit">Els camps no poden estar buits</small>
             <button type="submit" class="button-login">
                 <span>Entrar</span>
             </button>
+
 
         </form>
     </div>

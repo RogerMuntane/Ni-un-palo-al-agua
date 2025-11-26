@@ -12,39 +12,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return emailRegex.test(stringEmail.trim());
     }
 
-    function mostrarError(inputElement, errorElement) {
-        inputElement.classList.add('error');
+    function mostrarError(inputElement, errorElement, missatge = null) {
+        if (missatge) {
+            errorElement.textContent = missatge;
+        }
+        if (inputElement) {
+            inputElement.classList.add('error');
+        }
         errorElement.style.display = 'block';
         setTimeout(() => errorElement.classList.add('show'), 10);
     }
 
     function ocultarError(inputElement, errorElement) {
-        inputElement.classList.remove('error');
-        errorElement.classList.remove('show');
-        setTimeout(() => errorElement.style.display = 'none', 300);
-    }
-
-    function validarEstatFormulari() {
-        if (emailValid(email.value)) {
-            enviar.disabled = false;
-        } else {
-            enviar.disabled = true;
+        if (inputElement) {
+            inputElement.classList.remove('error');
         }
+        errorElement.classList.remove('show');
     }
 
     formulari.addEventListener('submit', function(event) {
-        let formulariCorrecte = true;
+        event.preventDefault();
 
+        let formulariCorrecte = true;
         const stringEmail = email.value.trim();
-        if (stringEmail.length > MAX_LENGTH || !emailValid(stringEmail)) {
+
+        ocultarError(email, errorEmail);
+
+        if (stringEmail.length === 0) {
             formulariCorrecte = false;
-            mostrarError(email, errorEmail);
-        } else {
-            ocultarError(email, errorEmail);
+            mostrarError(email, errorEmail, "L'email és obligatori");
+        } else if (stringEmail.length > MAX_LENGTH || !emailValid(stringEmail)) {
+            formulariCorrecte = false;
+            mostrarError(email, errorEmail, "El format de l'email no és vàlid");
         }
 
-        if (!formulariCorrecte) {
-            event.preventDefault();
+        if (formulariCorrecte) {
+            formulari.submit();
         }
     });
 
@@ -60,19 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (emailValid(stringEmail) || stringEmail.length === 0) {
             ocultarError(email, errorEmail);
-        } else {
-            mostrarError(email, errorEmail);
         }
 
-        validarEstatFormulari();
     });
 
     email.addEventListener('blur', () => {
         const stringEmail = email.value.trim();
-        if (stringEmail.length > 0 && !emailValid(stringEmail)) {
-            mostrarError(email, errorEmail);
+
+        if (stringEmail.length === 0) {
+            mostrarError(email, errorEmail, "L'email és obligatori");
+        } else if (stringEmail.length > 0 && !emailValid(stringEmail)) {
+            mostrarError(email, errorEmail, "El format de l'email no és vàlid");
+        } else {
+            ocultarError(email, errorEmail);
         }
     });
-
-    validarEstatFormulari();
 });

@@ -243,10 +243,10 @@ h2 {
 .camps-texts input:-webkit-autofill:hover,
 .camps-texts input:-webkit-autofill:focus,
 .camps-texts input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0px 1000px $color-secundario inset !important;
-    box-shadow: 0 0 0px 1000px $color-secundario inset !important;
-    -webkit-text-fill-color: $color-principal !important;
-    caret-color: $color-principal !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+    box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+    -webkit-text-fill-color: $color-amarillo !important;
+    caret-color: $color-amarillo !important;
     border-bottom-color: $color-naranja !important;
     transition: background-color 9999s ease-in-out 0s;
 }
