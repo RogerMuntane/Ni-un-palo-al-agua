@@ -2572,6 +2572,45 @@ h2 {
     font-size: 14px;
   }
 }
+.camps-texts input:-webkit-autofill,
+.camps-texts input:-webkit-autofill:hover,
+.camps-texts input:-webkit-autofill:focus,
+.camps-texts input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+  -webkit-text-fill-color: #FFE6A7 !important;
+  caret-color: #FFE6A7 !important;
+  border-bottom-color: #99582A !important;
+  -webkit-transition: background-color 9999s ease-in-out 0s;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.camps-texts {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.error-msg {
+  color: rgb(172.5326086957, 45.0760869565, 41.9673913043);
+  font-size: 12px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.error-msg.show {
+  display: block;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 h1, h2, h3 {
   margin: 0;
 }
