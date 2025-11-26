@@ -2,5 +2,17 @@
     {
         "usuari": "roger@gmail.com",
         "contrasenya": "r"
+    },
+    {
+        "usuari": "",
+        "contrasenya": ""
+    },
+    {
+        "usuari": "asdd",
+        "contrasenya": ""
+    },
+    {
+        "usuari": "alumnes@iesthosicodina.cat",
+        "contrasenya": "asdasd"
     }
 ]
