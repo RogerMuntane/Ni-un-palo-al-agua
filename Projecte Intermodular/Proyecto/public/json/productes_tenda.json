@@ -1,0 +1,108 @@
+{
+    "categories": [
+        {
+            "nom": "Bocadillos",
+            "productes": [
+                {
+                    "id": 1,
+                    "nom": "Entrepa de pernil",
+                    "preu": 3.50,
+                    "imatge": "Images/bocatajamon.jpg",
+                    "alt": "Bocadillo"
+                },
+                {
+                    "id": 2,
+                    "nom": "Entrepa de butifarra",
+                    "preu": 4.50,
+                    "imatge": "Images/bocadillo_butifarra.jpg",
+                    "alt": "Bocadillo"
+                },
+                {
+                    "id": 3,
+                    "nom": "Entrepa Mixt",
+                    "preu": 4.00,
+                    "imatge": "Images/bocadillo_mixt.jpg",
+                    "alt": "Bocadillo"
+                }
+            ]
+        },
+        {
+            "nom": "Begudes",
+            "productes": [
+                {
+                    "id": 4,
+                    "nom": "Refresc",
+                    "preu": 2.00,
+                    "imatge": "Images/cocacola.jpg",
+                    "alt": "Beguda"
+                },
+                {
+                    "id": 5,
+                    "nom": "Suc Natural",
+                    "preu": 2.50,
+                    "imatge": "Images/zumo-de-naranja.jpg",
+                    "alt": "Beguda"
+                },
+                {
+                    "id": 6,
+                    "nom": "Aigua Mineral",
+                    "preu": 1.00,
+                    "imatge": "Images/solan2(1).jpg",
+                    "alt": "Beguda"
+                }
+            ]
+        },
+        {
+            "nom": "Postres",
+            "productes": [
+                {
+                    "id": 7,
+                    "nom": "Pastís de Xocolata",
+                    "preu": 3.00,
+                    "imatge": "Images/pastel.jpg",
+                    "alt": "Postre"
+                },
+                {
+                    "id": 8,
+                    "nom": "Iogurt Natural",
+                    "preu": 1.50,
+                    "imatge": "Images/iogurt.jpg",
+                    "alt": "Postre"
+                },
+                {
+                    "id": 9,
+                    "nom": "Fruit del dia",
+                    "preu": 2.00,
+                    "imatge": "Images/fruita.jpg",
+                    "alt": "Postre"
+                }
+            ]
+        },
+        {
+            "nom": "Snaks",
+            "productes": [
+                {
+                    "id": 10,
+                    "nom": "Barreta energetica",
+                    "preu": 1.00,
+                    "imatge": "Images/barreta.jpg",
+                    "alt": "Postre"
+                },
+                {
+                    "id": 11,
+                    "nom": "Kit Kat",
+                    "preu": 1.50,
+                    "imatge": "Images/kitkat.jpeg",
+                    "alt": "Postre"
+                },
+                {
+                    "id": 12,
+                    "nom": "Kinder Bueno",
+                    "preu": 1.50,
+                    "imatge": "Images/kinder.jpeg",
+                    "alt": "Postre"
+                }
+            ]
+        }
+    ]
+}
