@@ -95,3 +95,67 @@ function mostrarpromocio(){
 }
 
 document.addEventListener("DOMContentLoaded", mostrarpromocio);
+
+
+
+
+
+//Carrusel 
+let slideActual = 0;
+const totalSlides = 3;
+const wrapper = document.getElementById('carruselWrapper');
+const indicadors = document.querySelectorAll('.indicador');
+
+let intervalCarrusel; // Variable per guardar la referència del interval
+
+function canviarSlide(index) {
+    slideActual = index;
+    actualitzarCarrusel();
+    reiniciarInterval(); // Reinicia el interval quan canviem manualment
+}
+
+function actualitzarCarrusel() {
+    wrapper.style.transform = `translateX(-${slideActual * 100}%)`;
+    
+    indicadors.forEach((ind, i) => {
+        ind.classList.toggle('actiu', i === slideActual);
+    });
+}
+
+function reiniciarInterval() {
+    clearInterval(intervalCarrusel); // Atura el interval actual
+    intervalCarrusel = setInterval(() => { // Inicia un nou interval
+        slideActual = (slideActual + 1) % totalSlides;
+        actualitzarCarrusel();
+    }, 20000);
+}
+
+// Inicia el interval per primera vegada
+reiniciarInterval();
+
+// Per als botons inferiors
+let posicio_inicial = 0;
+let posicio_final = 0;
+
+wrapper.addEventListener('touchstart', (e) => {
+    posicio_inicial = e.changedTouches[0].screenX; // Registra la posició inicial que es fa abans del click
+});
+
+wrapper.addEventListener('touchend', (e) => {
+    posicio_final = e.changedTouches[0].screenX; // Registra la posició final despres del click
+    handleSwipe(); // Gestiona el canvi
+});
+
+function handleSwipe() {
+    if (posicio_final < posicio_inicial - 50) { // Detecta desplaçament esquerra (mínim 50px)
+        slideActual = (slideActual + 1) % totalSlides; // Avança al següent slide 
+        actualitzarCarrusel();
+        setInterval();
+    }
+    if (posicio_final > posicio_inicial + 50) { // Detecta desplaçament dreta (mínim 50px)
+        slideActual = (slideActual - 1 + totalSlides) % totalSlides; // Retrocedeix al slide anterior 
+        actualitzarCarrusel(); 
+        setInterval();
+        
+    }
+}

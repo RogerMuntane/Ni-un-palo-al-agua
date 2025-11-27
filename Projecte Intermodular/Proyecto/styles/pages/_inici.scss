@@ -196,3 +196,131 @@
         }
     }
 }
+
+
+
+//Carrusel
+.carrusel-section {
+    padding: $espacio-xl 0;
+    background: linear-gradient(135deg, $color-principal 0%, $color-naranja 100%);
+    overflow: hidden;
+}
+
+.carrusel-container {
+    max-width: $vista-max;
+    margin: 0 auto;
+    padding: 0 $espacio-m;
+    position: relative;
+}
+
+.carrusel-wrapper {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.carrusel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $espacio-xl $espacio-m;
+    min-height: 400px;
+}
+
+.carrusel-content {
+    max-width: 800px;
+    text-align: center;
+    background: rgba($color-amarillo, 0.95);
+    padding: $espacio-xl * 2;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+
+    h2 {
+        font-family: $font-titol;
+        font-size: $titol-size-4xl;
+        color: $color-principal;
+        margin-bottom: $espacio-l;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    p {
+        font-family: $font-parraf;
+        font-size: $titol-size-l;
+        color: $color-negre;
+        line-height: 1.8;
+    }
+}
+
+.carrusel-indicadors {
+    display: flex;
+    justify-content: center;
+    gap: $espacio-s;
+    margin-top: $espacio-xl;
+}
+
+.indicador {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba($color-amarillo, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+
+    &:hover {
+        background: rgba($color-amarillo, 0.6);
+        transform: scale(1.1);
+    }
+
+    &.actiu {
+        background: $color-amarillo;
+        border-color: $color-secundario;
+        transform: scale(1.3);
+    }
+}
+
+// Media Queries
+@media (max-width: $vista-tablet) {
+    .carrusel-content {
+        padding: $espacio-xl;
+
+        h2 {
+            font-size: $titol-size-3xl;
+        }
+
+        p {
+            font-size: $titol-size-m;
+        }
+    }
+}
+
+@media (max-width: $vista-mobil) {
+    .carrusel-section {
+        padding: $espacio-l 0;
+    }
+
+    .carrusel-slide {
+        min-height: 350px;
+        padding: $espacio-l $espacio-s;
+    }
+
+    .carrusel-content {
+        padding: $espacio-l;
+
+        h2 {
+            font-size: $titol-size-xl;
+            margin-bottom: $espacio-m;
+        }
+
+        p {
+            font-size: $titol-size-s;
+            line-height: 1.6;
+        }
+    }
+
+    .indicador {
+        width: 12px;
+        height: 12px;
+    }
+}
