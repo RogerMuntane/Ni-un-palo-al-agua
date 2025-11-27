@@ -36,14 +36,14 @@
 }
 
 .futur-tiquet {
-    background-color: rgba($color-principal, 0.05);
+    background-color: rgba($color-secundario, 0.05);
     border-radius: 8px;
     padding: $espacio-m;
     margin-bottom: $espacio-l;
 
     h3 {
         text-align: center;
-        color: $color-secundario;
+        color: $color-rojo;
         font-family: $font-titol;
         font-size: $titol-size-l;
         margin-bottom: $espacio-m;
@@ -114,7 +114,7 @@
 
 
 .tiquet-resum {
-    flex: 0 0 40%; // 35% de l'amplada
+    flex: 0 0 45%; // 45% de l'amplada
     padding: 20px;
     min-width: 300px; // Amplada mínima
 }
@@ -267,6 +267,27 @@
 
 // Media Query Mòbil
 @media (max-width: $vista-mobil) {
+
+    .tiquet-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .tiquet-resum {
+        order: -1;
+        flex: none;
+        width: 100%;
+        min-width: 0;
+        padding: 10px;
+    }
+
+    .tiquet-detalls {
+        order: 0 !important;
+        width: 100%;
+    }
+
     .futur-tiquet {
         padding: $espacio-s;
 

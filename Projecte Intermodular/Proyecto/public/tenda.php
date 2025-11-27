@@ -21,7 +21,7 @@
 
         <!-- Barra Buscadora -->
         <div class="buscador buscador-header">
-            <input type="text" placeholder="Buscar Producte">
+            <input type="text" placeholder="Buscar Producte" id="buscador">
             <button>&#128269;</button>
         </div>
 
@@ -41,7 +41,7 @@
 
             <li><a href="contacte.html">Contacte</a></li>
             <li><a href="carreto.html">&#128722;Carretó</a></li>
-            <li><a href="tenda.html">Tenda Online</a></li>
+            <li><a href="tenda.php">Tenda Online</a></li>
         </ul>
 
         <!-- Menu Hamburguesa -->
@@ -54,7 +54,7 @@
                 <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
             </button>
             <!-- Perfil -->
-            <button class="boto-rodo perfil-sidepanel" onclick="modeFosc()">
+            <button class="boto-rodo perfil-sidepanel" onclick="location.href='login.php'">
                 <img src="Images/perfil.png" alt="Pefil" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->
@@ -62,12 +62,12 @@
             <br>
             <!-- Barra Buscadora Sidepanel -->
             <div class="buscador buscador-sidepanel">
-                <input type="text" placeholder="Buscar">
+                <input type="text" placeholder="Buscar Producte" id="buscador-sidepanel">
                 <button>&#128269;</button>
             </div>
             <!-- Links -->
             <a href="inici.html">Inici</a>
-            <a href="tenda.html">Tenda Online</a>
+            <a href="tenda.php">Tenda Online</a>
             <a href="carreto.html">&#128722;Carretó</a>
             <a href="contacte.html">Contacte</a>
 
@@ -108,87 +108,10 @@
 
     <!-- Categories de Menjar -->
     <section class="tenda_categories">
-        <h1>La nostra oferta</h1>
-        <!-- Categoria 1: Bocadillos -->
-        <div class="categoria">
-            <div class="categoria_header">
-                <h3>Bocadillos</h3>
-            </div>
-            <div class="categoria_productes">
-                <div class="producte">
-                    <img src="/public/Images/bocatajamon.jpg" alt="Bocadillo">
-                    <h4>Entrepa de pernil</h4>
-                    <p class="preu">3.50€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-                <div class="producte">
-                    <img src="../public/Images/bocadillo_butifarra.jpg" alt="Bocadillo">
-                    <h4>Entrepa de butifarra</h4>
-                    <p class="preu">4.50€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-                <div class="producte">
-                    <img src="../public/Images/bocadillo_mixt.jpg" alt="Bocadillo">
-                    <h4>Entrepa Mixt</h4>
-                    <p class="preu">4.00€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-            </div>
-        </div>
+        <?php
+        require_once __DIR__ . '/php/carregar_productes.php';
+        ?>
 
-        <!-- Categoria 2: Begudes -->
-        <div class="categoria">
-            <div class="categoria_header">
-                <h3>Begudes</h3>
-            </div>
-            <div class="categoria_productes">
-                <div class="producte">
-                    <img src="../public/Images/cocacola.jpg" alt="Beguda">
-                    <h4>Refresc</h4>
-                    <p class="preu">2.00€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-                <div class="producte">
-                    <img src="../public/Images/zumo-de-naranja.jpg" alt="Beguda">
-                    <h4>Suc Natural</h4>
-                    <p class="preu">2.50€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-                <div class="producte">
-                    <img src="../public/Images/solan2(1).jpg" alt="Beguda">
-                    <h4>Aigua Mineral</h4>
-                    <p class="preu">1.00€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Categoria 3: Postres -->
-        <div class="categoria">
-            <div class="categoria_header">
-                <h3>Postres</h3>
-            </div>
-            <div class="categoria_productes">
-                <div class="producte">
-                    <img src="../public/Images/pastel.jpg" alt="Postre">
-                    <h4>Pastís de Xocolata</h4>
-                    <p class="preu">3.00€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-                <div class="producte">
-                    <img src="../public/Images/iogurt.jpg" alt="Postre">
-                    <h4>Iogurt Natural</h4>
-                    <p class="preu">1.50€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-                <div class="producte">
-                    <img src="../public/Images/fruita.jpg" alt="Postre">
-                    <h4>Fruit del dia</h4>
-                    <p class="preu">2.00€</p>
-                    <button class="btn_comprar">Afegir al carret</button>
-                </div>
-            </div>
-        </div>
 
     </section>
 

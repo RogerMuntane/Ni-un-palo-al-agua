@@ -1,7 +1,10 @@
 @use "../abstract/variables" as *;
 
 footer {
-    background-color: $color-secundario;
+    // Colores dinámicos
+    background-color: var(--fondo-secundario);
+    // Transiciones para un cambio de tema suave
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     padding: $espacio-s $espacio-m; // Menys padding vertical
 
     display: grid;
@@ -28,7 +31,7 @@ footer {
     p {
         font-family: $font-titol;
         font-size: $titol-size-m;
-        color: $color-amarillo;
+        color: var(--texto-secundario);
         margin: 0;
 
         span {
@@ -47,7 +50,7 @@ footer {
     p {
         font-family: $font-parraf;
         font-size: $titol-size-m;
-        color: $color-amarillo;
+        color: var(--texto-secundario);
         margin: 0;
         line-height: 1.4;
     }
@@ -61,10 +64,16 @@ footer {
     a {
         font-family: $font-parraf;
         font-size: $titol-size-m;
-        color: $color-amarillo;
+        color: var(--texto-secundario);
         margin: 0;
         font-weight: bold;
         text-decoration: none;
+
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-hover;
+        }
     }
 }
 
@@ -73,15 +82,16 @@ footer {
     grid-column: 1 / -1;
     text-align: center;
     margin-top: $espacio-s; // Menys marge
-    border-top: 1px solid $color-principal;
+
+    // Borde dinámico
+    border-top: 1px solid var(--fondo-negre);
     padding-top: $espacio-s;
 
     p {
         font-family: $font-parraf;
         font-size: $titol-size-m;
         font-weight: bold;
-        color: $color-amarillo;
-        margin: 0;
+        color: var(--texto-secundario);
 
     }
 }
