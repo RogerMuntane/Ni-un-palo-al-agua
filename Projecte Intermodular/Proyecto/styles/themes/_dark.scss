@@ -1,0 +1,67 @@
+@use '../abstract/variables' as *;
+
+:root {
+    --fondo-primario: #{$color-amarillo-claro};
+    --fondo-secundario: #{$color-secundario};
+    --fondo-tarjeta: #{$color-principal};
+    --fondo-hero-overlay: rgba(0, 0, 0, 0.5);
+    --fondo-overlay: rgba(0, 0, 0, 0.5);
+    --fondo: #{$color-principal};
+    --fondo-amarillo: #{$color-amarillo};
+    --fondo-negre: #{$color-negre};
+
+    --texto-primario: #{$color-negre};
+    --texto-secundario: #{$color-principal};
+    --texto-color-secundario: #{$color-secundario};
+    --texto-negre: #{$color-negre};
+    --texto-gris-fosc: #{$color-gris-fosc};
+    --texto-hero: #{$color-amarillo};
+    --texto-tarjeta: #{$color-amarillo};
+
+    --acento-primario: #{$color-rojo};
+    --acento-secundario: #{$color-naranja};
+    --acento-hover: #{$color-rojo};
+
+    --borde-principal: #{$color-secundario};
+    --borde-tarjeta: #{$color-secundario};
+    --borde-naranja: #{$color-secundario};
+    --borde-hover: #{$color-rojo};
+    --borde-amarillo: #{$color-amarillo};
+
+    --nav-lletres: #{$color-amarillo};
+    --fondo-sidepanel: rgba(#{$color-amarillo}, 0.85);
+    --fondo-link-sidepanel: rgba(#{$color-gris-fosc}, 0.9);
+}
+
+body.dark-mode {
+    --fondo-primario: #2d1810;
+    --fondo-secundario: #2d1810;
+    --fondo-tarjeta: #1a0f08;
+    --fondo-hero-overlay: rgba(0, 0, 0, 0.8);
+    --fondo-overlay: rgba(0, 0, 0, 0.8);
+    --fondo: #1a0f08;
+    --fondo-amarillo: #1f100a;
+    --fondo-negre: #0d0704;
+
+    --texto-primario: #{$color-amarillo};
+    --texto-secundario: #{$color-amarillo};
+    --texto-color-secundario: #{$color-amarillo-claro};
+    --texto-negre: #{$color-amarillo-claro};
+    --texto-gris-fosc: #{$color-amarillo-claro};
+    --texto-hero: #{$color-amarillo};
+    --texto-tarjeta: #{$color-amarillo};
+
+    --acento-primario: #{$color-naranja};
+    --acento-secundario: #2d1810;;
+    --acento-hover: #{$color-rojo};
+
+    --borde-principal: #{$color-naranja};
+    --borde-tarjeta: #{$color-naranja};
+    --borde-naranja: #2d1810;
+    --borde-hover: #{$color-amarillo};
+    --borde-amarillo: #{$color-amarillo};
+
+    --nav-lletres: #{$color-amarillo};
+    --fondo-sidepanel: rgba(45, 24, 16, 0.95);
+    --fondo-link-sidepanel: rgba(26, 15, 8, 0.9);
+}
