@@ -22,13 +22,14 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50px 50px 0px 0px;
+    transition: background-color 0.3s ease;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     text-align: center;
-    color: $color-amarillo;
+    color: var(--texto-hero);
 }
 
 .hero-content h1 {
@@ -42,8 +43,8 @@
 .hero-btn {
     display: inline-block;
     padding: 15px 40px;
-    background-color: $color-rojo;
-    color: $color-amarillo;
+    background-color: var(--acento-primario);
+    color: var(--texto-hero);
     text-decoration: none;
     font-size: $titol-size-m;
     font-family: $font-parraf;
@@ -51,7 +52,6 @@
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: $color-rojo;
         transform: scale(1.05);
     }
 
@@ -63,14 +63,16 @@
 /* Ofertes del dia */
 .ofertes {
     padding: 60px 20px;
-    background-color: $color-amarillo-claro;
+    background-color: var(--fondo-primario);
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .ofertes h2 {
     font-size: $titol-size-4xl;
     margin-bottom: 40px;
-    color: $color-secundario;
+    color: var(--texto-color-secundario);
+    transition: color 0.3s ease;
 }
 
 /* Secció text i imatge */
@@ -80,18 +82,26 @@
 
 .text-content {
     padding: 60px;
-    background-color: $color-amarillo;
+    background-color: var(--fondo-amarillo);
+    transition: background-color 0.3s ease;
+
 
     h2 {
         font-size: $titol-size-4xl;
         margin-bottom: 20px;
-        color: $color-negre;
+        color: var(--texto-negre);
+        align-items: center;
+        justify-content: center;
+        transition: color 0.3s ease;
     }
 
     p {
         font-size: 18px;
         line-height: 1.6;
-        color: $color-gris-fosc;
+        color: var(--texto-gris-fosc);
+        align-items: center;
+        justify-content: center;
+        transition: color 0.3s ease;
     }
 }
 
@@ -102,18 +112,11 @@
     background-position: center;
 }
 
-/* Llistat Ofertes */
-.llistat_ofertes {
-    max-width: $vista-max;
-    margin: 0 auto;
-    padding-top: $espacio-m;
-    padding-bottom: $espacio-m;
-    border-radius: 6px;
-}
+
 
 .producte_oferta {
-    background-color: $color-principal;
-    border: 2px solid $color-secundario;
+    background-color: var(--fondo);
+    border: 2px solid var(--borde-tarjeta);
     border-radius: 8px;
     padding: $espacio-m;
     text-align: center;
@@ -122,7 +125,7 @@
     &:hover {
         transform: translateY(-8px);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        border-color: $color-amarillo;
+        border-color: var(--borde-hover);
     }
 
     .producte_oferta_imatge {
@@ -135,22 +138,22 @@
 
     .producte_oferta_nom {
         font-family: $font-titol;
-        color: $color-amarillo;
+        color: var(--texto-tarjeta);
         font-size: $titol-size-m;
         margin: 0 0 $espacio-s;
     }
 
     .producte_oferta_preu {
         font-family: $font-titol;
-        color: $color-naranja;
+        color: var(--acento-secundario);
         font-size: $titol-size-l;
         font-weight: bold;
         margin: 0 0 $espacio-m;
     }
 
     .btn_comprar_oferta {
-        background-color: $color-naranja;
-        color: $color-amarillo;
+        background-color: var(--acento-secundario);
+        color: var(--texto-hero);
         border: none;
         padding: $espacio-s $espacio-m;
         font-size: $titol-size-m;
@@ -161,7 +164,7 @@
         font-family: $font-parraf;
 
         &:hover {
-            background-color: $color-rojo;
+            background-color: var(--acento-hover);
             transform: scale(1.03);
         }
 

@@ -17,14 +17,15 @@ html {
 }
 
 body {
-    background-color: $color-principal;
+    background-color: var(--fondo);
     min-width: $vista-min;
     max-width: $vista-max;
     margin: 0 auto;
     font-family: $font-parraf;
     line-height: 1.6;
-    color: $color-amarillo;
+    color: var(--texto-primario);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Reset d'encapçalaments */
