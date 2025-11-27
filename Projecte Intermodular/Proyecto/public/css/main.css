@@ -2234,14 +2234,11 @@ header .overlay-sidepanel.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 20px;
-}
-
-.tiquet-resum {
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -2266,7 +2263,12 @@ header .overlay-sidepanel.active {
   font-size: 20px;
   margin-bottom: 20px;
 }
-.futur-tiquet .tiquet-item {
+.futur-tiquet h4 {
+  text-align: center;
+  color: #6F1D1B;
+}
+
+.tiquet-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2281,10 +2283,10 @@ header .overlay-sidepanel.active {
   background-color: #FFE6A7;
   border-left: 3px solid #99582A;
 }
-.futur-tiquet .tiquet-item:last-child {
+.tiquet-item:last-child {
   margin-bottom: 0;
 }
-.futur-tiquet .tiquet-item .tiquet-nom {
+.tiquet-item .tiquet-nom {
   font-family: "PlayfairDisplay";
   font-size: 13px;
   color: #432818;
@@ -2293,7 +2295,7 @@ header .overlay-sidepanel.active {
       -ms-flex: 2;
           flex: 2;
 }
-.futur-tiquet .tiquet-item .tiquet-detalls {
+.tiquet-item .tiquet-esp {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -2311,9 +2313,9 @@ header .overlay-sidepanel.active {
   font-family: "NunitoSans";
   font-size: 12px;
   color: #6F1D1B;
-  padding-top: 18px;
+  padding-top: 0px;
 }
-.futur-tiquet .tiquet-item .tiquet-subtotal {
+.tiquet-item .tiquet-subtotal {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -2323,7 +2325,8 @@ header .overlay-sidepanel.active {
   color: #99582A;
   font-weight: bold;
 }
-.futur-tiquet .tiquet-total {
+
+.tiquet-total {
   background: #99582A;
   color: #FFE6A7;
   border-radius: 6px;
@@ -2335,8 +2338,26 @@ header .overlay-sidepanel.active {
   font-weight: bold;
 }
 
-.tiquet-detalls {
+.tiquet-resum {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
   padding: 20px;
+  min-width: 300px;
+}
+
+.tiquet-detalls {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.formulari-tiquet {
+  display: block;
+  width: 100%;
 }
 
 .titol-detalls {
@@ -2350,6 +2371,9 @@ header .overlay-sidepanel.active {
 .finalitzacio-camps {
   position: relative;
   margin-bottom: 30px;
+  margin-bottom: 30px;
+  display: block;
+  width: 100%;
 }
 
 .finalitzacio-camps input {
