@@ -1,3 +1,41 @@
+<?php
+session_start();
+
+//Verifica si l'usuari esta identificat
+if (!isset($_SESSION['usuari'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$usuari = $_SESSION['usuari'];
+
+//Carrega les dates del JSON
+$path = __DIR__ . "/json/productes.json";
+$dadesUsuari = [];
+$historial = [];
+$totalGeneral = 0;
+
+if (file_exists($path)) {
+    $productes = json_decode(file_get_contents($path), true);
+
+    //Verifica si el usuari ja hi es al JSON
+    if (isset($productes[$usuari])) {
+        $dadesUsuari = $productes[$usuari];
+
+        //Obte l'historial dels tiquets
+        if (isset($dadesUsuari['historial']) && is_array($dadesUsuari['historial'])) {
+            $historial = $dadesUsuari['historial'];
+
+            //Calcula el total de tots els tiquets
+            foreach ($historial as $tiquet) {
+                foreach ($tiquet as $producte) {
+                    $totalGeneral += $producte['price'] * $producte['quantity'];
+                }
+            }
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="ca">
 
@@ -12,10 +50,9 @@
 
 <body>
 
-    <?php
-    $valor = $_POST['usuari'];
-    echo "<script>const usuariPHP = " . json_encode($valor) . ";</script>";
-    ?>
+    <script>
+        const usuariPHP = <?php echo json_encode($usuari); ?>;
+    </script>
 
     <!-- HEADER -->
     <header>
@@ -32,14 +69,9 @@
                     <img src="Images/luna.png" alt="Mode Fosc" class="icone-mode-fosc icones-nav" draggable="false">
                 </button>
             </li>
-            <li>
-                <button class="boto-rodo" onclick="location.href='login.php';">
-                    <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
-                </button>
-            </li>
             <li><a href="contacte.html">Contacte</a></li>
-            <li><a href="carreto.html">&#128722;Carretó</a></li>
-            <li><a href="tenda.html">Tenda Online</a></li>
+            <li><a href="tcarreto.html">&#128722;Carretó</a></li>
+            <li><a href="tenda.php">Tenda Online</a></li>
         </ul>
 
         <span class="burger-header" onclick="desplegarBurger()">&#9776;</span>
@@ -48,13 +80,10 @@
             <button class="boto-rodo lluna-sidepanel" onclick="modeFosc()">
                 <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
             </button>
-            <button class="boto-rodo perfil-sidepanel" onclick="modeFosc()">
-                <img src="Images/perfil.png" alt="Mode Fosc" class="icones-nav" draggable="false">
-            </button>
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
             <br>
             <a href="inici.html">Inici</a>
-            <a href="tenda.html">Tenda Online</a>
+            <a href="tenda.php">Tenda Online</a>
             <a href="carreto.html">&#128722;Carretó</a>
             <a href="contacte.html">Contacte</a>
         </div>
@@ -65,7 +94,7 @@
 
     <!-- CONTINGUT PRINCIPAL -->
     <div class="historial-container">
-        <h1 class="historial-titol">Historial de Tiquets</h1>
+        <h1 class="historial-titol">Historial de Tiquets - <?php echo htmlspecialchars($usuari); ?></h1>
 
         <div class="filtres-container">
             <button class="btn-afegir" onclick="afegirTiquet()">+ Afegir Tiquet</button>
@@ -73,18 +102,73 @@
         </div>
 
         <div id="tiquets-llista" class="tiquets-llista">
-            <!-- Els tiquets es carregaran aquí dinàmicament -->
+            <?php if (empty($historial)): ?>
+                <p class="missatge-buit">No hi ha tiquets disponibles.</p>
+            <?php else: ?>
+                <?php foreach ($historial as $index => $tiquet): ?>
+                    <?php
+                    $totalTiquet = 0;
+                    foreach ($tiquet as $producte) {
+                        $totalTiquet += $producte['price'] * $producte['quantity'];
+                    }
+                    ?>
+                    <div class="tiquet-card">
+                        <div class="tiquet-header">
+                            <h3>Tiquet #<?php echo $index + 1; ?></h3>
+                            <span class="tiquet-data"><?php echo isset($dadesUsuari['ultima_actualizacion']) ? htmlspecialchars($dadesUsuari['ultima_actualizacion']) : 'Data desconeguda'; ?></span>
+                        </div>
+                        <div class="tiquet-productes">
+                            <table class="taula-productes">
+                                <thead>
+                                    <tr>
+                                        <th>Producte</th>
+                                        <th class="alineat-centre">Quantitat</th>
+                                        <th class="alineat-dreta">Preu</th>
+                                        <th class="alineat-dreta">Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($tiquet as $producte): ?>
+                                        <tr>
+                                            <td>
+                                                <div class="producte-info">
+                                                    <?php if (isset($producte['image'])): ?>
+                                                        <img src="<?php echo htmlspecialchars($producte['image']); ?>"
+                                                            alt="<?php echo htmlspecialchars($producte['name']); ?>"
+                                                            onerror="this.src='Images/default.png'">
+                                                    <?php endif; ?>
+                                                    <span><?php echo htmlspecialchars($producte['name']); ?></span>
+                                                </div>
+                                            </td>
+                                            <td class="alineat-centre"><?php echo $producte['quantity']; ?></td>
+                                            <td class="alineat-dreta"><?php echo number_format($producte['price'], 2); ?> €</td>
+                                            <td class="alineat-dreta"><?php echo number_format($producte['price'] * $producte['quantity'], 2); ?> €</td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tiquet-total">
+                            Total: <?php echo number_format($totalTiquet, 2); ?> €
+                        </div>
+                        <div class="tiquet-accions">
+                            <button class="btn-editar" onclick="editarTiquet(<?php echo $index; ?>)">Editar</button>
+                            <button class="btn-eliminar" onclick="eliminarTiquet(<?php echo $index; ?>)">Eliminar</button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
 
         <div class="totals-container">
-            <h3>Total General: <span id="total-general">0.00</span> €</h3>
+            <h3>Total General: <span id="total-general"><?php echo number_format($totalGeneral, 2); ?></span> €</h3>
         </div>
     </div>
 
     <!-- Modal per editar/afegir tiquet -->
-    <div id="modal-tiquet" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-titol">
+    <div id="modal-tiquet" class="modal" role="dialog">
         <div class="modal-content" role="document">
-            <button class="tancar-modal" aria-label="Tancar" onclick="tancarModal()">&times;</button>
+            <button class="tancar-modal" onclick="tancarModal()">&times;</button>
             <h2 id="modal-titol">Editar Tiquet</h2>
 
             <form id="form-tiquet">
@@ -96,7 +180,7 @@
                 <h3>Productes</h3>
                 <div class="product-list-scroll">
                     <ul id="llista-productes">
-                        <!-- Los productos se añadirán aquí -->
+                        <!-- Els productes s'afegeixen aquí -->
                     </ul>
                 </div>
 

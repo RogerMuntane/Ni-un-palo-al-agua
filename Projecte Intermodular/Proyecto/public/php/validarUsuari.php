@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $path = __DIR__ . "/../json/login.json";
 
@@ -19,38 +20,30 @@ foreach ($infoJson as $dades => $sessio) {
     if ($usuari == $sessio["usuari"]) {
         $usuari_trobat = true;
         if ($contrasenya == $sessio["contrasenya"]) {
+            $_SESSION['usuari'] = $usuari;
             echo "Sessió iniciada correctament";
-            header("Location: /../public/administracio.php");
-            $es_correcte = true;
+            header("Location: ../administracio.php");
+            exit();
         } else {
-            session_start();
             $_SESSION['error'] = "Contrasenya incorrecta";
-            header("Location: /../public/login.php");
+            header("Location: ../login.php");
             exit();
         }
         break;
     }
 }
 
-// Si no hem trobat l'usuari, l'afegim
+//Si no troba l'usuari l'afegeix
 if (!$usuari_trobat) {
     $usuari_afegit = [
         "usuari" => $usuari,
         "contrasenya" => $contrasenya,
     ];
     $infoJson[] = $usuari_afegit;
+    file_put_contents($path, json_encode($infoJson, JSON_PRETTY_PRINT));
+
+    $_SESSION['usuari'] = $usuari;
     echo "Usuari registrat correctament";
-    header("Location: /../public/administracio.php");
+    header("Location: ../administracio.php");
+    exit();
 }
-
-file_put_contents($path, json_encode($infoJson, JSON_PRETTY_PRINT));
-
-$ch = curl_init("pagina2.php");
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, ['dato' => $valor]);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-$resposta = curl_exec($ch);
-unset($ch);
-
-echo $resposta;
