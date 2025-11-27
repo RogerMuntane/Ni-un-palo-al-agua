@@ -22,12 +22,12 @@ header {
 
     //Colors
 
-    background-color: $color-secundario;
+    background-color: var(--fondo-secundario);
 
     //Vora
 
     border-radius: 100px;
-    border: 2px solid $color-amarillo;
+    border: 2px solid var(--borde-amarillo);
 
     //Espaciat
 
@@ -78,14 +78,14 @@ header {
                 text-decoration: none;
                 font-size: $titol-size-l;
 
-                color: $color-amarillo;
-                background-color: $color-principal;
+                color: var(--nav-lletres);
+                background-color: var(--fondo);
 
                 display: block;
                 padding: $espacio-xs $espacio-xl;
 
                 border-radius: 100px;
-                border: 2px solid $color-amarillo;
+                border: 2px solid var(--borde-amarillo);
 
                 transition: transform 0.3s ease;
 
@@ -129,8 +129,8 @@ header {
 
         border-radius: 50%; //cercle
 
-        background-color: $color-principal;
-        border: $color-amarillo 1px solid;
+        background-color: var(--fondo);
+        border: var(--borde-amarillo) 1px solid;
 
         display: inline-flex;
         align-items: center;
@@ -164,6 +164,7 @@ header {
 
         .icones-nav {
             width: 30px;
+            padding-bottom: 3px;
         }
 
         //Aspecte en Hover
@@ -199,7 +200,7 @@ header {
 
         display: none;
 
-        color: $color-principal;
+        color: var(--fondo);
 
         //Responsive per Tablets i Mobils
 
@@ -222,13 +223,13 @@ header {
 
         overflow-x: hidden;
 
-        background-color: rgba($color-secundario, 0.75); //li donem transperencia
+        background-color: var(--fondo-sidepanel);
         backdrop-filter: blur(6px); //efecte borros al fons
 
         padding-top: 80px;
         padding-inline: $espacio-m; //padding als costats
 
-        border-left: 2px solid $color-amarillo;
+        border-left: 2px solid var(--borde-hover);
         box-shadow: -4px 0 15px rgba(0, 0, 0, 0.4);
 
         opacity: 0; //per a que no es mostri
@@ -258,7 +259,7 @@ header {
             //Aspecte en Hover
 
             &:hover {
-                background-color: $color-amarillo;
+                background-color: var(--fondo-amarillo);
 
                 rotate: 360deg;
                 scale: 1.08;
@@ -285,7 +286,7 @@ header {
             transition: scale 0.3s ease;
 
             &:hover {
-                background-color: $color-amarillo;
+                background-color: var(--fondo-amarillo);
 
                 scale: 1.08;
                 transition:
@@ -304,7 +305,7 @@ header {
 
             font-size: 45px;
             font-weight: bold;
-            color: $color-amarillo;
+            color: var(--texto-secundario);
 
             cursor: pointer;
 
@@ -329,16 +330,16 @@ header {
             font-size: $titol-size-m;
             text-decoration: none;
 
-            color: $color-amarillo;
-            background-color: rgba($color-principal, 0.75);
+            color: var(--texto-secundario);
+            background-color: var(--fondo-link-sidepanel);
 
             transition: background-color 0.3s ease, transform 0.3s ease;
 
             //Aspecte en Hover
 
             &:hover {
-                background-color: $color-amarillo;
-                color: $color-principal;
+                background-color: var(--fondo-amarillo);
+                color: var(--fondo);
                 box-shadow: 0 0 10px rgba($color-amarillo, 0.4);
 
                 transform: translateX(5px);
@@ -406,7 +407,7 @@ header {
         //Quadre de Text
 
         input {
-            color: $color-amarillo;
+            color: var(--texto-secundario);
             font-size: $titol-size-m;
 
             width: 100%;
@@ -423,7 +424,7 @@ header {
             //Aspecte Placeholder
 
             &::placeholder {
-                color: $color-amarillo;
+                color: var(--texto-secundario);
                 opacity: 0.5;
             }
         }
@@ -431,8 +432,8 @@ header {
         //Botó de Cerca
 
         button {
-            background-color: $color-amarillo;
-            color: $color-principal;
+            background-color: var(--fondo-amarillo);
+            color: var(--fondo);
 
             border: none;
             border-radius: 0px 100px 100px 0px;
@@ -460,7 +461,7 @@ header {
         //Vora en fer Focus en el Quadre de Text
 
         &:has(input:focus) {
-            border-color: $color-amarillo;
+            border-color: var(--borde-hover);
 
         }
 
@@ -475,7 +476,7 @@ header {
             //Quadre de Text en el Buscador del Header
 
             input {
-                background-color: $color-principal;
+                background-color: var(--fondo);
             }
 
             //Responsive per Mobils
@@ -497,7 +498,7 @@ header {
             //Quadre de Text en el Buscador del Sidepanel
 
             input {
-                background-color: rgba($color-principal, 0.8);
+                background-color: var(--fondo-link-sidepanel);
             }
 
             //Responsive per Mobils Buscador Sidepanel

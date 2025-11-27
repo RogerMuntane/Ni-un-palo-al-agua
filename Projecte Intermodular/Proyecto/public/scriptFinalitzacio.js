@@ -297,7 +297,7 @@ function carregar_productes() {
 
             // Detalls compactes
             const detallsDiv = document.createElement("div");
-            detallsDiv.className = "tiquet-detalls";
+            detallsDiv.className = "tiquet-esp";
             detallsDiv.innerHTML = `
                 <span>${element.price.toFixed(2)}€</span>
                 <span>x${element.quantity}</span>
