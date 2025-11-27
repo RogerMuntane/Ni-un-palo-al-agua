@@ -1,37 +1,37 @@
 function promocioDelDia(){
     const productes = [
         {
-            id: 1,
+            id: "entrepa-de-pernil",
             nom: "Entrepa de pernil salat",
             preu: 3.50,
             imatge: "Images/bocatajamon.jpg"
         },
         {
-            id: 2,
+            id: "entrepa-de-butifarra",
             nom: "Entrepa de butifarra",
             preu: 4.50,
             imatge: "Images/bocadillo_butifarra.jpg"
         },
         {
-            id: 3,
+            id: "refresc",
             nom: "Refresc",
             preu: 2.00,
             imatge: "Images/cocacola.jpg"
         },
         {
-            id: 4,
+            id: "suc-natural",
             nom: "Suc Natural",
             preu: 2.50,
             imatge: "Images/zumo-de-naranja.jpg"
         },
         {
-            id: 5,
+            id: "iogurt-natural",
             nom: "Pastís de Xocolata",
             preu: 3.00,
             imatge: "Images/pastel.jpg"
         },
         {
-            id: 6,
+            id: "pasts-de-xocolata",
             nom: "Iogurt Natural",
             preu: 1.50,
             imatge: "Images/iogurt.jpg"
@@ -66,7 +66,7 @@ function mostrarRecomanacio(){
 
     productes.forEach(producte => {
         const article = document.createElement("article");
-        article.className = "producte_oferta";
+        article.className = "producte";
         article.dataset.id = producte.id;
 
         const imatge = document.createElement("img");
@@ -85,11 +85,7 @@ function mostrarRecomanacio(){
         const btn = document.createElement("button");
         btn.textContent = "Afegir al carret";
         btn.className = "btn_comprar";
-        btn.onclick = (e) => {
-            e.preventDefault();
-            afegirProductoAlCarret(article);
-            mostrarFeedbackBoton(btn);
-        };
+       
 
         article.appendChild(imatge);
         article.appendChild(nom);
@@ -97,6 +93,7 @@ function mostrarRecomanacio(){
         article.appendChild(btn);
 
         contenedor.appendChild(article);
+
     });
 }
 
@@ -122,14 +119,14 @@ function guardarCarret(cart) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
 }
 
-// Parsejar el preu del text
+// Parsejar el preu del text per pasar en el format correcte
 function parsarPreu(text) {
     if (!text) return 0;
     const cleaned = text.replace(/\s/g, '').replace(',', '.').replace(/[^\d.-]/g, '');
     return parseFloat(cleaned) || 0;
 }
 
-// Crear un ID únic per a cada producte
+// Crear un ID que es el nom sense espais per a cada producte
 function crearId(productEl) {
     const dataId = productEl.dataset.id;
     if (dataId) return dataId;
@@ -191,6 +188,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     inicializarCarretListeners()
     mostrarRecomanacio()
 });
+
+
+
+
+
+
 
 // Buscador de productes
 

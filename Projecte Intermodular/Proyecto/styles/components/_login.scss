@@ -252,7 +252,7 @@ h2 {
 }
 
 .error-msg {
-    color: color.adjust($color-rojo, $lightness:15%);
+    color: color.adjust($color-rojo, $lightness: 15%);
     font-size: 12px;
     position: absolute;
     bottom: -20px;
