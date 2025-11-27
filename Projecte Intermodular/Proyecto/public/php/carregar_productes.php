@@ -6,6 +6,7 @@ function carregarProductes()
 
     if (!file_exists($jsonPath)) {
         error_log("Fitxer no trobat: " . $jsonPath);
+        echo json_encode(["succes" => false, "error" => "Error en carregar"]);
         return null;
     }
 
