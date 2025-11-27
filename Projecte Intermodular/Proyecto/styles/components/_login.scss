@@ -1,12 +1,7 @@
-// Creacio d'un nou fitxer login.scss perquè sigui més visible i no hes barregi amb els altres formularis.
+@use "sass:color";
 @use "../abstract/variables" as *;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $font-parraf;
-}
+
 
 .pagina-login {
     display: flex;
@@ -65,8 +60,8 @@ h2 {
     transition: all 0.3s ease;
 }
 
-.camps-texts input:focus ~ label,
-.camps-texts input:not(:placeholder-shown) ~ label {
+.camps-texts input:focus~label,
+.camps-texts input:not(:placeholder-shown)~label {
     top: -20px;
     font-size: 12px;
     color: $color-naranja;
@@ -127,9 +122,11 @@ h2 {
 }
 
 
-.oblidat, .registrar a {
+.oblidat,
+.registrar a {
     color: $color-amarillo;
     text-decoration: none;
+
     &:hover {
         color: $color-naranja;
         text-decoration: underline;
@@ -163,4 +160,111 @@ h2 {
         transform: translateY(-3px);
         box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
     }
+}
+
+/* Error message */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: $espacio-s;
+    padding: $espacio-m $espacio-l;
+    margin-bottom: $espacio-l;
+    background: $color-rojo;
+    border-left: 4px solid $color-amarillo;
+    border-radius: 8px;
+    color: $color-amarillo;
+    font-size: $titol-size-m;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba($color-rojo, 0.4);
+    animation: slideIn 0.4s ease;
+
+    strong {
+        font-size: $titol-size-l;
+        color: $color-amarillo;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: $vista-mobil) {
+    .login-camps {
+        width: 95%;
+        padding: 30px 20px;
+        max-width: 350px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .camps-texts input {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .camps-texts label {
+        font-size: 14px;
+    }
+
+    .button-login {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .error-message {
+        padding: $espacio-s $espacio-m;
+        font-size: $titol-size-s;
+        gap: 8px;
+
+        strong {
+            font-size: $titol-size-m;
+        }
+    }
+}
+
+.camps-texts input:-webkit-autofill,
+.camps-texts input:-webkit-autofill:hover,
+.camps-texts input:-webkit-autofill:focus,
+.camps-texts input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+    box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+    -webkit-text-fill-color: $color-amarillo !important;
+    caret-color: $color-amarillo !important;
+    border-bottom-color: $color-naranja !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.camps-texts {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.error-msg {
+    color: color.adjust($color-rojo, $lightness: 15%);
+    font-size: 12px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    display: none;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.error-msg.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }

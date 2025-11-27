@@ -2,9 +2,9 @@ function promocioDelDia(){
     const productes = [
         {
             id: 1,
-            nom: "Entrepa de pernil salat",
+            nom: "Barreta energetica",
             preu: 3.50,
-            imatge: "Images/bocatajamon.jpg"
+            imatge: "Images/barreta.jpg"
         },
         {
             id: 2,
@@ -83,7 +83,7 @@ function mostrarpromocio(){
         const btn = document.createElement("button");
         btn.textContent = "Anar a tenda online";
         btn.className = "btn_comprar_oferta";
-        btn.onclick = () => location.href="tenda.html";
+        btn.onclick = () => location.href="tenda.php";
 
         article.appendChild(imatge);
         article.appendChild(nom);

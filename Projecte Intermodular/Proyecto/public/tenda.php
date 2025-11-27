@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ni Un Palo Al Agua</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="tenda.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 
 <body>
-
-
     <!-- HEADER -->
     <header class="header-tenda">
 
@@ -22,7 +21,7 @@
 
         <!-- Barra Buscadora -->
         <div class="buscador buscador-header">
-            <input type="text" placeholder="Buscar Producte">
+            <input type="text" placeholder="Buscar Producte" id="buscador">
             <button>&#128269;</button>
         </div>
 
@@ -35,7 +34,6 @@
             </li>
 
             <li>
-
                 <button class="boto-rodo boto-rodo-nav" onclick="location.href='login.php';">
                     <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
                 </button>
@@ -64,7 +62,7 @@
             <br>
             <!-- Barra Buscadora Sidepanel -->
             <div class="buscador buscador-sidepanel">
-                <input type="text" placeholder="Buscar">
+                <input type="text" placeholder="Buscar Producte" id="buscador-sidepanel">
                 <button>&#128269;</button>
             </div>
             <!-- Links -->
@@ -80,6 +78,70 @@
         <div id="overlaySidepanel" class="overlay-sidepanel" onclick="tancarSidepanel()"></div>
 
     </header>
+
+
+
+
+
+
+
+
+    <!-- Banner -->
+    <section class="tenda_banner">
+        <div class="tenda_banner_content">
+            <h1>Benvingut a la nostra Tenda</h1>
+            <p>Descobreix els millors productes de la nostra cantina</p>
+        </div>
+    </section>
+
+    <!-- Text Introductori -->
+    <section class="tenda_intro">
+        <div class="tenda_intro_content">
+            <h2>Productes recomanats</h2>
+            <p>A la nostra cantina trobaràs una gran varietat de productes elaborats amb ingredients de qualitat.
+                Des de bocadillos fins a begudes refrescants, tot pensat perquè gaudeixis d'una experiència gastronòmica
+                completa.</p>
+        </div>
+
+        <div class="llistat_ofertes"></div>
+    </section>
+
+    <!-- Categories de Menjar -->
+    <section class="tenda_categories">
+        <?php
+        require_once __DIR__ . '/php/carregar_productes.php';
+        ?>
+
+
+    </section>
+
+
+    <footer>
+        <div class="footer_imatge">
+            <img src="../public/Images/mini-logo.png" alt="Logo">
+        </div>
+
+        <div class="footer_informacio">
+            <p> <span>Autors:</span> <br>
+                Xarvier Ruiz <br>
+                Adria Salas <br>
+                Roger Muntané <br>
+            </p>
+        </div>
+
+        <div class="footer_direccio">
+            <p>Riera de Cirera, 57, 08304 Mataró, Barcelona</p>
+        </div>
+
+        <div class="footer_condicions">
+            <a href="condicionslegals.html">Condicions legals</a>
+        </div>
+
+        <div class="footer_copyright">
+            <p>© 2025 Ni un palo al agua. All Rights Reserved</p>
+        </div>
+    </footer>
+
 
 </body>
 

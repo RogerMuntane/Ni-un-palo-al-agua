@@ -1,0 +1,224 @@
+@use "../abstract/variables" as *;
+
+.purchase-success {
+    //efecte de degradat diagonal en un angle de 135 graus
+    background: linear-gradient(135deg, $color-principal 0%, $color-naranja 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: $espacio-m;
+
+
+    .container {
+        background: $color-amarillo;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(67, 40, 24, 0.4);
+        max-width: 500px;
+        width: 100%;
+        overflow: hidden;
+        animation: slideIn 0.5s ease-out; //utilitza una animació personalitzada
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    //animació que dona un efecte de entrada al tiquet
+    //el tiquet es moura cap abaix i pasara de no ser visible a ser comnpletament opac
+
+    .success-header {
+        //efecte de degradat diagonal en un angle de 135 graus
+        background: linear-gradient(135deg, $color-principal 0%, $color-rojo 100%);
+        padding: 40px $espacio-m;
+        text-align: center;
+        color: $color-amarillo;
+
+        h1 {
+            font-size: $titol-size-3xl;
+            margin: 0 0 $espacio-xs 0;
+        }
+
+        p {
+            font-size: $titol-size-m;
+            opacity: 0.9;
+            margin: 0;
+        }
+    }
+
+    .checkmark {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $color-amarillo;
+        margin: 0 auto $espacio-m;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: scaleIn 0.5s ease-out 0.2s both; //utilitza una animació personalitzada
+
+        svg {
+            width: 50px;
+            height: 50px;
+            stroke: $color-principal;
+            //tamany del pincell
+            stroke-width: 3;
+            //per a que no ompli
+            fill: none;
+            //acabaments de lineas rodons
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    }
+
+    //animació que dona un efecte de entrada al svg
+    //el svg no sera visible en obrir la pagina
+    //es fara gran fins arribar al tamany indicat
+
+    @keyframes scaleIn {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+
+    .ticket {
+        padding: $espacio-xl;
+        background: $color-amarillo;
+    }
+
+    .ticket-header {
+        text-align: center;
+        padding-bottom: $espacio-m;
+        //efecte dashed a la vora que fa lineas entretallades
+        border-bottom: 2px dashed $color-secundario;
+        margin-bottom: $espacio-m;
+
+        h2 {
+            color: $color-principal;
+            margin: 0 0 5px 0;
+        }
+
+        .order-number {
+            color: $color-rojo;
+            font-weight: bold;
+            font-size: $titol-size-l;
+        }
+    }
+
+    .ticket-info {
+        margin-bottom: $espacio-m;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        color: $color-naranja;
+    }
+
+    .info-label {
+        font-weight: 600;
+        color: $color-principal;
+    }
+
+    .items {
+        border-top: 2px dashed $color-secundario;
+        border-bottom: 2px dashed $color-secundario;
+        padding: $espacio-m 0;
+        margin: $espacio-m 0;
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        padding: $espacio-xs 0;
+        color: $color-naranja;
+    }
+
+    .item-name {
+        flex: 1;
+    }
+
+    .item-qty {
+        margin: 0 $espacio-m;
+        color: $color-secundario;
+    }
+
+    .item-price {
+        font-weight: 600;
+        color: $color-principal;
+    }
+
+    .totals {
+        margin-top: $espacio-m;
+    }
+
+    .total-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        color: $color-naranja;
+
+        .final {
+            border-top: 2px solid $color-rojo;
+            margin-top: $espacio-xs;
+            padding-top: $espacio-s;
+            font-size: $titol-size-xl;
+            font-weight: bold;
+            color: $color-principal;
+        }
+    }
+
+    .ticket-footer {
+        text-align: center;
+        padding-top: $espacio-m;
+        border-top: 2px dashed $color-secundario;
+        margin-top: $espacio-m;
+
+        p {
+            color: $color-naranja;
+            font-size: $titol-size-s;
+            margin: 5px 0;
+        }
+
+    }
+
+    .info-buit {
+        justify-content: center;
+        color: $color-secundario;
+        font-style: italic;
+    }
+
+    .btn-print {
+        //efecte de degradat diagonal en un angle de 135 graus
+        background: linear-gradient(135deg, $color-principal 0%, $color-rojo 100%);
+        color: $color-amarillo;
+        border: none;
+        padding: $espacio-s 40px;
+        border-radius: 30px;
+        font-size: $titol-size-m;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: $espacio-m;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(111, 29, 27, 0.4);
+        }
+    }
+}

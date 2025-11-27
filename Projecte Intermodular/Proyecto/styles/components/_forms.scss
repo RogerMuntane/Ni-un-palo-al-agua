@@ -1,14 +1,8 @@
 @use "../abstract/variables" as *;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 // Estils per la pàgina de finalitazio
-
-.pagina-tiquet{
+.pagina-tiquet {
     font-family: $font-parraf;
     background: linear-gradient(135deg, $color-principal 0%, $color-rojo 100%);
     display: flex;
@@ -20,23 +14,18 @@
 
 // Estils per el tiquet
 
-.tiquet-container{
+.tiquet-container {
     width: 100%;
     max-width: 1100px;
     background-color: $color-secundario;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
     padding: 20px;
 }
 
-// Dades
-
-.tiquet-resum {
-    padding: 20px;
-
-}
 
 .titol-resum {
     color: $color-principal;
@@ -47,15 +36,99 @@
 }
 
 .futur-tiquet {
-    width: 100%;
-    min-height: 200px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px $color-principal;
-    border-radius: 10px;
+    background-color: rgba($color-secundario, 0.05);
+    border-radius: 8px;
+    padding: $espacio-m;
+    margin-bottom: $espacio-l;
+
+    h3 {
+        text-align: center;
+        color: $color-rojo;
+        font-family: $font-titol;
+        font-size: $titol-size-l;
+        margin-bottom: $espacio-m;
+    }
+
+    h4 {
+        text-align: center;
+        color: $color-rojo;
+    }
+}
+
+.tiquet-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $espacio-xs;
+    margin-bottom: 0px;
+    background-color: $color-amarillo;
+    border-left: 3px solid $color-naranja;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .tiquet-nom {
+        font-family: $font-titol;
+        font-size: $titol-size-s;
+        color: $color-principal;
+        font-weight: bold;
+        flex: 2;
+    }
+
+    .tiquet-esp {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        font-family: $font-parraf;
+        font-size: $titol-size-xs;
+        color: $color-rojo;
+        padding-top: 0px;
+    }
+
+    .tiquet-subtotal {
+        flex: 1;
+        text-align: right;
+        font-family: $font-titol;
+        font-size: $titol-size-s;
+        color: $color-naranja;
+        font-weight: bold;
+    }
+}
+
+.tiquet-total {
+    background: $color-naranja;
+    color: $color-amarillo;
+    border-radius: 6px;
+    padding: $espacio-m;
+    margin-top: $espacio-m;
+    text-align: center;
+    font-family: $font-titol;
+    font-size: $titol-size-l;
+    font-weight: bold;
+}
+
+
+
+
+.tiquet-resum {
+    flex: 0 0 40%; // 35% de l'amplada
+    padding: 20px;
+    min-width: 300px; // Amplada mínima
 }
 
 .tiquet-detalls {
+    flex: 1; // Ocupa la resta de l'espai
     padding: 20px;
+    align-content: center;
+}
+
+// Assegurar que el formulari no faci flex
+.formulari-tiquet {
+    display: block; // Afegir aquesta línia
+    width: 100%;
 }
 
 .titol-detalls {
@@ -71,6 +144,9 @@
 .finalitzacio-camps {
     position: relative;
     margin-bottom: 30px;
+    margin-bottom: 30px;
+    display: block;
+    width: 100%;
 }
 
 .finalitzacio-camps input {
@@ -102,8 +178,8 @@
     padding: 0 5px;
 }
 
-.finalitzacio-camps input:focus ~ .text-camps2,
-.finalitzacio-camps input:not(:placeholder-shown) ~ .text-camps2 {
+.finalitzacio-camps input:focus~.text-camps2,
+.finalitzacio-camps input:not(:placeholder-shown)~.text-camps2 {
     top: -10px;
     left: 10px;
     font-size: 12px;
@@ -137,7 +213,7 @@
     transition: all 0.3s ease;
 }
 
-.finalitzacio-camps input:focus ~ .img-finalitzacio {
+.finalitzacio-camps input:focus~.img-finalitzacio {
     opacity: 1;
     transform: translateY(-50%) scale(1.15);
 }
@@ -189,34 +265,28 @@
 
 // Media Querry
 
-@media (min-width: 900px) {
+// Media Query Mòbil
+@media (max-width: $vista-mobil) {
+    .futur-tiquet {
+        padding: $espacio-s;
 
-    .tiquet-container {
-        flex-direction: row;
-        padding: 40px;
-        align-items: center;
-    }
+        .tiquet-item {
+            padding: $espacio-xs;
 
-    .tiquet-resum {
-        flex: 1;
-        padding-right: 40px;
-        padding-top: 0;
-    }
+            .tiquet-nom {
+                font-size: $titol-size-xs;
+            }
 
-    .tiquet-detalls {
-        flex: 1.5;
-        padding-left: 40px;
-        padding-top: 0;
-        border-left: 2px solid $color-naranja;
-    }
+            .tiquet-detalls,
+            .tiquet-subtotal {
+                font-size: $titol-size-xs;
+            }
+        }
 
-    .titol-resum,
-    .titol-detalls {
-        text-align: left;
-    }
-
-    .buttons {
-        flex-direction: row-reverse;
+        .tiquet-total {
+            font-size: $titol-size-m;
+            padding: $espacio-s;
+        }
     }
 }
 
@@ -241,4 +311,174 @@
 .finalitzacio-camps {
     position: relative;
     margin-bottom: 35px;
+}
+
+// PART CONTACTE
+
+.pagina-contacte {
+    font-family: $font-parraf;
+    background: linear-gradient(135deg, $color-principal 0%, $color-rojo 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+.contacte-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.formulari-contacte {
+    background: $color-secundario;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+.titol-contacte {
+    text-align: center;
+    color: $color-principal;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+
+.contacte-camps {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.contacte-camps input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid $color-naranja;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s ease;
+    color: $color-principal;
+}
+
+.contacte-camps input:focus {
+    border-bottom-color: $color-rojo;
+}
+
+.text-camps {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    color: $color-principal;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: $color-secundario;
+    padding: 0 5px;
+}
+
+.contacte-camps input:focus~.text-camps,
+.contacte-camps input:valid~.text-camps {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: $color-naranja;
+}
+
+.img-contacte {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.contacte-camps input:focus~.img-contacte {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.15);
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.button {
+    flex: 1;
+    padding: 14px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.enviar {
+    background: linear-gradient(135deg, $color-naranja 0%, $color-rojo 100%);
+    color: $color-amarillo;
+    box-shadow: 0 4px 15px rgba(153, 88, 42, 0.4);
+}
+
+.enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(153, 88, 42, 0.6);
+}
+
+.enviar:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(153, 88, 42, 0.5);
+}
+
+.reinicia {
+    background: $color-secundario;
+    color: $color-rojo;
+    border: 2px solid $color-rojo;
+}
+
+.reinicia:hover {
+    background: $color-rojo;
+    color: $color-amarillo;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(153, 88, 42, 0.3);
+}
+
+.reinicia:active {
+    transform: translateY(-1px);
+}
+
+@media (max-width: $vista-mobil) {
+    .formulari-contacte {
+        padding: 30px 20px;
+    }
+
+    .titol-contacte {
+        font-size: 26px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+.contacte-camps input:-webkit-autofill,
+.contacte-camps input:-webkit-autofill:hover,
+.contacte-camps input:-webkit-autofill:focus,
+.contacte-camps input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px $color-secundario inset !important;
+    box-shadow: 0 0 0px 1000px $color-secundario inset !important;
+    -webkit-text-fill-color: $color-principal !important;
+    caret-color: $color-principal !important;
+    border-bottom-color: $color-naranja !important;
+    transition: background-color 9999s ease-in-out 0s;
 }
