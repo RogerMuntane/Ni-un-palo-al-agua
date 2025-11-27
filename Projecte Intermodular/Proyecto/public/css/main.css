@@ -817,7 +817,7 @@ header .overlay-sidepanel.active {
   padding: 30px 20px;
   background-color: #432818;
   border: 2px solid #BB9457;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .producte_oferta {
@@ -944,7 +944,8 @@ header .overlay-sidepanel.active {
 
 .tenda_categories .categoria.filtro,
 .tenda_intro .llistat_ofertes.filtro,
-.tenda_intro.filtro, .categoria_header {
+.tenda_intro.filtro,
+.categoria_header {
   display: none !important;
 }
 
@@ -1171,7 +1172,6 @@ header .overlay-sidepanel.active {
   transition: all 0.3s ease;
 }
 .hero-btn:hover {
-  background-color: #6F1D1B;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -1230,15 +1230,6 @@ header .overlay-sidepanel.active {
   background-image: url(../../public/Images/obertf.jpeg);
   background-size: cover;
   background-position: center;
-}
-
-/* Llistat Ofertes */
-.llistat_ofertes {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-radius: 6px;
 }
 
 .producte_oferta {
@@ -1811,14 +1802,14 @@ header .overlay-sidepanel.active {
 }
 
 .futur-tiquet {
-  background-color: rgba(67, 40, 24, 0.05);
+  background-color: rgba(187, 148, 87, 0.05);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 25px;
 }
 .futur-tiquet h3 {
   text-align: center;
-  color: #BB9457;
+  color: #6F1D1B;
   font-family: "PlayfairDisplay";
   font-size: 20px;
   margin-bottom: 20px;

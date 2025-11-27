@@ -51,7 +51,6 @@
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: $color-rojo;
         transform: scale(1.05);
     }
 
@@ -107,14 +106,7 @@
     background-position: center;
 }
 
-/* Llistat Ofertes */
-.llistat_ofertes {
-    max-width: $vista-max;
-    margin: 0 auto;
-    padding-top: $espacio-m;
-    padding-bottom: $espacio-m;
-    border-radius: 6px;
-}
+
 
 .producte_oferta {
     background-color: $color-principal;

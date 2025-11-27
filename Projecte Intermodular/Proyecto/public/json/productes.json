@@ -908,24 +908,10 @@
     "roger@gmail.com": {
         "carret": [
             {
-                "id": "entrepa-de-butifarra",
+                "id": "undefined",
                 "name": "Entrepa de butifarra",
                 "price": 4.5,
                 "image": "Images\/bocadillo_butifarra.jpg",
-                "quantity": 1
-            },
-            {
-                "id": "entrepa-mixt",
-                "name": "Entrepa Mixt",
-                "price": 4,
-                "image": "Images\/bocadillo_mixt.jpg",
-                "quantity": 1
-            },
-            {
-                "id": "aigua-mineral",
-                "name": "Aigua Mineral",
-                "price": 1,
-                "image": "Images\/solan2(1).jpg",
                 "quantity": 1
             },
             {
@@ -933,11 +919,11 @@
                 "name": "Suc Natural",
                 "price": 2.5,
                 "image": "Images\/zumo-de-naranja.jpg",
-                "quantity": 1
+                "quantity": 2
             }
         ],
-        "total": 17,
-        "ultima_actualizacion": "2025-11-26 16:02:29",
+        "total": 14.5,
+        "ultima_actualizacion": "2025-11-27 14:49:46",
         "historial": [
             [
                 {
@@ -967,6 +953,22 @@
                     "price": 2.5,
                     "image": "Images\/zumo-de-naranja.jpg",
                     "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "undefined",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "suc-natural",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 2
                 }
             ]
         ]

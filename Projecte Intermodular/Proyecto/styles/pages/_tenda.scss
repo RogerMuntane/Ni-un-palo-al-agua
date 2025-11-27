@@ -172,7 +172,7 @@
     padding: $espacio-xl $espacio-m;
     background-color: $color-principal;
     border: 2px solid $color-secundario;
-    margin-top: $espacio-m;
+    margin-top: $espacio-xl;
 }
 
 // Productes d'Oferta (generats dinàmicament)
@@ -320,7 +320,8 @@
 
 .tenda_categories .categoria.filtro,
 .tenda_intro .llistat_ofertes.filtro,
-.tenda_intro.filtro, .categoria_header {
+.tenda_intro.filtro,
+.categoria_header {
     display: none !important;
 }
 

@@ -36,14 +36,14 @@
 }
 
 .futur-tiquet {
-    background-color: rgba($color-principal, 0.05);
+    background-color: rgba($color-secundario, 0.05);
     border-radius: 8px;
     padding: $espacio-m;
     margin-bottom: $espacio-l;
 
     h3 {
         text-align: center;
-        color: $color-secundario;
+        color: $color-rojo;
         font-family: $font-titol;
         font-size: $titol-size-l;
         margin-bottom: $espacio-m;
