@@ -251,6 +251,7 @@ header .boto-rodo:active.boto-rodo-nav {
 }
 header .boto-rodo .icones-nav {
   width: 30px;
+  padding-bottom: 3px;
 }
 header .boto-rodo.boto-rodo:hover .icones-nav {
   -webkit-filter: invert(42%) sepia(84%) saturate(1000%) hue-rotate(-20deg) brightness(70%) contrast(100%);
@@ -637,6 +638,7 @@ header .overlay-sidepanel.active {
     margin-top: 20px;
   }
 }
+
 :root {
   --fondo-primario: #fefae0;
   --fondo-secundario: #BB9457;
@@ -1318,7 +1320,7 @@ body.dark-mode {
           transform: translateY(-8px);
   -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  border-color: var(--borde-hover);
+  border-color: var(--borde-amarillo);
 }
 .producte_oferta .producte_oferta_imatge {
   width: 100%;
