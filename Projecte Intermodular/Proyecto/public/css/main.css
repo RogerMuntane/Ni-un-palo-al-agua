@@ -2233,7 +2233,7 @@ body.dark-mode {
   margin: 0;
 }
 .historial-container .totals-container h3 span {
-  color: var(--texto-secundario) !important;
+  color: #FFE6A7;
 }
 @media (max-width: 728px) {
   .historial-container {

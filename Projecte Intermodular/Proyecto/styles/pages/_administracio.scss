@@ -199,7 +199,7 @@
             margin: 0;
 
             span {
-                color: var(--texto-secundario) !important;;
+                color: $color-amarillo;
             }
         }
     }
@@ -618,6 +618,7 @@
                 text-align: right;
                 color: var(--texto-secundario);
             }
+
             span {
                 color: var(--texto-secundario) !important;
             }
