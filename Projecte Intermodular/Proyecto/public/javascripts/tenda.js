@@ -115,7 +115,6 @@ function mostrarRecomanacio() {
     });
 }
 
-//Tambe es guarda al local storage, pero no s'utilitza perque al principi haviem plantejat fer-ho en fetch, pero al final ho hem canviat
 const STORAGE_KEY = 'carret';
 
 function obtenerCarret() {
