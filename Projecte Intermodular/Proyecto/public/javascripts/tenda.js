@@ -1,40 +1,40 @@
-function promocioDelDia(){
+function promocioDelDia() {
     const productes = [
         {
             id: "entrepa-de-pernil",
             nom: "Entrepa de pernil salat",
             preu: 3.50,
-            imatge: "Images/bocatajamon.jpg"
+            imatge: "../Images/bocatajamon.jpg"
         },
         {
             id: "entrepa-de-butifarra",
             nom: "Entrepa de butifarra",
             preu: 4.50,
-            imatge: "Images/bocadillo_butifarra.jpg"
+            imatge: "../Images/bocadillo_butifarra.jpg"
         },
         {
             id: "refresc",
             nom: "Refresc",
             preu: 2.00,
-            imatge: "Images/cocacola.jpg"
+            imatge: "../Images/cocacola.jpg"
         },
         {
             id: "suc-natural",
             nom: "Suc Natural",
             preu: 2.50,
-            imatge: "Images/zumo-de-naranja.jpg"
+            imatge: "../Images/zumo-de-naranja.jpg"
         },
         {
             id: "iogurt-natural",
             nom: "Pastís de Xocolata",
             preu: 3.00,
-            imatge: "Images/pastel.jpg"
+            imatge: "../Images/pastel.jpg"
         },
         {
             id: "pasts-de-xocolata",
             nom: "Iogurt Natural",
             preu: 1.50,
-            imatge: "Images/iogurt.jpg"
+            imatge: "../Images/iogurt.jpg"
         }
     ];
 
@@ -43,12 +43,12 @@ function promocioDelDia(){
 
     const productes_final = [];
 
-    if(hora <= 4){
-        for (let i = 0; i < productes.length; i += 2){
+    if (hora <= 4) {
+        for (let i = 0; i < productes.length; i += 2) {
             productes_final.push(productes[i]);
         }
     } else {
-        for (let i = 1; i < productes.length; i += 2){
+        for (let i = 1; i < productes.length; i += 2) {
             productes_final.push(productes[i]);
         }
     }
@@ -56,7 +56,7 @@ function promocioDelDia(){
     return productes_final;
 }
 
-function mostrarRecomanacio(){
+function mostrarRecomanacio() {
     const productes = promocioDelDia();
     const contenedor = document.querySelector(".llistat_ofertes");
 
@@ -85,7 +85,7 @@ function mostrarRecomanacio(){
         const btn = document.createElement("button");
         btn.textContent = "Afegir al carret";
         btn.className = "btn_comprar";
-       
+
 
         article.appendChild(imatge);
         article.appendChild(nom);
@@ -149,7 +149,7 @@ function obtenerDatosProducto(productEl) {
 function afegirProductoAlCarret(productEl) {
     const product = obtenerDatosProducto(productEl);
     const cart = obtenerCarret();
-    
+
     const existing = cart.find(item => item.id === product.id);
     if (existing) {
         existing.quantity = (existing.quantity || 1) + 1;
@@ -174,17 +174,17 @@ function inicializarCarretListeners() {
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.btn_comprar');
         if (!btn) return;
-        
+
         const productEl = btn.closest('.producte');
         if (!productEl) return;
-        
+
         afegirProductoAlCarret(productEl);
         mostrarFeedbackBoton(btn);
     });
 }
 
 // Executar quan el DOM està carregat
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () => {
     inicializarCarretListeners()
     mostrarRecomanacio()
 });

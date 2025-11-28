@@ -17,27 +17,29 @@
 
         <!-- Logo -->
         <a href="inici.html" class="logo-link">
-            <img src="Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false">
+            <img src="../Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false">
         </a>
 
         <!-- Barra Buscadora -->
         <div class="buscador buscador-header">
-            <input type="text" placeholder="Buscar Producte">
+            <input type="text" placeholder="Buscar Producte" id="buscador">
             <button>&#128269;</button>
         </div>
 
         <!-- Nav -->
         <ul class="nav-header">
             <li>
-                <button class="boto-rodo boto-rodo-nav" onclick="modeFosc()">
-                    <img src="Images/luna.png" alt="Mode Fosc" class="icone-mode-fosc icones-nav" draggable="false">
+                <button class="boto-rodo boton-tema" aria-label="Canviar tema">
+                    <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
+                        draggable="false">
+                    <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol"
+                        draggable="false" style="display: none;">
                 </button>
             </li>
 
             <li>
-
                 <button class="boto-rodo boto-rodo-nav" onclick="location.href='login.php';">
-                    <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
+                    <img src="../Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
                 </button>
             </li>
 
@@ -52,19 +54,22 @@
         <!-- Sidepanel -->
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
-            <button class="boto-rodo lluna-sidepanel" onclick="modeFosc()">
-                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            <button class="boto-rodo boton-tema lluna-sidepanel" aria-label="Canviar tema">
+                <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
+                    draggable="false">
+                <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false"
+                    style="display: none;">
             </button>
             <!-- Perfil -->
             <button class="boto-rodo perfil-sidepanel" onclick="location.href='login.php'">
-                <img src="Images/perfil.png" alt="Pefil" class="icones-nav" draggable="false">
+                <img src="../Images/perfil.png" alt="Pefil" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
             <br>
             <!-- Barra Buscadora Sidepanel -->
             <div class="buscador buscador-sidepanel">
-                <input type="text" placeholder="Buscar">
+                <input type="text" placeholder="Buscar Producte" id="buscador-sidepanel">
                 <button>&#128269;</button>
             </div>
             <!-- Links -->

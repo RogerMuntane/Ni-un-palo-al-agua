@@ -4,12 +4,12 @@ let tiquetEditantIndex = null;
 
 //Llista de imatges per escollir al editar un producte
 const imatgesDisponibles = [
-    { nom: 'Entrepa de butifarra', url: 'Images/bocadillo_butifarra.jpg' },
-    { nom: 'Entrepa mixt', url: 'Images/bocadillo_mixt.jpg' },
-    { nom: 'Entrepa de pernil', url: 'Images/bocatajamon.jpg' },
-    { nom: 'Suc natural', url: 'Images/zumo-de-naranja.jpg' },
-    { nom: 'Iogurt', url: 'Images/iogurt.jpg' },
-    { nom: 'Per defecte', url: 'Images/default.png' }
+    { nom: 'Entrepa de butifarra', url: '../Images/bocadillo_butifarra.jpg' },
+    { nom: 'Entrepa mixt', url: '../Images/bocadillo_mixt.jpg' },
+    { nom: 'Entrepa de pernil', url: '../Images/bocatajamon.jpg' },
+    { nom: 'Suc natural', url: '../Images/zumo-de-naranja.jpg' },
+    { nom: 'Iogurt', url: '../Images/iogurt.jpg' },
+    { nom: 'Per defecte', url: '../Images/default.png' }
 ];
 
 //Funcio per afegir un tiquet al historial
@@ -33,7 +33,7 @@ function tancarModal() {
 }
 
 //Funcio que crea el selector d'imatges
-function crearSelectorImatges(imatgeActual = 'Images/default.png') {
+function crearSelectorImatges(imatgeActual = '../Images/default.png') {
     let opcions = '';
     imatgesDisponibles.forEach(img => {
         const selected = img.url === imatgeActual ? 'selected' : '';
@@ -82,7 +82,7 @@ function actualitzarPreview(input) {
     if (url) {
         preview.src = url;
         preview.onerror = function () {
-            this.src = 'Images/default.png';
+            this.src = '../Images/default.png';
         };
     }
 }
@@ -96,7 +96,7 @@ function afegirProducteForm(producte = null) {
     const nom = producte ? producte.name : '';
     const preu = producte ? producte.price : '';
     const quantitat = producte ? producte.quantity : 1;
-    const imatge = producte && producte.image ? producte.image : 'Images/default.png';
+    const imatge = producte && producte.image ? producte.image : '../Images/default.png';
 
     li.innerHTML = `
         <div class="producte-grid">
@@ -132,7 +132,7 @@ function afegirProducteForm(producte = null) {
 
         //Si la imatge no hi es a la llista mostra el costum input
         const estaEnLlista = imatgesDisponibles.some(img => img.url === imatge);
-        if (!estaEnLlista && imatge !== 'Images/default.png') {
+        if (!estaEnLlista && imatge !== '../Images/default.png') {
             const select = li.querySelector('.producte-imatge-select');
             select.value = 'custom';
             customInput.classList.add('visible');
@@ -160,7 +160,7 @@ function editarTiquet(index) {
     tiquetEditantIndex = index;
 
     //Carrega les dades del tiquet desde el servidor
-    fetch('php/gestionarTiquets.php', {
+    fetch('../php/gestionarTiquets.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -235,7 +235,7 @@ function obtenirImatgeProducte(li) {
     const customInput = li.querySelector('.producte-imatge-custom');
 
     if (select.value === 'custom') {
-        return customInput.value.trim() || 'Images/default.png';
+        return customInput.value.trim() || '../Images/default.png';
     } else {
         return select.value;
     }
@@ -287,7 +287,7 @@ document.getElementById('form-tiquet').addEventListener('submit', function (e) {
     }
 
     //Ho enviem al servidor
-    fetch('php/gestionarTiquets.php', {
+    fetch('../php/gestionarTiquets.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

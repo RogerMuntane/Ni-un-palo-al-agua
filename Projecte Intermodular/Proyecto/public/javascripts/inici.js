@@ -1,40 +1,40 @@
-function promocioDelDia(){
+function promocioDelDia() {
     const productes = [
         {
             id: 1,
             nom: "Barreta energetica",
             preu: 3.50,
-            imatge: "Images/barreta.jpg"
+            imatge: "../Images/barreta.jpg"
         },
         {
             id: 2,
             nom: "Entrepa de butifarra",
             preu: 4.50,
-            imatge: "Images/bocadillo_butifarra.jpg"
+            imatge: "../Images/bocadillo_butifarra.jpg"
         },
         {
             id: 3,
             nom: "Refresc",
             preu: 2.00,
-            imatge: "Images/cocacola.jpg"
+            imatge: "../Images/cocacola.jpg"
         },
         {
             id: 4,
             nom: "Suc Natural",
             preu: 2.50,
-            imatge: "Images/zumo-de-naranja.jpg"
+            imatge: "../Images/zumo-de-naranja.jpg"
         },
         {
             id: 5,
             nom: "Pastís de Xocolata",
             preu: 3.00,
-            imatge: "Images/pastel.jpg"
+            imatge: "../Images/pastel.jpg"
         },
         {
             id: 6,
             nom: "Iogurt Natural",
             preu: 1.50,
-            imatge: "Images/iogurt.jpg"
+            imatge: "../Images/iogurt.jpg"
         }
     ];
 
@@ -43,12 +43,12 @@ function promocioDelDia(){
 
     const productes_final = [];
 
-    if((dia % 2) == 0){
-        for (let i = 0; i < productes.length; i += 2){
+    if ((dia % 2) == 0) {
+        for (let i = 0; i < productes.length; i += 2) {
             productes_final.push(productes[i]);
         }
     } else {
-        for (let i = 1; i < productes.length; i += 2){
+        for (let i = 1; i < productes.length; i += 2) {
             productes_final.push(productes[i]);
         }
     }
@@ -56,7 +56,7 @@ function promocioDelDia(){
     return productes_final;
 }
 
-function mostrarpromocio(){
+function mostrarpromocio() {
     const productes = promocioDelDia();
     const contenedor = document.querySelector(".llistat_ofertes");
 
@@ -83,7 +83,7 @@ function mostrarpromocio(){
         const btn = document.createElement("button");
         btn.textContent = "Anar a tenda online";
         btn.className = "btn_comprar_oferta";
-        btn.onclick = () => location.href="tenda.php";
+        btn.onclick = () => location.href = "../vistes/tenda.php";
 
         article.appendChild(imatge);
         article.appendChild(nom);
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", mostrarpromocio);
 
 
 
-//Carrusel 
+//Carrusel
 let slideActual = 0;
 const totalSlides = 3;
 const wrapper = document.getElementById('carruselWrapper');
@@ -116,7 +116,7 @@ function canviarSlide(index) {
 
 function actualitzarCarrusel() {
     wrapper.style.transform = `translateX(-${slideActual * 100}%)`;
-    
+
     indicadors.forEach((ind, i) => {
         ind.classList.toggle('actiu', i === slideActual);
     });
@@ -148,14 +148,14 @@ wrapper.addEventListener('touchend', (e) => {
 
 function handleSwipe() {
     if (posicio_final < posicio_inicial - 50) { // Detecta desplaçament esquerra (mínim 50px)
-        slideActual = (slideActual + 1) % totalSlides; // Avança al següent slide 
+        slideActual = (slideActual + 1) % totalSlides; // Avança al següent slide
         actualitzarCarrusel();
         setInterval();
     }
     if (posicio_final > posicio_inicial + 50) { // Detecta desplaçament dreta (mínim 50px)
-        slideActual = (slideActual - 1 + totalSlides) % totalSlides; // Retrocedeix al slide anterior 
-        actualitzarCarrusel(); 
+        slideActual = (slideActual - 1 + totalSlides) % totalSlides; // Retrocedeix al slide anterior
+        actualitzarCarrusel();
         setInterval();
-        
+
     }
 }
