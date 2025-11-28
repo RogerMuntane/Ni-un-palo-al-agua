@@ -14,5 +14,21 @@
                 }
             ]
         ]
+    },
+    "roger@gmail.com": {
+        "carret": [],
+        "total": 0,
+        "ultima_actualizacion": "2025-11-28 21:41:13",
+        "historial": [
+            [
+                {
+                    "id": "d",
+                    "name": "d",
+                    "price": 3,
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+                }
+            ]
+        ]
     }
 }
