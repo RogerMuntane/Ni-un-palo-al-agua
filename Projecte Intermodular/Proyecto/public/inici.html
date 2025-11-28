@@ -25,8 +25,10 @@
             <!-- Mode Fosc -->
             <li>
                 <button class="boto-rodo boton-tema" aria-label="Canviar tema">
-                    <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
-                    <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
+                    <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
+                        draggable="false">
+                    <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false"
+                        style="display: none;">
                 </button>
             </li>
             <!-- Links -->
@@ -48,10 +50,13 @@
         <!-- Sidepanel -->
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
-        <button class="boto-rodo boton-tema" aria-label="Canviar tema">
-            <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
-            <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
-        </button>
+            <button class="boto-rodo lluna-sidepanel boton-tema" onclick="modeFosc()">
+                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            </button>
+            <!-- Perfil -->
+            <button class="boto-rodo perfil-sidepanel" onclick="location.href='login.php'">
+                <img src=" Images/perfil.png" alt="Mode Fosc" class="icones-nav" draggable="false">
+            </button>
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
             <br>
@@ -73,6 +78,52 @@
             <h1>Ni un palo al agua</h1>
             <h3>Sabors autèntics, moments inoblidables</h3>
             <a href="tenda.php" class="hero-btn">Veure productes</a>
+        </div>
+    </section>
+
+    <section class="carrusel-section">
+        <div class="carrusel-container">
+            <div class="carrusel-wrapper" id="carruselWrapper">
+
+                <!-- Slide 1: Bocadillos -->
+                <div class="carrusel-slide">
+                    <div class="carrusel-content">
+                        <h2>Bocadillos Artesans</h2>
+                        <p>Entrepans frescos i generosos preparats amb ingredients de qualitat premium.
+                            Cada dia elaborem les nostres especialitats amb pa acabat de fer i els millors embotits de
+                            la zona.
+                            Vine a descobrir per què som els favorits del barri!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Begudes -->
+                <div class="carrusel-slide">
+                    <div class="carrusel-content">
+                        <h2>Begudes Refrescants</h2>
+                        <p>Amplia selecció de begudes fredes i calents per acompanyar els teus àpats.
+                            Des de sucs naturals fets al moment fins a les teves begudes favorites.
+                            Tot sempre ben fred i preparat amb cura!</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Postres -->
+                <div class="carrusel-slide">
+                    <div class="carrusel-content">
+                        <h2>Postres Deliciosos</h2>
+                        <p>Endolceix el teu dia amb els nostres pastissos casolans i postres frescos.
+                            Elaborats diàriament amb ingredients naturals i molt d'amor.
+                            El toque perfecte per acabar qualsevol àpat!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Indicadors -->
+            <div class="carrusel-indicadors">
+                <div class="indicador actiu" onclick="canviarSlide(0)"></div>
+                <div class="indicador" onclick="canviarSlide(1)"></div>
+                <div class="indicador" onclick="canviarSlide(2)"></div>
+            </div>
         </div>
     </section>
 

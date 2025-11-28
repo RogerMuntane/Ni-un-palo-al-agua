@@ -1,0 +1,656 @@
+@use "sass:color";
+@use "../abstract/variables" as *;
+
+
+.historial-container {
+    margin: auto;
+    padding: $espacio-xl;
+    background: $color-amarillo;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: $color-principal;
+
+    .historial-titol {
+        color: $color-principal;
+        text-align: center;
+        font-size: $titol-size-4xl;
+        margin-bottom: $espacio-xl;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input::placeholder {
+        color: $color-rojo;
+    }
+
+    .filtres-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $espacio-l;
+        flex-wrap: wrap;
+        gap: $espacio-s;
+
+        .btn-afegir {
+            background-color: $color-principal;
+            color: $color-amarillo;
+            padding: 12px $espacio-l;
+            border: none;
+            border-radius: 8px;
+            font-size: $titol-size-m;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+            &:hover {
+                background-color: color.adjust($color-principal, $lightness: -8%);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .input-cerca {
+            padding: 12px $espacio-m;
+            border: 2px solid $color-principal;
+            border-radius: 8px;
+            font-size: $titol-size-m;
+            flex: 1;
+            max-width: 400px;
+            transition: all 0.3s ease;
+            color: $color-principal;
+
+            &:focus {
+                outline: none;
+                border-color: color.adjust($color-principal, $lightness: -10%);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    .tiquets-llista {
+        display: grid;
+        gap: $espacio-m;
+        margin-bottom: $espacio-xl;
+        color: $color-principal;
+
+        .tiquet-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: $espacio-m;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border-left: 5px solid $color-naranja;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .tiquet-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: $espacio-s;
+                padding-bottom: $espacio-s;
+                border-bottom: 2px solid $color-amarillo;
+
+                h3 {
+                    color: $color-principal;
+                    font-size: $titol-size-l;
+                    margin: 0;
+                }
+
+                .tiquet-data {
+                    color: $color-naranja;
+                    font-size: $titol-size-m;
+                    font-weight: 999;
+                }
+            }
+
+            .tiquet-detalls {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: $espacio-s;
+                margin-bottom: $espacio-s;
+
+                .detall-item {
+                    display: flex;
+                    flex-direction: column;
+
+                    .etiqueta {
+                        color: $color-naranja;
+                        font-size: $titol-size-s;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        margin-bottom: 5px;
+                    }
+
+                    .valor {
+                        color: $color-principal;
+                        font-size: $titol-size-m;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .tiquet-total {
+                background-color: $color-amarillo;
+                padding: $espacio-xs $espacio-s;
+                border-radius: 8px;
+                margin-bottom: $espacio-s;
+                text-align: right;
+
+                .total-text {
+                    color: $color-principal;
+                    font-size: $titol-size-m;
+                    font-weight: bold;
+                }
+            }
+
+            .tiquet-accions {
+                display: flex;
+                gap: $espacio-s;
+                justify-content: flex-end;
+
+                button {
+                    padding: $espacio-s $espacio-m;
+                    border: none;
+                    border-radius: 6px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &.btn-editar {
+                        background-color: $color-secundario;
+                        color: white;
+
+                        &:hover {
+                            background-color: $color-naranja;
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    &.btn-eliminar {
+                        background-color: $color-rojo;
+                        color: white;
+
+                        &:hover {
+                            background-color: $color-principal;
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .totals-container {
+        background-color: $color-principal;
+        padding: $espacio-m;
+        border-radius: 12px;
+        text-align: center;
+
+        h3 {
+            color: $color-amarillo;
+            font-size: $titol-size-3xl;
+            margin: 0;
+
+            span {
+                color: $color-secundario;
+            }
+        }
+    }
+
+    @media (max-width: $vista-mobil) {
+        padding: $espacio-m;
+
+        .historial-titol {
+            font-size: $titol-size-xxl;
+        }
+
+        .filtres-container {
+            flex-direction: column;
+
+            .input-cerca {
+                max-width: 100%;
+            }
+        }
+
+        .tiquet-card {
+            .tiquet-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: $espacio-xs;
+            }
+
+            .tiquet-botons {
+                flex-direction: column;
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+//Modal fora del contenidor principal
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(67, 40, 24, 0.7);
+    animation: 0.3s ease;
+    color: $color-principal;
+
+    input::placeholder {
+        color: $color-rojo;
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: $espacio-xl;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 700px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        animation: 0.3s ease;
+
+        .tancar-modal {
+            color: $color-rojo;
+            float: right;
+            font-size: $titol-size-4xl;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+            background: transparent;
+            border: none;
+
+            &:hover {
+                color: $color-principal;
+            }
+        }
+
+        h2 {
+            color: $color-principal;
+            margin-bottom: $espacio-l;
+            font-size: $titol-size-3xl;
+        }
+
+        .preview-imatge {
+            img {
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+
+        .producte-imatge-select,
+        .producte-imatge-custom {
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: $color-naranja !important;
+                box-shadow: 0 0 10px rgba(153, 88, 42, 0.3);
+            }
+        }
+
+        .form-grup {
+            margin-bottom: $espacio-m;
+
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 8px;
+                font-size: $titol-size-l;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px;
+                border: 2px solid $color-secundario;
+                border-radius: 8px;
+                font-size: $titol-size-l;
+                transition: all 0.3s ease;
+                box-sizing: border-box;
+
+                &:focus {
+                    outline: none;
+                    border-color: $color-naranja;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+
+        .product-list-scroll {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 6px;
+
+            //Scroll del modal
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #888;
+                border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+        }
+
+        //Producte dins del modal
+        .producte-grup {
+            padding: 12px;
+            border: 1px solid color.adjust($color-secundario, $lightness: 15%);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: grid;
+            grid-template-columns: 1fr 120px 120px 40px;
+            gap: $espacio-xs;
+            align-items: center;
+
+            label {
+                font-size: $titol-size-s;
+                margin-bottom: 6px;
+                color: $color-principal;
+            }
+
+            input {
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+
+            .prod-nom {
+                grid-column: 1 / 2;
+            }
+
+            .prod-quantitat {
+                grid-column: 2 / 3;
+            }
+
+            .prod-preu {
+                grid-column: 3 / 4;
+            }
+
+            .prod-eliminar {
+                grid-column: 4 / 5;
+                background: $color-rojo;
+                color: white;
+                border: none;
+                padding: 8px;
+                border-radius: 6px;
+                cursor: pointer;
+
+                &:hover {
+                    background: $color-principal;
+                }
+            }
+        }
+
+        .botons-modal {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+
+            button {
+                flex: 1;
+                padding: 12px;
+                border: none;
+                border-radius: 8px;
+                font-size: $titol-size-m;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &.btn-guardar {
+                    background-color: $color-principal;
+                    color: $color-amarillo;
+
+                    &:hover {
+                        background-color: $color-naranja;
+                        transform: scale(1.05);
+                    }
+                }
+
+                &.btn-cancelar {
+                    background-color: $color-secundario;
+                    color: white;
+
+                    &:hover {
+                        background-color: $color-rojo;
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Formulari de productes dintre del modal
+.producte-item {
+    margin-bottom: $espacio-s;
+    padding: $espacio-s;
+    border: 2px solid $color-secundario;
+    border-radius: 8px;
+    background-color: #fff9f0;
+
+    .producte-grid {
+        display: grid;
+        gap: $espacio-xs;
+    }
+
+    .camp-producte {
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: $color-principal;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: $espacio-xs;
+            border: 2px solid $color-secundario;
+            border-radius: 6px;
+            font-size: $titol-size-m;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: $color-naranja;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    .camps-preu-quantitat {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $espacio-xs;
+    }
+
+    .selector-imatge {
+        margin-top: $espacio-xs;
+
+        .imatge-select {
+            width: 100%;
+            padding: $espacio-xs;
+            border: 2px solid $color-secundario;
+            border-radius: 6px;
+            font-size: $titol-size-m;
+            box-sizing: border-box;
+            margin-bottom: $espacio-xs;
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: $color-naranja;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .imatge-custom {
+            width: 100%;
+            padding: $espacio-xs;
+            border: 2px solid $color-secundario;
+            border-radius: 6px;
+            font-size: $titol-size-m;
+            box-sizing: border-box;
+            display: none;
+            transition: all 0.3s ease;
+
+            &.visible {
+                display: block;
+            }
+
+            &:focus {
+                outline: none;
+                border-color: $color-naranja;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .preview-imatge {
+            margin-top: $espacio-xs;
+            text-align: center;
+
+            img {
+                max-width: 150px;
+                max-height: 150px;
+                border-radius: 8px;
+                border: 2px solid $color-secundario;
+                object-fit: cover;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    }
+
+    .boto-eliminar-producte {
+        background: $color-rojo;
+        color: white;
+        padding: $espacio-xs;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        width: 100%;
+        margin-top: $espacio-xs;
+
+        &:hover {
+            background: $color-principal;
+            transform: scale(1.02);
+        }
+    }
+}
+
+//Taula de productes en el tiquet
+.taula-productes {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            text-align: left;
+            padding: 8px;
+            font-weight: bold;
+            color: $color-principal;
+
+            &.alineat-centre {
+                text-align: center;
+            }
+
+            &.alineat-dreta {
+                text-align: right;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid #eee;
+
+            &:hover {
+                background-color: rgba(250, 235, 215, 0.3);
+            }
+        }
+
+        td {
+            padding: 8px;
+
+            &.alineat-centre {
+                text-align: center;
+            }
+
+            &.alineat-dreta {
+                text-align: right;
+            }
+        }
+    }
+
+    .producte-info {
+        display: flex;
+        align-items: center;
+        gap: $espacio-xs;
+
+        img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    }
+}
+
+//Total del tiquet
+.tiquet-total {
+    text-align: right;
+    padding: $espacio-xs;
+    font-weight: bold;
+    border-top: 2px solid $color-principal;
+    margin-top: $espacio-xs;
+}
+
+//Botons per eliminar i editar tiquets
+.tiquet-accions {
+    display: flex;
+    gap: $espacio-xs;
+    padding: $espacio-xs;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+//Missatge quan no hi ha tiquets
+.missatge-buit {
+    text-align: center;
+    padding: $espacio-m;
+    color: $color-rojo;
+    font-size: $titol-size-l;
+}

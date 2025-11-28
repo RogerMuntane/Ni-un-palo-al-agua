@@ -4,19 +4,19 @@
             "nom": "Bocadillos",
             "productes": [
                 {
-                    "nom": "Entrepa de pernil",
+                    "nom": "Entrepà de  pernil",
                     "preu": 3.50,
                     "imatge": "Images/bocatajamon.jpg",
                     "alt": "Bocadillo"
                 },
                 {
-                    "nom": "Entrepa de butifarra",
+                    "nom": "Entrepà de butifarra",
                     "preu": 4.50,
                     "imatge": "Images/bocadillo_butifarra.jpg",
                     "alt": "Bocadillo"
                 },
                 {
-                    "nom": "Entrepa Mixt",
+                    "nom": "Entrepà Mixt",
                     "preu": 4.00,
                     "imatge": "Images/bocadillo_mixt.jpg",
                     "alt": "Bocadillo"

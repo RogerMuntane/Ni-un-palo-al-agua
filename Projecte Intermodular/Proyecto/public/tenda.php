@@ -57,7 +57,7 @@
                 <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
             </button>
             <!-- Perfil -->
-            <button class="boto-rodo perfil-sidepanel" onclick="modeFosc()">
+            <button class="boto-rodo perfil-sidepanel" onclick="location.href='login.php'">
                 <img src="Images/perfil.png" alt="Pefil" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->

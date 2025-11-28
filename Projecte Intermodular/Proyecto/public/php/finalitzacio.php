@@ -73,6 +73,7 @@
 
         if (file_exists($path)) {
             $jsonData = json_decode(file_get_contents($path), true) ?? [];
+            echo json_encode(["succes" => false, "error" => "Error en carregar"]);
         } else {
             $jsonData = [];
         }
