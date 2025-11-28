@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carretó - Ni un palo al agua</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="script.js" defer></script>
-    <script src="carreto.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="scriptTemas.js" defer></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../javascripts/header.js" defer></script>
+    <script src="../javascripts/carreto.js" defer></script>
+    <script src="../javascripts/header.js" defer></script>
+    <script src="../javascripts/scriptTemas.js" defer></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
         <!-- Logo -->
         <a href="inici.html" class="logo-link">
-            <img src="Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false" usemap="#logo-map">
+            <img src="../Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false" usemap="#logo-map">
         </a>
 
         <!-- Nav -->
@@ -25,14 +25,16 @@
             <!-- Mode Fosc -->
             <li>
                 <button class="boto-rodo boton-tema" aria-label="Canviar tema">
-                    <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
-                    <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
+                    <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
+                        draggable="false">
+                    <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol"
+                        draggable="false" style="display: none;">
                 </button>
             </li>
             <!-- Links -->
             <li>
                 <button class="boto-rodo" onclick="location.href='login.php';">
-                    <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
+                    <img src="../Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
                 </button>
             </li>
             <li><a href="contacte.html">Contacte</a></li>
@@ -49,12 +51,14 @@
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
             <button class="boto-rodo boton-tema lluna-sidepanel" aria-label="Canviar tema">
-                    <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
-                    <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
-                </button>
+                <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
+                    draggable="false">
+                <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false"
+                    style="display: none;">
+            </button>
             <!-- Perfil -->
             <button class="boto-rodo perfil-sidepanel" onclick="location.href='login.php'"">
-                <img src=" Images/perfil.png" alt="Mode Fosc" class="icones-nav" draggable="false">
+                <img src=" ../Images/perfil.png" alt="Mode Fosc" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
@@ -114,7 +118,7 @@
 
     <footer>
         <div class="footer_imatge">
-            <img src="../public/Images/mini-logo.png" alt="Logo">
+            <img src="../Images/mini-logo.png" alt="Logo">
         </div>
 
         <div class="footer_informacio">

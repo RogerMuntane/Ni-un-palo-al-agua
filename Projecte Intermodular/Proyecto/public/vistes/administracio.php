@@ -43,10 +43,10 @@ if (file_exists($path)) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Historial de Tiquets</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <script src="script.js" defer></script>
-    <script src="historial.js" defer></script>
-    <script src="scriptTemas.js" defer></script>
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../javascripts/header.js" defer></script>
+    <script src="../javascripts/historial.js" defer></script>
+    <script src="../javascripts/scriptTemas.js" defer></script>
 </head>
 
 <body>
@@ -60,14 +60,14 @@ if (file_exists($path)) {
 
         <!-- Logo -->
         <a href="inici.html" class="logo-link">
-            <img src="Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false" usemap="#logo-map">
+            <img src="../Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false" usemap="#logo-map">
         </a>
 
         <!-- Nav -->
         <ul class="nav-header">
             <li>
                 <button class="boto-rodo boton-tema" aria-label="Canviar tema">
-                    <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
+                    <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
                         draggable="false">
                     <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false"
                         style="display: none;">
@@ -82,8 +82,8 @@ if (file_exists($path)) {
 
         <div id="sidepanel" class="sidepanel">
             <button class="boto-rodo boton-tema lluna-sidepanel" aria-label="Canviar tema">
-                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
-                <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
+                <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
+                <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
             </button>
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
             <br>
@@ -140,7 +140,7 @@ if (file_exists($path)) {
                                                     <?php if (isset($producte['image'])): ?>
                                                         <img src="<?php echo htmlspecialchars($producte['image']); ?>"
                                                             alt="<?php echo htmlspecialchars($producte['name']); ?>"
-                                                            onerror="this.src='Images/default.png'">
+                                                            onerror="this.src='../Images/default.png'">
                                                     <?php endif; ?>
                                                     <span><?php echo htmlspecialchars($producte['name']); ?></span>
                                                 </div>
@@ -203,7 +203,7 @@ if (file_exists($path)) {
 
     <footer>
         <div class="footer_imatge">
-            <img src="../public/Images/mini-logo.png" alt="Logo">
+            <img src="../Images/mini-logo.png" alt="Logo">
         </div>
 
         <div class="footer_informacio">
