@@ -56,6 +56,11 @@
         padding: 0 $espacio-m;
     }
 
+    .carret_list h4 {
+        color: var(--texto-hero);
+        font-size: $titol-size-xxl;
+    }
+
     .carret_item {
         background-color: var(--fondo);
         border: 2px solid $color-secundario;
@@ -65,9 +70,10 @@
 
         img {
             width: 100%;
-            height: 100%;
+            height: 180px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 60px !important;
+            padding: $espacio-m;
         }
 
         h4 {

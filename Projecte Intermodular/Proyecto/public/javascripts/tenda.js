@@ -1,14 +1,14 @@
 function promocioDelDia() {
     const productes = [
         {
-            id: "entrepa-de-pernil",
-            nom: "Entrepa de pernil salat",
+            id: "entrep-de-pernil",
+            nom: "Entrepà de pernil salat",
             preu: 3.50,
             imatge: "../Images/bocatajamon.jpg"
         },
         {
-            id: "entrepa-de-butifarra",
-            nom: "Entrepa de butifarra",
+            id: "entrep-de-butifarra",
+            nom: "Entrepà de butifarra",
             preu: 4.50,
             imatge: "../Images/bocadillo_butifarra.jpg"
         },
@@ -25,13 +25,13 @@ function promocioDelDia() {
             imatge: "../Images/zumo-de-naranja.jpg"
         },
         {
-            id: "iogurt-natural",
+            id: "pasts-de-xocolata",
             nom: "Pastís de Xocolata",
             preu: 3.00,
             imatge: "../Images/pastel.jpg"
         },
         {
-            id: "pasts-de-xocolata",
+            id: "iogurt-natural",
             nom: "Iogurt Natural",
             preu: 1.50,
             imatge: "../Images/iogurt.jpg"

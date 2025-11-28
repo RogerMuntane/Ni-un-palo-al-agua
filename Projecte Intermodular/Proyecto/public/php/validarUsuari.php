@@ -22,7 +22,7 @@ foreach ($infoJson as $dades => $sessio) {
         if ($contrasenya == $sessio["contrasenya"]) {
             $_SESSION['usuari'] = $usuari;
             echo "Sessió iniciada correctament";
-            header("Location: ../administracio.php");
+            header("Location: ../vistes/administracio.php");
             exit();
         } else {
             $_SESSION['error'] = "Contrasenya incorrecta";

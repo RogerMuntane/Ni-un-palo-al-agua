@@ -112,7 +112,7 @@
     <!-- Categories de Menjar -->
     <section class="tenda_categories">
         <?php
-        require_once __DIR__ . '../php/carregar_productes.php';
+        require_once __DIR__ . '/../php/carregar_productes.php';
         ?>
 
 
