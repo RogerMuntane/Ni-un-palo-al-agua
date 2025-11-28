@@ -20,7 +20,7 @@
 
     --acento-primario: #{$color-rojo};
     --acento-secundario: #{$color-naranja};
-    --acento-hover: #{$color-rojo};
+    --acento-hover: #{$color-amarillo-claro};
 
     --borde-principal: #{$color-secundario};
     --borde-tarjeta: #{$color-secundario};
@@ -29,8 +29,12 @@
     --borde-amarillo: #{$color-amarillo};
 
     --nav-lletres: #{$color-amarillo};
-    --fondo-sidepanel: rgba(#{$color-amarillo}, 0.85);
-    --fondo-link-sidepanel: rgba(#{$color-gris-fosc}, 0.9);
+    --fondo-sidepanel: rgba(187, 148, 87, 0.75);
+    --fondo-link-sidepanel: rgba(67,40,24, 0.75);
+    --hover-sidepanel: #{$color-amarillo};
+
+    // Carreto
+    --fondo-carreto: #{$color-naranja};
 }
 
 body.dark-mode {
@@ -40,7 +44,7 @@ body.dark-mode {
     --fondo-hero-overlay: rgba(0, 0, 0, 0.8);
     --fondo-overlay: rgba(0, 0, 0, 0.8);
     --fondo: #1a0f08;
-    --fondo-amarillo: #1f100a;
+    --fondo-amarillo: #381e14;
     --fondo-negre: #0d0704;
 
     --texto-primario: #{$color-amarillo};
@@ -64,4 +68,8 @@ body.dark-mode {
     --nav-lletres: #{$color-amarillo};
     --fondo-sidepanel: rgba(45, 24, 16, 0.95);
     --fondo-link-sidepanel: rgba(26, 15, 8, 0.9);
+    --hover-sidepanel: #{$color-secundario};
+
+    // Carreto
+    --fondo-carreto: #381e14;;
 }

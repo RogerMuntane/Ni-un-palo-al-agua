@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorIntolerancies = document.getElementById('intolerancies-error');
     const errorExtras = document.getElementById('extras-error');
 
-    const MAX_LENGTH = 256; // Longitud màxima per a tots els camps
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Valida email
-    const symbolsRegex = /[!@$%^&*()_+={}\[\]|\\<>\?~]/; // Símbols "que no volem"
-    const telefonRegex = /^\d{9}$/; // Valida 9 números exactes
+    const MAX_LENGTH = 256;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const symbolsRegex = /[!@$%^&*()_+={}\[\]|\\<>\?~]/;
+    const telefonRegex = /^\d{9}$/;
 
     function emailValid(stringEmail) {
         return emailRegex.test(stringEmail.trim());
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function adrecaValid(stringAdreca) {
         stringAdreca = stringAdreca.trim();
         if (stringAdreca.length === 0)
-            return true;
+            return false;
         if (stringAdreca.length < 8)
             return false;
         if (symbolsRegex.test(stringAdreca))
@@ -56,7 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return true;
     }
 
-    function mostrarError(inputElement, errorElement) {
+    function mostrarError(inputElement, errorElement, missatge = null) {
+        if (missatge) {
+            errorElement.textContent = missatge;
+        }
         inputElement.classList.add('error');
         errorElement.style.display = 'block';
         setTimeout(() => errorElement.classList.add('show'), 10);
@@ -65,97 +68,101 @@ document.addEventListener('DOMContentLoaded', () => {
     function ocultarError(inputElement, errorElement) {
         inputElement.classList.remove('error');
         errorElement.classList.remove('show');
-        setTimeout(() => errorElement.style.display = 'none', 300);
     }
 
     formulari.addEventListener('submit', function (event) {
+        event.preventDefault();
+
         let formulariCorrecte = true;
+
+        // Ocultar tots els errors abans de validar
+        ocultarError(email, errorEmail);
+        ocultarError(adreca, errorAdreca);
+        ocultarError(telefon, errorTelefon);
+        ocultarError(intolerancies, errorIntolerancies);
+        ocultarError(extras, errorExtras);
 
         // Validar Email
         const stringEmail = email.value.trim();
-        if (stringEmail.length > MAX_LENGTH || !emailValid(stringEmail)) {
+        if (stringEmail.length === 0) {
             formulariCorrecte = false;
-            mostrarError(email, errorEmail);
-        } else {
-            ocultarError(email, errorEmail);
+            mostrarError(email, errorEmail, "L'email és obligatori");
+        } else if (stringEmail.length > MAX_LENGTH || !emailValid(stringEmail)) {
+            formulariCorrecte = false;
+            mostrarError(email, errorEmail, "El format de l'email no és vàlid");
         }
 
         // Validar Adreça
         const stringAdreca = adreca.value.trim();
-        if (stringAdreca.length > MAX_LENGTH || !adrecaValid(stringAdreca)) {
+        if (stringAdreca.length === 0) {
             formulariCorrecte = false;
-            mostrarError(adreca, errorAdreca);
-        } else {
-            ocultarError(adreca, errorAdreca);
+            mostrarError(adreca, errorAdreca, "L'adreça és obligatòria");
+        } else if (stringAdreca.length < 8) {
+            formulariCorrecte = false;
+            mostrarError(adreca, errorAdreca, "L'adreça ha de tenir almenys 8 caràcters");
+        } else if (stringAdreca.length > MAX_LENGTH || !adrecaValid(stringAdreca)) {
+            formulariCorrecte = false;
+            mostrarError(adreca, errorAdreca, "L'adreça no pot contenir símbols especials");
         }
 
         // Validar Telèfon
         const stringTelefon = telefon.value.trim();
-        if (stringTelefon.length > MAX_LENGTH || !telefonValid(stringTelefon)) {
+        if (stringTelefon.length === 0) {
             formulariCorrecte = false;
-            mostrarError(telefon, errorTelefon);
-        } else {
-            ocultarError(telefon, errorTelefon);
+            mostrarError(telefon, errorTelefon, "El telèfon és obligatori");
+        } else if (stringTelefon.length > MAX_LENGTH || !telefonValid(stringTelefon)) {
+            formulariCorrecte = false;
+            mostrarError(telefon, errorTelefon, "El telèfon ha de tenir 9 dígits");
         }
 
-        // Validar Intoleràncies
+        // Validar Intoleràncies (opcional)
         const stringIntolerancies = intolerancies.value.trim();
         if (stringIntolerancies.length > MAX_LENGTH || !intoleranciesValid(stringIntolerancies)) {
             formulariCorrecte = false;
-            mostrarError(intolerancies, errorIntolerancies);
-        } else {
-            ocultarError(intolerancies, errorIntolerancies);
+            mostrarError(intolerancies, errorIntolerancies, "Les intoleràncies no poden contenir símbols especials");
         }
 
-        // Validar Extras
+        // Validar Extras (opcional)
         const stringExtras = extras.value.trim();
         if (stringExtras.length > MAX_LENGTH || !extrasValid(stringExtras)) {
             formulariCorrecte = false;
-            mostrarError(extras, errorExtras);
-        } else {
-            ocultarError(extras, errorExtras);
+            mostrarError(extras, errorExtras, "Els extras no poden contenir símbols especials");
         }
 
-        //Introduir LocalStorage al Hidden Input
+        // Introduir LocalStorage al Hidden Input
+        if (formulariCorrecte) {
+            let carret = []
+            let total = 0;
 
-        let carret = []
-        let total = 0;
+            try {
+                const carretData = localStorage.getItem("carret");
+                const totalData = localStorage.getItem("total_compra");
+                if (carretData) {
+                    carret = JSON.parse(carretData);
 
-        try {
-            const carretData = localStorage.getItem("carret");
-            const totalData = localStorage.getItem("total_compra");
-            if (carretData) {
-                carret = JSON.parse(carretData);
-
-                // Validar que sea un array
-                if (!Array.isArray(carret)) {
-                    console.warn("Los datos del carrito no son un array válido");
-                    carret = [];
+                    if (!Array.isArray(carret)) {
+                        console.warn("Los datos del carrito no son un array válido");
+                        carret = [];
+                    }
                 }
+                if (totalData) {
+                    total = JSON.parse(totalData);
+                }
+                localStorage.clear();
+            } catch (error) {
+                console.error("Error al parsear el carrito:", error);
+                alert("Error al cargar los datos del carrito");
+                carret = [];
+                total = 0;
             }
-            if (totalData) {
-                total = JSON.parse(totalData);
-            }
-            localStorage.clear();
-        } catch (error) {
-            console.error("Error al parsear el carrito:", error);
-            // Opcional: mostrar mensaje al usuario
-            alert("Error al cargar los datos del carrito");
-            carret = [];
-            total = 0;
-        }
 
-        document.getElementById("carretData").value = JSON.stringify(carret);
-        document.getElementById("totalData").value = total;
+            document.getElementById("carretData").value = JSON.stringify(carret);
+            document.getElementById("totalData").value = total;
 
-        console.log("Carrito enviado:", carret);
-        console.log("localData value:", document.getElementById("localData").value);
-        console.log("Formulari correcte:", formulariCorrecte);
+            console.log("Carrito enviado:", carret);
+            console.log("Formulari correcte:", formulariCorrecte);
 
-
-        // Es para l'enviament si alguna cosa ha fallat
-        if (!formulariCorrecte) {
-            event.preventDefault();
+            formulari.submit();
         }
     });
 
@@ -166,37 +173,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Funcio per eliminar símbols especials
+    function eliminarSimbols(inputElement) {
+        inputElement.value = inputElement.value.replace(/[!@$%^&*()_+={}\[\]|\\<>\?~]/g, '');
+    }
+
     // EMAIL
     email.addEventListener('input', () => {
         controlarLongitud(email);
         const stringEmail = email.value.trim();
         if (emailValid(stringEmail) || stringEmail.length === 0) {
             ocultarError(email, errorEmail);
-        } else {
-            mostrarError(email, errorEmail);
         }
     });
+
     email.addEventListener('blur', () => {
         const stringEmail = email.value.trim();
-        if (stringEmail.length > 0 && !emailValid(stringEmail)) {
-            mostrarError(email, errorEmail);
+        if (stringEmail.length === 0) {
+            mostrarError(email, errorEmail, "L'email és obligatori");
+        } else if (!emailValid(stringEmail)) {
+            mostrarError(email, errorEmail, "El format de l'email no és vàlid");
+        } else {
+            ocultarError(email, errorEmail);
         }
     });
 
     // ADREÇA
     adreca.addEventListener('input', () => {
+        eliminarSimbols(adreca);
         controlarLongitud(adreca);
         const stringAdreca = adreca.value.trim();
         if (adrecaValid(stringAdreca) || stringAdreca.length === 0) {
             ocultarError(adreca, errorAdreca);
-        } else {
-            mostrarError(adreca, errorAdreca);
         }
     });
+
     adreca.addEventListener('blur', () => {
         const stringAdreca = adreca.value.trim();
-        if (stringAdreca.length > 0 && !adrecaValid(stringAdreca)) {
-            mostrarError(adreca, errorAdreca);
+        if (stringAdreca.length === 0) {
+            mostrarError(adreca, errorAdreca, "L'adreça és obligatòria");
+        } else if (stringAdreca.length < 8) {
+            mostrarError(adreca, errorAdreca, "L'adreça ha de tenir almenys 8 caràcters");
+        } else if (!adrecaValid(stringAdreca)) {
+            mostrarError(adreca, errorAdreca, "L'adreça no pot contenir símbols especials");
+        } else {
+            ocultarError(adreca, errorAdreca);
         }
     });
 
@@ -206,52 +227,58 @@ document.addEventListener('DOMContentLoaded', () => {
         const stringTelefon = telefon.value.trim();
         if (telefonValid(stringTelefon) || stringTelefon.length === 0) {
             ocultarError(telefon, errorTelefon);
-        } else {
-            mostrarError(telefon, errorTelefon);
         }
     });
+
     telefon.addEventListener('blur', () => {
         const stringTelefon = telefon.value.trim();
-        if (stringTelefon.length > 0 && !telefonValid(stringTelefon)) {
-            mostrarError(telefon, errorTelefon);
+        if (stringTelefon.length === 0) {
+            mostrarError(telefon, errorTelefon, "El telèfon és obligatori");
+        } else if (!telefonValid(stringTelefon)) {
+            mostrarError(telefon, errorTelefon, "El telèfon ha de tenir 9 dígits");
+        } else {
+            ocultarError(telefon, errorTelefon);
         }
     });
 
     // INTOLERÀNCIES
     intolerancies.addEventListener('input', () => {
+        eliminarSimbols(intolerancies);
         controlarLongitud(intolerancies);
         const stringIntolerancies = intolerancies.value.trim();
         if (intoleranciesValid(stringIntolerancies)) {
             ocultarError(intolerancies, errorIntolerancies);
-        } else {
-            mostrarError(intolerancies, errorIntolerancies);
         }
     });
+
     intolerancies.addEventListener('blur', () => {
         const stringIntolerancies = intolerancies.value.trim();
         if (stringIntolerancies.length > 0 && !intoleranciesValid(stringIntolerancies)) {
-            mostrarError(intolerancies, errorIntolerancies);
+            mostrarError(intolerancies, errorIntolerancies, "Les intoleràncies no poden contenir símbols especials");
+        } else {
+            ocultarError(intolerancies, errorIntolerancies);
         }
     });
 
     // EXTRAS
     extras.addEventListener('input', () => {
+        eliminarSimbols(extras);
         controlarLongitud(extras);
         const stringExtras = extras.value.trim();
         if (extrasValid(stringExtras)) {
             ocultarError(extras, errorExtras);
-        } else {
-            mostrarError(extras, errorExtras);
-        }
-    });
-    extras.addEventListener('blur', () => {
-        const stringExtras = extras.value.trim();
-        if (stringExtras.length > 0 && !extrasValid(stringExtras)) {
-            mostrarError(extras, errorExtras);
         }
     });
 
-}); // Tancament del DOMContentLoaded
+    extras.addEventListener('blur', () => {
+        const stringExtras = extras.value.trim();
+        if (stringExtras.length > 0 && !extrasValid(stringExtras)) {
+            mostrarError(extras, errorExtras, "Els extras no poden contenir símbols especials");
+        } else {
+            ocultarError(extras, errorExtras);
+        }
+    });
+});
 
 
 function total_guardat(total) {

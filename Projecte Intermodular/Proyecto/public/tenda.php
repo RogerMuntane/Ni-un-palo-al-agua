@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="tenda.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="scriptTemas.js" defer></script>
 </head>
 
 <body>
@@ -28,8 +29,9 @@
         <!-- Nav -->
         <ul class="nav-header">
             <li>
-                <button class="boto-rodo boto-rodo-nav" onclick="modeFosc()">
-                    <img src="Images/luna.png" alt="Mode Fosc" class="icone-mode-fosc icones-nav" draggable="false">
+                <button class="boto-rodo boton-tema" aria-label="Canviar tema">
+                    <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
+                    <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
                 </button>
             </li>
 
@@ -50,8 +52,9 @@
         <!-- Sidepanel -->
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
-            <button class="boto-rodo lluna-sidepanel" onclick="modeFosc()">
-                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            <button class="boto-rodo boton-tema lluna-sidepanel" aria-label="Canviar tema">
+                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
+                <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
             </button>
             <!-- Perfil -->
             <button class="boto-rodo perfil-sidepanel" onclick="location.href='login.php'">

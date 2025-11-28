@@ -229,7 +229,7 @@ header {
         padding-top: 80px;
         padding-inline: $espacio-m; //padding als costats
 
-        border-left: 2px solid var(--borde-hover);
+        border-left: 2px solid var(--borde-amarillo);
         box-shadow: -4px 0 15px rgba(0, 0, 0, 0.4);
 
         opacity: 0; //per a que no es mostri
@@ -305,7 +305,7 @@ header {
 
             font-size: 45px;
             font-weight: bold;
-            color: var(--texto-secundario);
+            color: var(--nav-lletres);
 
             cursor: pointer;
 
@@ -330,7 +330,7 @@ header {
             font-size: $titol-size-m;
             text-decoration: none;
 
-            color: var(--texto-secundario);
+            color: var(--nav-lletres);
             background-color: var(--fondo-link-sidepanel);
 
             transition: background-color 0.3s ease, transform 0.3s ease;
@@ -338,7 +338,7 @@ header {
             //Aspecte en Hover
 
             &:hover {
-                background-color: var(--fondo-amarillo);
+                background-color: var(--hover-sidepanel);
                 color: var(--fondo);
                 box-shadow: 0 0 10px rgba($color-amarillo, 0.4);
 
@@ -529,4 +529,16 @@ header {
         }
 
     }
+}
+
+.buscador-header input:-webkit-autofill,
+.buscador-header input:-webkit-autofill:hover,
+.buscador-header input:-webkit-autofill:focus,
+.buscador-header input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+    box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+    -webkit-text-fill-color: $color-amarillo !important;
+    caret-color: $color-amarillo !important;
+    border-bottom-color: $color-naranja !important;
+    transition: background-color 9999s ease-in-out 0s;
 }

@@ -37,6 +37,7 @@
             <div class="camps-texts">
                 <input type="password" name="password" id="password" required placeholder=" ">
                 <label for="password">Contrasenya</label>
+                <small class="error-msg" id="password-error">La contrasenya és obligatòria</small>
             </div>
             <small class="error-msg" id="form-buit">Els camps no poden estar buits</small>
             <button type="submit" class="button-login">

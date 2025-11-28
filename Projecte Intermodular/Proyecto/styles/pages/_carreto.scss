@@ -1,7 +1,7 @@
 @use "../abstract/variables" as *;
 
 .carreto_senser {
-    background-color: $color-naranja;
+    background-color: var(--fondo-carreto);
     min-height: 700px;
     height: auto;
     border-radius: 50px 50px 0px 0px;
@@ -57,7 +57,7 @@
     }
 
     .carret_item {
-        background-color: $color-principal;
+        background-color: var(--fondo);
         border: 2px solid $color-secundario;
         padding: $espacio-m;
         border-radius: 8px;
@@ -98,7 +98,7 @@
 
             .btn_minus,
             .btn_plus {
-                background: $color-secundario;
+                background: var(--acento-secundario);
                 color: $color-amarillo;
                 padding: $espacio-xs;
                 font-weight: bold;
@@ -128,7 +128,7 @@
     }
 
     .carret_resum {
-        background-color: $color-principal;
+        background-color: var(--fondo);
         border: 2px solid $color-secundario;
         padding: $espacio-m;
         border-radius: 8px;
@@ -152,7 +152,7 @@
 
         .btn_primary,
         .btn_secondary {
-            background: $color-naranja;
+            background: var(--acento-secundario);
             color: $color-amarillo;
             padding: $espacio-s $espacio-m;
             border-radius: 6px;

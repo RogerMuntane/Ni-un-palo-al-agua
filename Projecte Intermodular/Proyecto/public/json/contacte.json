@@ -3,5 +3,15 @@
         "nom": "a",
         "correu": "roger@gmail.com",
         "telefon": "333333333"
+    },
+    {
+        "nom": "",
+        "correu": "",
+        "telefon": ""
+    },
+    {
+        "nom": "Adria#",
+        "correu": "asdassadasdsadsa@gamil.com",
+        "telefon": "345678902"
     }
 ]
