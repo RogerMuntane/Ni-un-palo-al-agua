@@ -681,6 +681,10 @@ header .overlay-sidepanel.active {
   --fondo-link-sidepanel: rgba(67,40,24, 0.75);
   --hover-sidepanel: #FFE6A7;
   --fondo-carreto: #99582A;
+  --color-principal-oscuro: rgb(36.9604395604, 22.0659340659, 13.2395604396);
+  --color-tiquet: white;
+  --total: #FFE6A7;
+  --total-text: black;
 }
 
 body.dark-mode {
@@ -712,6 +716,10 @@ body.dark-mode {
   --fondo-link-sidepanel: rgba(26, 15, 8, 0.9);
   --hover-sidepanel: #BB9457;
   --fondo-carreto: #381e14;
+  --color-principal-oscuro: #6F1D1B;
+  --color-tiquet: #422519;
+  --total: #99582A;
+  --total-text: #432818;
 }
 
 .tenda_banner {
@@ -1982,33 +1990,33 @@ body.dark-mode {
 .historial-container {
   margin: auto;
   padding: 30px;
-  background: #FFE6A7;
+  background: var(--fondo-amarillo);
   border-radius: 15px 15px 0 0;
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   color: #432818;
 }
 .historial-container .historial-titol {
-  color: #432818;
+  color: var(--texto-secundario);
   text-align: center;
   font-size: 35px;
   margin-bottom: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .historial-container input::-webkit-input-placeholder {
-  color: #6F1D1B;
+  color: var(--acento-primario);
 }
 .historial-container input::-moz-placeholder {
-  color: #6F1D1B;
+  color: var(--acento-primario);
 }
 .historial-container input:-ms-input-placeholder {
-  color: #6F1D1B;
+  color: var(--acento-primario);
 }
 .historial-container input::-ms-input-placeholder {
-  color: #6F1D1B;
+  color: var(--acento-primario);
 }
 .historial-container input::placeholder {
-  color: #6F1D1B;
+  color: var(--acento-primario);
 }
 .historial-container .filtres-container {
   display: -webkit-box;
@@ -2026,7 +2034,7 @@ body.dark-mode {
   gap: 15px;
 }
 .historial-container .filtres-container .btn-afegir {
-  background-color: #432818;
+  background-color: var(--acento-secundario);
   color: #FFE6A7;
   padding: 12px 25px;
   border: none;
@@ -2040,7 +2048,7 @@ body.dark-mode {
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .historial-container .filtres-container .btn-afegir:hover {
-  background-color: rgb(36.9604395604, 22.0659340659, 13.2395604396);
+  background-color: var(--color-principal-oscuro);
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
   -webkit-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
@@ -2057,7 +2065,7 @@ body.dark-mode {
   max-width: 400px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  color: #432818;
+  color: var(--texto-secundario);
 }
 .historial-container .filtres-container .input-cerca:focus {
   outline: none;
@@ -2072,7 +2080,7 @@ body.dark-mode {
   color: #432818;
 }
 .historial-container .tiquets-llista .tiquet-card {
-  background-color: white;
+  background-color: var(--color-tiquet);
   border-radius: 12px;
   padding: 20px;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -2102,7 +2110,7 @@ body.dark-mode {
   border-bottom: 2px solid #FFE6A7;
 }
 .historial-container .tiquets-llista .tiquet-card .tiquet-header h3 {
-  color: #432818;
+  color: var(--texto-secundario);
   font-size: 20px;
   margin: 0;
 }
@@ -2139,14 +2147,14 @@ body.dark-mode {
   font-weight: bold;
 }
 .historial-container .tiquets-llista .tiquet-card .tiquet-total {
-  background-color: #FFE6A7;
+  background-color: var(--total);
   padding: 10px 15px;
   border-radius: 8px;
   margin-bottom: 15px;
   text-align: right;
 }
 .historial-container .tiquets-llista .tiquet-card .tiquet-total .total-text {
-  color: #432818;
+  color: var(--total-text);
   font-size: 14px;
   font-weight: bold;
 }
@@ -2198,7 +2206,7 @@ body.dark-mode {
   margin: 0;
 }
 .historial-container .totals-container h3 span {
-  color: #BB9457;
+  color: var(--texto-secundario);
 }
 @media (max-width: 728px) {
   .historial-container {
@@ -2576,7 +2584,7 @@ body.dark-mode {
   text-align: left;
   padding: 8px;
   font-weight: bold;
-  color: #432818;
+  color: var(--texto-secundario);
 }
 .taula-productes thead th.alineat-centre {
   text-align: center;
@@ -2595,9 +2603,11 @@ body.dark-mode {
 }
 .taula-productes tbody td.alineat-centre {
   text-align: center;
+  color: var(--texto-secundario);
 }
 .taula-productes tbody td.alineat-dreta {
   text-align: right;
+  color: var(--texto-secundario);
 }
 .taula-productes .producte-info {
   display: -webkit-box;
@@ -2622,6 +2632,7 @@ body.dark-mode {
   font-weight: bold;
   border-top: 2px solid #432818;
   margin-top: 10px;
+  color: var(--total-text);
 }
 
 .tiquet-accions {
@@ -2640,7 +2651,7 @@ body.dark-mode {
 .missatge-buit {
   text-align: center;
   padding: 20px;
-  color: #6F1D1B;
+  color: var(--acento-primario);
   font-size: 20px;
 }
 
