@@ -160,10 +160,15 @@ header {
             }
         }
 
+        &.boto-rodo-nav {
+            width: 55px;
+            height: 55px;
+        }
+
         //Icones de Perfil i Mode Fosc
 
         .icones-nav {
-            width: 30px;
+            width: 40px;
             padding-bottom: 3px;
         }
 
@@ -488,6 +493,7 @@ header {
             }
         }
 
+
         //Aspectes Únics del Buscador en el Sidepanel
 
         &.buscador-sidepanel {
@@ -527,6 +533,16 @@ header {
         li {
             margin: 7px;
         }
+
+        .boto-rodo-nav {
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        .icones-nav {
+            width: 30px !important;
+        }
+
 
     }
 }

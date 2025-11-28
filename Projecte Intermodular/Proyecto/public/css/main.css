@@ -249,8 +249,12 @@ header .boto-rodo:active {
 header .boto-rodo:active.boto-rodo-nav {
   border-color: rgb(229.7914691943, 143.8957345972, 83.2085308057);
 }
+header .boto-rodo.boto-rodo-nav {
+  width: 55px;
+  height: 55px;
+}
 header .boto-rodo .icones-nav {
-  width: 30px;
+  width: 40px;
   padding-bottom: 3px;
 }
 header .boto-rodo.boto-rodo:hover .icones-nav {
@@ -494,6 +498,13 @@ header .overlay-sidepanel.active {
 }
 .header-tenda .nav-header li {
   margin: 7px;
+}
+.header-tenda .nav-header .boto-rodo-nav {
+  width: 40px !important;
+  height: 40px !important;
+}
+.header-tenda .nav-header .icones-nav {
+  width: 30px !important;
 }
 
 .buscador-header input:-webkit-autofill,
