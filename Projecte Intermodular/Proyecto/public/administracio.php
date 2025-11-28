@@ -46,6 +46,7 @@ if (file_exists($path)) {
     <link rel="stylesheet" href="css/main.css" />
     <script src="script.js" defer></script>
     <script src="historial.js" defer></script>
+    <script src="scriptTemas.js" defer></script>
 </head>
 
 <body>
@@ -65,8 +66,11 @@ if (file_exists($path)) {
         <!-- Nav -->
         <ul class="nav-header">
             <li>
-                <button class="boto-rodo" onclick="modeFosc()">
-                    <img src="Images/luna.png" alt="Mode Fosc" class="icone-mode-fosc icones-nav" draggable="false">
+                <button class="boto-rodo boton-tema" aria-label="Canviar tema">
+                    <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
+                        draggable="false">
+                    <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false"
+                        style="display: none;">
                 </button>
             </li>
             <li><a href="contacte.html">Contacte</a></li>
@@ -77,8 +81,9 @@ if (file_exists($path)) {
         <span class="burger-header" onclick="desplegarBurger()">&#9776;</span>
 
         <div id="sidepanel" class="sidepanel">
-            <button class="boto-rodo lluna-sidepanel" onclick="modeFosc()">
-                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icone-mode-fosc" draggable="false">
+            <button class="boto-rodo boton-tema lluna-sidepanel" aria-label="Canviar tema">
+                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
+                <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
             </button>
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
             <br>

@@ -84,5 +84,21 @@
                 }
             ]
         ]
+    },
+    "hola@gmail.com": {
+        "carret": [],
+        "total": 0,
+        "ultima_actualizacion": "2025-11-28 15:50:22",
+        "historial": [
+            [
+                {
+                    "id": "sadasdsa",
+                    "name": "sadasdsa",
+                    "price": "23",
+                    "quantity": 1,
+                    "image": "Images\/default.png"
+                }
+            ]
+        ]
     }
 }

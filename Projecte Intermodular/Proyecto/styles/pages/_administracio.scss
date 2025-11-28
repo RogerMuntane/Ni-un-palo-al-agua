@@ -5,13 +5,13 @@
 .historial-container {
     margin: auto;
     padding: $espacio-xl;
-    background: $color-amarillo;
+    background: var(--fondo-amarillo);
     border-radius: 15px 15px 0 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     color: $color-principal;
 
     .historial-titol {
-        color: $color-principal;
+        color: var(--texto-secundario);
         text-align: center;
         font-size: $titol-size-4xl;
         margin-bottom: $espacio-xl;
@@ -19,7 +19,7 @@
     }
 
     input::placeholder {
-        color: $color-rojo;
+        color: var(--acento-primario);
     }
 
     .filtres-container {
@@ -31,7 +31,7 @@
         gap: $espacio-s;
 
         .btn-afegir {
-            background-color: $color-principal;
+            background-color: var(--acento-secundario);
             color: $color-amarillo;
             padding: 12px $espacio-l;
             border: none;
@@ -43,7 +43,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
             &:hover {
-                background-color: color.adjust($color-principal, $lightness: -8%);
+                background-color: var(--color-principal-oscuro);
                 transform: translateY(-2px);
                 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
             }
@@ -57,7 +57,7 @@
             flex: 1;
             max-width: 400px;
             transition: all 0.3s ease;
-            color: $color-principal;
+            color: var(--texto-secundario);
 
             &:focus {
                 outline: none;
@@ -74,7 +74,7 @@
         color: $color-principal;
 
         .tiquet-card {
-            background-color: white;
+            background-color: var(--color-tiquet);
             border-radius: 12px;
             padding: $espacio-m;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -95,7 +95,7 @@
                 border-bottom: 2px solid $color-amarillo;
 
                 h3 {
-                    color: $color-principal;
+                    color: var(--texto-secundario);
                     font-size: $titol-size-l;
                     margin: 0;
                 }
@@ -112,6 +112,7 @@
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
                 gap: $espacio-s;
                 margin-bottom: $espacio-s;
+
 
                 .detall-item {
                     display: flex;
@@ -134,14 +135,14 @@
             }
 
             .tiquet-total {
-                background-color: $color-amarillo;
+                background-color: var(--total);
                 padding: $espacio-xs $espacio-s;
                 border-radius: 8px;
                 margin-bottom: $espacio-s;
                 text-align: right;
 
                 .total-text {
-                    color: $color-principal;
+                    color: var(--total-text);
                     font-size: $titol-size-m;
                     font-weight: bold;
                 }
@@ -196,7 +197,7 @@
             margin: 0;
 
             span {
-                color: $color-secundario;
+                color: var(--texto-secundario);
             }
         }
     }
@@ -581,7 +582,7 @@
             text-align: left;
             padding: 8px;
             font-weight: bold;
-            color: $color-principal;
+            color: var(--texto-secundario);
 
             &.alineat-centre {
                 text-align: center;
@@ -607,10 +608,12 @@
 
             &.alineat-centre {
                 text-align: center;
+                color: var(--texto-secundario);
             }
 
             &.alineat-dreta {
                 text-align: right;
+                color: var(--texto-secundario);
             }
         }
     }
@@ -636,6 +639,7 @@
     font-weight: bold;
     border-top: 2px solid $color-principal;
     margin-top: $espacio-xs;
+    color: var(--total-text);
 }
 
 //Botons per eliminar i editar tiquets
@@ -651,6 +655,6 @@
 .missatge-buit {
     text-align: center;
     padding: $espacio-m;
-    color: $color-rojo;
+    color: var(--acento-primario);
     font-size: $titol-size-l;
 }
