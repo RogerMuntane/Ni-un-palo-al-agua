@@ -10,7 +10,7 @@ if (!isset($_SESSION['usuari'])) {
 $usuari = $_SESSION['usuari'];
 
 //Carrega les dates del JSON
-$path = __DIR__ . "/json/productes.json";
+$path = __DIR__ . "../json/productes.json";
 $dadesUsuari = [];
 $historial = [];
 $totalGeneral = 0;
