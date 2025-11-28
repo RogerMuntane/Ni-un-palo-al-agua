@@ -69,7 +69,7 @@ if (file_exists($path)) {
                 <button class="boto-rodo boton-tema" aria-label="Canviar tema">
                     <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna"
                         draggable="false">
-                    <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false"
+                    <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false"
                         style="display: none;">
                 </button>
             </li>
