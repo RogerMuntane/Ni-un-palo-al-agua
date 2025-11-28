@@ -84,7 +84,7 @@ error_log("Total general calculat: " . $totalGeneral);
                 </button>
             </li>
             <li><a href="contacte.html">Contacte</a></li>
-            <li><a href="tcarreto.html">&#128722;Carretó</a></li>
+            <li><a href="carreto.html">&#128722;Carretó</a></li>
             <li><a href="tenda.php">Tenda Online</a></li>
         </ul>
 

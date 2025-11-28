@@ -416,7 +416,7 @@ header {
         //Quadre de Text
 
         input {
-            color: var(--texto-secundario);
+            color: $color-amarillo;
             font-size: $titol-size-m;
 
             width: 100%;
@@ -433,7 +433,7 @@ header {
             //Aspecte Placeholder
 
             &::placeholder {
-                color: var(--texto-secundario);
+                color: $color-amarillo;
                 opacity: 0.5;
             }
         }
@@ -470,7 +470,7 @@ header {
         //Vora en fer Focus en el Quadre de Text
 
         &:has(input:focus) {
-            border-color: var(--borde-hover);
+            border-color: $color-amarillo;
 
         }
 

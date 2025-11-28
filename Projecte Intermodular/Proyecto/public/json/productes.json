@@ -14,10 +14,17 @@
                 "price": 2.5,
                 "image": "..\/Images\/zumo-de-naranja.jpg",
                 "quantity": 1
+            },
+            {
+                "id": "iogurt-natural",
+                "name": "Iogurt Natural",
+                "price": 1.5,
+                "image": "..\/Images\/iogurt.jpg",
+                "quantity": 1
             }
         ],
-        "total": 12,
-        "ultima_actualizacion": "2025-11-28 21:06:52",
+        "total": 13.5,
+        "ultima_actualizacion": "2025-11-28 21:21:53",
         "historial": [
             [
                 {
@@ -92,6 +99,191 @@
                     "price": 2,
                     "quantity": 1,
                     "image": "..\/Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "entrep-de-butifarra",
+                    "name": "Entrep\u00e0 de butifarra",
+                    "price": 4.5,
+                    "image": "..\/Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "suc-natural",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "..\/Images\/zumo-de-naranja.jpg",
+<<<<<<< Updated upstream
+                    "quantity": 1
+                },
+                {
+                    "id": "iogurt-natural",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "..\/Images\/iogurt.jpg",
+                    "quantity": 1
+=======
+                    "quantity": 1
+                },
+                {
+                    "id": "iogurt-natural",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "..\/Images\/iogurt.jpg",
+                    "quantity": 1
+<<<<<<< HEAD
+                },
+                {
+                    "id": "barreta-energetica",
+                    "name": "Barreta energetica",
+                    "price": 1,
+                    "image": "..\/Images\/barreta.jpg",
+                    "quantity": 1
+                }
+            ],
+            [
+                {
+                    "id": "rf",
+                    "name": "rf",
+                    "price": "3",
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "433",
+                    "name": "433",
+                    "price": "33",
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+                },
+                {
+                    "id": "dsds",
+                    "name": "dsds",
+                    "price": "4",
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "dsa",
+                    "name": "dsa",
+                    "price": "3",
+                    "quantity": 12,
+                    "image": "..\/Images\/bocadillo_mixt.jpg"
+                }
+            ]
+        ]
+    },
+    "hola@gmail.com": {
+        "carret": [
+            {
+                "id": "entrepa-de-butifarra",
+                "name": "Entrepa de butifarra",
+                "price": 4.5,
+                "image": "Images\/bocadillo_butifarra.jpg",
+                "quantity": 1
+            },
+            {
+                "id": "entrepa-de-pernil",
+                "name": "Entrepa de pernil",
+                "price": 3.5,
+                "image": "Images\/bocatajamon.jpg",
+                "quantity": 1
+            },
+            {
+                "id": "refresc",
+                "name": "Refresc",
+                "price": 2,
+                "image": "Images\/cocacola.jpg",
+                "quantity": 1
+            },
+            {
+                "id": "suc-natural",
+                "name": "Suc Natural",
+                "price": 2.5,
+                "image": "Images\/zumo-de-naranja.jpg",
+                "quantity": 1
+            },
+            {
+                "id": "aigua-mineral",
+                "name": "Aigua Mineral",
+                "price": 1,
+                "image": "Images\/solan2(1).jpg",
+                "quantity": 1
+            }
+        ],
+        "total": 18.5,
+        "ultima_actualizacion": "2025-11-28 21:03:54",
+        "historial": [
+            [
+                {
+                    "id": "sadasdsa",
+                    "name": "sadasdsa",
+                    "price": "23",
+                    "quantity": 1,
+                    "image": "Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "asdas",
+                    "name": "asdas",
+                    "price": "23",
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "3123123",
+                    "name": "3123123",
+                    "price": "23",
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+=======
+>>>>>>> 36e3a53b9cda6e7d3c41ec96aab03933c037c2d8
+                }
+            ],
+            [
+                {
+                    "id": "entrepa-de-butifarra",
+                    "name": "Entrepa de butifarra",
+                    "price": 4.5,
+                    "image": "Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "entrepa-de-pernil",
+                    "name": "Entrepa de pernil",
+                    "price": 3.5,
+                    "image": "Images\/bocatajamon.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "refresc",
+                    "name": "Refresc",
+                    "price": 2,
+                    "image": "Images\/cocacola.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "suc-natural",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "aigua-mineral",
+                    "name": "Aigua Mineral",
+                    "price": 1,
+                    "image": "Images\/solan2(1).jpg",
+                    "quantity": 1
+>>>>>>> Stashed changes
                 }
             ]
         ]
