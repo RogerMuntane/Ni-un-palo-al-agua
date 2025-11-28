@@ -91,7 +91,7 @@ error_log("Total general calculat: " . $totalGeneral);
         <span class="burger-header" onclick="desplegarBurger()">&#9776;</span>
 
         <div id="sidepanel" class="sidepanel">
-            <button class="boto-rodo boton-tema lluna-sidepanel" aria-label="Canviar tema">
+            <button class="boto-rodo boton-tema lluna-sidepanel boto-rodo-nav" aria-label="Canviar tema">
                 <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
                 <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
             </button>
