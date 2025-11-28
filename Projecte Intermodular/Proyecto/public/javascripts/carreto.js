@@ -24,7 +24,6 @@ function deleteCookie(name) {
     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
-//Tambe es guarda al local storage, pero no s'utilitza perque al principi haviem plantejat fer-ho en fetch, pero al final ho hem canviat per fer-ho en ajax
 function obtenir_localSorage() {
     try {
         const data = getCookie(STORAGE_KEY);
