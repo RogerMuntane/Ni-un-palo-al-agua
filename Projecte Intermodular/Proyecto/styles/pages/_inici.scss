@@ -146,7 +146,7 @@
 
     .producte_oferta_preu {
         font-family: $font-titol;
-        color: var(--acento-secundario);
+        color: var(--acento-naranja);
         font-size: $titol-size-l;
         font-weight: bold;
         margin: 0 0 $espacio-m;
@@ -166,6 +166,7 @@
 
         &:hover {
             background-color: var(--acento-hover);
+            color: var(--acento-primario);
             transform: scale(1.03);
         }
 

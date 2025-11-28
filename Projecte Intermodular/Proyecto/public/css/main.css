@@ -671,6 +671,7 @@ header .overlay-sidepanel.active {
   --acento-primario: #6F1D1B;
   --acento-secundario: #99582A;
   --acento-hover: #fefae0;
+  --acento-naranja: #99582A;
   --borde-principal: #BB9457;
   --borde-tarjeta: #BB9457;
   --borde-naranja: #BB9457;
@@ -678,7 +679,7 @@ header .overlay-sidepanel.active {
   --borde-amarillo: #FFE6A7;
   --nav-lletres: #FFE6A7;
   --fondo-sidepanel: rgba(187, 148, 87, 0.75);
-  --fondo-link-sidepanel: rgba(67,40,24, 0.75);
+  --fondo-link-sidepanel: rgba(67, 40, 24, 0.75);
   --hover-sidepanel: #FFE6A7;
   --fondo-carreto: #99582A;
   --color-principal-oscuro: rgb(36.9604395604, 22.0659340659, 13.2395604396);
@@ -706,6 +707,7 @@ body.dark-mode {
   --acento-primario: #99582A;
   --acento-secundario: #2d1810;
   --acento-hover: #6F1D1B;
+  --acento-naranja: #99582A;
   --borde-principal: #99582A;
   --borde-tarjeta: #99582A;
   --borde-naranja: #2d1810;
@@ -1363,7 +1365,7 @@ body.dark-mode {
 }
 .producte_oferta .producte_oferta_preu {
   font-family: "PlayfairDisplay";
-  color: var(--acento-secundario);
+  color: var(--acento-naranja);
   font-size: 20px;
   font-weight: bold;
   margin: 0 0 20px;
@@ -1383,6 +1385,7 @@ body.dark-mode {
 }
 .producte_oferta .btn_comprar_oferta:hover {
   background-color: var(--acento-hover);
+  color: var(--acento-primario);
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
 }

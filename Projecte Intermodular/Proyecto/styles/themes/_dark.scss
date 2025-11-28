@@ -22,6 +22,7 @@
     --acento-primario: #{$color-rojo};
     --acento-secundario: #{$color-naranja};
     --acento-hover: #{$color-amarillo-claro};
+    --acento-naranja: #{$color-naranja};
 
     --borde-principal: #{$color-secundario};
     --borde-tarjeta: #{$color-secundario};
@@ -31,7 +32,7 @@
 
     --nav-lletres: #{$color-amarillo};
     --fondo-sidepanel: rgba(187, 148, 87, 0.75);
-    --fondo-link-sidepanel: rgba(67,40,24, 0.75);
+    --fondo-link-sidepanel: rgba(67, 40, 24, 0.75);
     --hover-sidepanel: #{$color-amarillo};
 
     // Carreto
@@ -63,8 +64,9 @@ body.dark-mode {
     --texto-tarjeta: #{$color-amarillo};
 
     --acento-primario: #{$color-naranja};
-    --acento-secundario: #2d1810;;
+    --acento-secundario: #2d1810;
     --acento-hover: #{$color-rojo};
+    --acento-naranja: #{$color-naranja};
 
     --borde-principal: #{$color-naranja};
     --borde-tarjeta: #{$color-naranja};
@@ -78,11 +80,12 @@ body.dark-mode {
     --hover-sidepanel: #{$color-secundario};
 
     // Carreto
-    --fondo-carreto: #381e14;;
+    --fondo-carreto: #381e14;
+    ;
 
     // Administracio
     --color-principal-oscuro: #{$color-rojo};
-    --color-tiquet : #422519;
+    --color-tiquet: #422519;
     --total: #99582A;
     --total-text: #{$color-principal};
 }
