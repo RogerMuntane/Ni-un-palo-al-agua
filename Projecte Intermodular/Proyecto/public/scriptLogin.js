@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formulari = document.getElementById('login');
     const email = document.getElementById('email');
+    const password = document.getElementById('password');
     const enviar = formulari.querySelector('button[type="submit"]');
 
     const errorEmail = document.getElementById('email-error');
+    const errorPassword = document.getElementById('password-error');
 
     const MAX_LENGTH = 256;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,8 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let formulariCorrecte = true;
         const stringEmail = email.value.trim();
+        const stringPassword = password.value.trim();
 
         ocultarError(email, errorEmail);
+        ocultarError(password, errorPassword);
 
         if (stringEmail.length === 0) {
             formulariCorrecte = false;
@@ -44,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (stringEmail.length > MAX_LENGTH || !emailValid(stringEmail)) {
             formulariCorrecte = false;
             mostrarError(email, errorEmail, "El format de l'email no és vàlid");
+        }
+
+        if (stringPassword.length === 0) {
+            formulariCorrecte = false;
+            mostrarError(password, errorPassword, "La contrasenya és obligatòria");
         }
 
         if (formulariCorrecte) {
@@ -64,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (emailValid(stringEmail) || stringEmail.length === 0) {
             ocultarError(email, errorEmail);
         }
-
     });
 
     email.addEventListener('blur', () => {
@@ -76,6 +84,25 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarError(email, errorEmail, "El format de l'email no és vàlid");
         } else {
             ocultarError(email, errorEmail);
+        }
+    });
+
+    password.addEventListener('input', () => {
+        controlarLongitud(password);
+        const stringPassword = password.value.trim();
+
+        if (stringPassword.length > 0) {
+            ocultarError(password, errorPassword);
+        }
+    });
+
+    password.addEventListener('blur', () => {
+        const stringPassword = password.value.trim();
+
+        if (stringPassword.length === 0) {
+            mostrarError(password, errorPassword, "La contrasenya és obligatòria");
+        } else {
+            ocultarError(password, errorPassword);
         }
     });
 });

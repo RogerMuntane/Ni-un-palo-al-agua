@@ -32,7 +32,7 @@
 
 // Text Introductori
 .tenda_intro {
-    background-color: $color-secundario;
+    background-color: var(--fondo-secundario);
     padding: $espacio-xl $espacio-m;
 
     .tenda_intro_content {
@@ -61,7 +61,7 @@
 .tenda_categories {
     margin: 0 auto;
     padding: $espacio-s $espacio-m $espacio-xl;
-    background-color: $color-amarillo;
+    background-color: var(--fondo-amarillo);
 
     h1 {
         color: $color-rojo;
@@ -140,7 +140,7 @@
     }
 
     .btn_comprar {
-        background-color: $color-naranja;
+        background-color: var(--acento-secundario);
         color: $color-amarillo;
         padding: $espacio-s $espacio-m;
         font-size: $titol-size-m;
@@ -152,9 +152,9 @@
         font-weight: bold;
 
         &:hover {
-            background-color: $color-amarillo;
+            background-color: var(--acento-hover);
             transform: scale(1.05);
-            color: $color-principal;
+            color: var(--texto-principal);
         }
 
         &:active {
