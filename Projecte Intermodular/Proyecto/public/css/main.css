@@ -695,6 +695,7 @@ header .overlay-sidepanel.active {
   --fondo-sidepanel: rgba(187, 148, 87, 0.75);
   --fondo-link-sidepanel: rgba(67, 40, 24, 0.75);
   --hover-sidepanel: #FFE6A7;
+  --carrusel-color: linear-gradient(135deg, #432818 0%, #99582A 100%);
   --fondo-carreto: #99582A;
   --color-principal-oscuro: rgb(36.9604395604, 22.0659340659, 13.2395604396);
   --color-tiquet: white;
@@ -731,6 +732,7 @@ body.dark-mode {
   --fondo-sidepanel: rgba(45, 24, 16, 0.95);
   --fondo-link-sidepanel: rgba(26, 15, 8, 0.9);
   --hover-sidepanel: #BB9457;
+  --carrusel-color: #2b150d;
   --fondo-carreto: #381e14;
   --color-principal-oscuro: #6F1D1B;
   --color-tiquet: #422519;
@@ -1431,7 +1433,7 @@ body.dark-mode {
 }
 .carrusel-section {
   padding: 30px 0;
-  background: linear-gradient(135deg, #432818 0%, #99582A 100%);
+  background: var(--carrusel-color);
   overflow: hidden;
 }
 
@@ -1470,7 +1472,7 @@ body.dark-mode {
 .carrusel-content {
   max-width: 800px;
   text-align: center;
-  background: rgba(255, 230, 167, 0.95);
+  background: var(--fondo-amarillo);
   padding: 60px;
   border-radius: 20px;
   -webkit-box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
@@ -1479,7 +1481,7 @@ body.dark-mode {
 .carrusel-content h2 {
   font-family: "PlayfairDisplay";
   font-size: 35px;
-  color: #432818;
+  color: var(--texto-secundario);
   margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -1487,7 +1489,7 @@ body.dark-mode {
 .carrusel-content p {
   font-family: "NunitoSans";
   font-size: 20px;
-  color: #333;
+  color: var(--texto-negre);
   line-height: 1.8;
 }
 
@@ -2174,6 +2176,8 @@ body.dark-mode {
   border-radius: 8px;
   margin-bottom: 15px;
   text-align: right;
+  color: var(--total-text);
+  font-weight: bold;
 }
 .historial-container .tiquets-llista .tiquet-card .tiquet-total .total-text {
   color: var(--total-text);
@@ -2228,7 +2232,7 @@ body.dark-mode {
   margin: 0;
 }
 .historial-container .totals-container h3 span {
-  color: var(--texto-secundario);
+  color: var(--texto-secundario) !important;
 }
 @media (max-width: 728px) {
   .historial-container {
@@ -2622,6 +2626,7 @@ body.dark-mode {
 }
 .taula-productes tbody td {
   padding: 8px;
+  color: var(--texto-secundario);
 }
 .taula-productes tbody td.alineat-centre {
   text-align: center;
@@ -2630,6 +2635,9 @@ body.dark-mode {
 .taula-productes tbody td.alineat-dreta {
   text-align: right;
   color: var(--texto-secundario);
+}
+.taula-productes tbody td span {
+  color: var(--texto-secundario) !important;
 }
 .taula-productes .producte-info {
   display: -webkit-box;
