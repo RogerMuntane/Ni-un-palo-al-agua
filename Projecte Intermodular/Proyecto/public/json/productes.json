@@ -2,18 +2,8 @@
     "xavierruizboix50@gmail.com": {
         "carret": [],
         "total": 0,
-        "ultima_actualizacion": "2025-11-28 21:46:06",
-        "historial": [
-            [
-                {
-                    "id": "232",
-                    "name": "232",
-                    "price": 23,
-                    "quantity": 1,
-                    "image": "..\/Images\/default.png"
-                }
-            ]
-        ]
+        "ultima_actualizacion": "2025-11-28 22:17:02",
+        "historial": []
     },
     "roger@gmail.com": {
         "carret": [],

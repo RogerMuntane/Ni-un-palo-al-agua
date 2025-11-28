@@ -9,6 +9,10 @@
     border-radius: 15px 15px 0 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     color: $color-principal;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .historial-titol {
         color: var(--texto-secundario);
@@ -143,6 +147,7 @@
                 color: var(--total-text);
                 font-weight: bold;
 
+
                 .total-text {
                     color: var(--total-text);
                     font-size: $titol-size-m;
@@ -192,6 +197,7 @@
         padding: $espacio-m;
         border-radius: 12px;
         text-align: center;
+
 
         h3 {
             color: $color-amarillo;
