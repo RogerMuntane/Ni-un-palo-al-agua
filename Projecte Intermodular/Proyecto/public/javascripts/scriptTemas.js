@@ -1,6 +1,24 @@
 const CLAVE_TEMA = 'tema-usuario';
 const CLASE_TEMA_OSCURO = 'dark-mode';
 
+function setCookie(name, value, days = 365) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let c = cookies[i];
+        while (c.charAt(0) === ' ') c = c.substring(1);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+    }
+    return null;
+}
+
 function aplicarTema(tema) {
     if (tema === CLASE_TEMA_OSCURO) {
         document.body.classList.add(CLASE_TEMA_OSCURO);
@@ -36,7 +54,7 @@ function alternarTema() {
 
     aplicarTema(nuevoTema);
     actualizarIconos(nuevoTema);
-    localStorage.setItem(CLAVE_TEMA, nuevoTema);
+    setCookie(CLAVE_TEMA, nuevoTema);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,16 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let temaInicial;
+    const temaCookie = getCookie(CLAVE_TEMA);
 
-    if (localStorage.getItem(CLAVE_TEMA) !== null) {
-        // Si hay algo guardado (incluso si es ''), úsalo
-        temaInicial = localStorage.getItem(CLAVE_TEMA);
+    if (temaCookie !== null) {
+        //Si hi ha cookie guardada, usar-la
+        temaInicial = temaCookie;
     } else {
-        // Solo la primera vez, usa la preferencia del sistema
+        //Primera vegada: usar preferència del sistema
         const preferenciaSistema = window.matchMedia('(prefers-color-scheme: dark)').matches;
         temaInicial = preferenciaSistema ? CLASE_TEMA_OSCURO : '';
-        // Guarda la preferencia inicial
-        localStorage.setItem(CLAVE_TEMA, temaInicial);
+        setCookie(CLAVE_TEMA, temaInicial); //Guardar preferència inicial
     }
 
     aplicarTema(temaInicial);

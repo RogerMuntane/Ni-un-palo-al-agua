@@ -96,22 +96,20 @@ function mostrarpromocio() {
 
 document.addEventListener("DOMContentLoaded", mostrarpromocio);
 
-
-
-
-
-//Carrusel
+// ==========================================
+// CARRUSEL
+// ==========================================
 let slideActual = 0;
 const totalSlides = 3;
 const wrapper = document.getElementById('carruselWrapper');
 const indicadors = document.querySelectorAll('.indicador');
 
-let intervalCarrusel; // Variable per guardar la referència del interval
+let intervalCarrusel;
 
 function canviarSlide(index) {
     slideActual = index;
     actualitzarCarrusel();
-    reiniciarInterval(); // Reinicia el interval quan canviem manualment
+    reiniciarInterval();
 }
 
 function actualitzarCarrusel() {
@@ -123,8 +121,8 @@ function actualitzarCarrusel() {
 }
 
 function reiniciarInterval() {
-    clearInterval(intervalCarrusel); // Atura el interval actual
-    intervalCarrusel = setInterval(() => { // Inicia un nou interval
+    clearInterval(intervalCarrusel);
+    intervalCarrusel = setInterval(() => {
         slideActual = (slideActual + 1) % totalSlides;
         actualitzarCarrusel();
     }, 20000);
@@ -133,29 +131,28 @@ function reiniciarInterval() {
 // Inicia el interval per primera vegada
 reiniciarInterval();
 
-// Per als botons inferiors
+// Per als botons inferiors i swipe
 let posicio_inicial = 0;
 let posicio_final = 0;
 
 wrapper.addEventListener('touchstart', (e) => {
-    posicio_inicial = e.changedTouches[0].screenX; // Registra la posició inicial que es fa abans del click
+    posicio_inicial = e.changedTouches[0].screenX;
 });
 
 wrapper.addEventListener('touchend', (e) => {
-    posicio_final = e.changedTouches[0].screenX; // Registra la posició final despres del click
-    handleSwipe(); // Gestiona el canvi
+    posicio_final = e.changedTouches[0].screenX;
+    handleSwipe();
 });
 
 function handleSwipe() {
-    if (posicio_final < posicio_inicial - 50) { // Detecta desplaçament esquerra (mínim 50px)
-        slideActual = (slideActual + 1) % totalSlides; // Avança al següent slide
+    if (posicio_final < posicio_inicial - 50) {
+        slideActual = (slideActual + 1) % totalSlides;
         actualitzarCarrusel();
-        setInterval();
+        reiniciarInterval(); // ✅ CORREGIT - abans era setInterval()
     }
-    if (posicio_final > posicio_inicial + 50) { // Detecta desplaçament dreta (mínim 50px)
-        slideActual = (slideActual - 1 + totalSlides) % totalSlides; // Retrocedeix al slide anterior
+    if (posicio_final > posicio_inicial + 50) {
+        slideActual = (slideActual - 1 + totalSlides) % totalSlides;
         actualitzarCarrusel();
-        setInterval();
-
+        reiniciarInterval(); // ✅ CORREGIT - abans era setInterval()
     }
 }

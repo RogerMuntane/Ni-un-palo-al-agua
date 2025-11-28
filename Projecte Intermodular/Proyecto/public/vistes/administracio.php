@@ -10,17 +10,20 @@ if (!isset($_SESSION['usuari'])) {
 $usuari = $_SESSION['usuari'];
 
 //Carrega les dates del JSON
-$path = __DIR__ . "../json/productes.json";
+$path = __DIR__ . "/../json/productes.json";
 $dadesUsuari = [];
 $historial = [];
 $totalGeneral = 0;
 
 if (file_exists($path)) {
-    $productes = json_decode(file_get_contents($path), true);
+    $jsonContent = file_get_contents($path);
+    $productes = json_decode($jsonContent, true);
+
 
     //Verifica si el usuari ja hi es al JSON
     if (isset($productes[$usuari])) {
         $dadesUsuari = $productes[$usuari];
+
 
         //Obte l'historial dels tiquets
         if (isset($dadesUsuari['historial']) && is_array($dadesUsuari['historial'])) {
@@ -32,9 +35,17 @@ if (file_exists($path)) {
                     $totalGeneral += $producte['price'] * $producte['quantity'];
                 }
             }
+        } else {
+            error_log("L'historial no existeix o no és un array");
         }
+    } else {
+        error_log("L'usuari '$usuari' no existeix al JSON");
     }
+} else {
+    error_log("El fitxer JSON no existeix!");
 }
+
+error_log("Total general calculat: " . $totalGeneral);
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -57,7 +68,6 @@ if (file_exists($path)) {
 
     <!-- HEADER -->
     <header>
-
         <!-- Logo -->
         <a href="inici.html" class="logo-link">
             <img src="../Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false" usemap="#logo-map">
@@ -81,7 +91,7 @@ if (file_exists($path)) {
         <span class="burger-header" onclick="desplegarBurger()">&#9776;</span>
 
         <div id="sidepanel" class="sidepanel">
-            <button class="boto-rodo boton-tema lluna-sidepanel boto-rodo-nav" aria-label="Canviar tema">
+            <button class="boto-rodo boton-tema lluna-sidepanel" aria-label="Canviar tema">
                 <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
                 <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
             </button>
@@ -94,7 +104,6 @@ if (file_exists($path)) {
         </div>
 
         <div id="overlaySidepanel" class="overlay-sidepanel" onclick="tancarSidepanel()"></div>
-
     </header>
 
     <!-- CONTINGUT PRINCIPAL -->

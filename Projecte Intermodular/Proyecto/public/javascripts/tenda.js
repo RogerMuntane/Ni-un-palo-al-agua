@@ -1,3 +1,23 @@
+function setCookie(name, value, days = 365) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let c = cookies[i];
+        while (c.charAt(0) === ' ') c = c.substring(1);
+        if (c.indexOf(nameEQ) === 0) {
+            return decodeURIComponent(c.substring(nameEQ.length));
+        }
+    }
+    return null;
+}
+
 function promocioDelDia() {
     const productes = [
         {
@@ -60,7 +80,7 @@ function mostrarRecomanacio() {
     const productes = promocioDelDia();
     const contenedor = document.querySelector(".llistat_ofertes");
 
-    if (!contenedor) return; // Evitar error si no existeix
+    if (!contenedor) return;
 
     contenedor.innerHTML = '';
 
@@ -86,47 +106,36 @@ function mostrarRecomanacio() {
         btn.textContent = "Afegir al carret";
         btn.className = "btn_comprar";
 
-
         article.appendChild(imatge);
         article.appendChild(nom);
         article.appendChild(preu);
         article.appendChild(btn);
 
         contenedor.appendChild(article);
-
     });
 }
 
-
-
-
-
-
-// Gestiona carret (localStorage) quan es prem "Afegir al carret"
 const STORAGE_KEY = 'carret';
 
-// Obtenir el carret del localStorage
 function obtenerCarret() {
     try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        const data = getCookie(STORAGE_KEY);
+        return data ? JSON.parse(data) : [];
     } catch {
         return [];
     }
 }
 
-// Guardar el carret al localStorage
 function guardarCarret(cart) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    setCookie(STORAGE_KEY, JSON.stringify(cart));
 }
 
-// Parsejar el preu del text per pasar en el format correcte
 function parsarPreu(text) {
     if (!text) return 0;
     const cleaned = text.replace(/\s/g, '').replace(',', '.').replace(/[^\d.-]/g, '');
     return parseFloat(cleaned) || 0;
 }
 
-// Crear un ID que es el nom sense espais per a cada producte
 function crearId(productEl) {
     const dataId = productEl.dataset.id;
     if (dataId) return dataId;
@@ -135,7 +144,6 @@ function crearId(productEl) {
     return slug;
 }
 
-// Obtenir dades del producte des del DOM
 function obtenerDatosProducto(productEl) {
     return {
         id: crearId(productEl),
@@ -145,7 +153,6 @@ function obtenerDatosProducto(productEl) {
     };
 }
 
-// Afegir producte al carret
 function afegirProductoAlCarret(productEl) {
     const product = obtenerDatosProducto(productEl);
     const cart = obtenerCarret();
@@ -162,14 +169,12 @@ function afegirProductoAlCarret(productEl) {
     guardarCarret(cart);
 }
 
-// Mostrar feedback visual al botó
 function mostrarFeedbackBoton(btn) {
     const original = btn.innerText;
     btn.innerText = 'Afegit';
     setTimeout(() => btn.innerText = original, 900);
 }
 
-// Inicialitzar els listeners del carret
 function inicializarCarretListeners() {
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.btn_comprar');
@@ -183,33 +188,16 @@ function inicializarCarretListeners() {
     });
 }
 
-// Executar quan el DOM està carregat
-document.addEventListener("DOMContentLoaded", () => {
-    inicializarCarretListeners()
-    mostrarRecomanacio()
-});
-
-
-
-
-
-
-
-// Buscador de productes
-
 document.addEventListener('keyup', e => {
-    // Comprovar si s'està escrivint en algun dels buscadors
     if (!e.target.matches('#buscador') && !e.target.matches('#buscador-sidepanel')) {
         return;
     }
 
-    // Elements
     const buscador = document.getElementById('buscador');
     const buscadorSidepanel = document.getElementById('buscador-sidepanel');
     const seccioRecomenats = document.querySelector('.tenda_intro');
     const titolOferta = document.querySelector('.oferta');
 
-    // Text del buscador
     const target = e.target;
     const cerca = target.value.toLowerCase().trim();
 
@@ -236,7 +224,6 @@ document.addEventListener('keyup', e => {
 
         const producteCercaText = nomProducteElement.textContent.toLowerCase().trim();
 
-        // Mostrar o amagar segons coincidència
         if (cerca === "" || producteCercaText.includes(cerca)) {
             producte.classList.remove('filtro');
         } else {
@@ -247,7 +234,6 @@ document.addEventListener('keyup', e => {
     // AMAGAR CATEGORIES BUIDES
     document.querySelectorAll('.categoria').forEach(categoria => {
         const productesVisibles = categoria.querySelectorAll('.producte:not(.filtro)').length;
-
         const categoriaHeader = categoria.querySelector('.categoria_header');
         const categoriaProductes = categoria.querySelector('.categoria_productes');
 
@@ -262,10 +248,9 @@ document.addEventListener('keyup', e => {
         }
     });
 
-    // CONTROLAR TÍTOL (LA NOSTRA OFERTA)
+    // CONTROLAR TÍTOL
     if (titolOferta) {
         const categoriesVisibles = document.querySelectorAll('.categoria:not(.filtro)').length;
-
         if (cerca !== "" && categoriesVisibles === 0) {
             titolOferta.classList.add('filtro');
         } else {
@@ -281,4 +266,9 @@ document.addEventListener('keyup', e => {
             seccioRecomenats.classList.remove('filtro');
         }
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarCarretListeners();
+    mostrarRecomanacio();
 });

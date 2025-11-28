@@ -335,6 +335,9 @@ header .sidepanel .perfil-sidepanel:hover {
   -webkit-transition: scale 0.3s ease;
   transition: scale 0.3s ease;
 }
+header .sidepanel .icones-nav {
+  width: 30px !important;
+}
 header .sidepanel .boto-tancar-sidepanel {
   position: absolute;
   top: 10px;

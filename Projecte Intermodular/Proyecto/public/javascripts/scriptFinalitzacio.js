@@ -1,3 +1,34 @@
+
+function setCookie(name, value, days = 365) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let c = cookies[i];
+        while (c.charAt(0) === ' ') c = c.substring(1);
+        if (c.indexOf(nameEQ) === 0) {
+            return decodeURIComponent(c.substring(nameEQ.length));
+        }
+    }
+    return null;
+}
+
+function deleteAllCookies() {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const formulari = document.getElementById('tiquet');
@@ -129,29 +160,28 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarError(extras, errorExtras, "Els extras no poden contenir símbols especials");
         }
 
-        // Introduir LocalStorage al Hidden Input
         if (formulariCorrecte) {
-            let carret = []
+            let carret = [];
             let total = 0;
 
             try {
-                const carretData = localStorage.getItem("carret");
-                const totalData = localStorage.getItem("total_compra");
+                const carretData = getCookie("carret");
+                const totalData = getCookie("total_compra");
+
                 if (carretData) {
                     carret = JSON.parse(carretData);
-
                     if (!Array.isArray(carret)) {
-                        console.warn("Los datos del carrito no son un array válido");
+                        console.warn("Les dades del carret no són un array vàlid");
                         carret = [];
                     }
                 }
                 if (totalData) {
                     total = JSON.parse(totalData);
                 }
-                localStorage.clear();
+                deleteAllCookies();
             } catch (error) {
-                console.error("Error al parsear el carrito:", error);
-                alert("Error al cargar los datos del carrito");
+                console.error("Error al parsejar el carret:", error);
+                alert("Error al carregar les dades del carret");
                 carret = [];
                 total = 0;
             }
@@ -159,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById("carretData").value = JSON.stringify(carret);
             document.getElementById("totalData").value = total;
 
-            console.log("Carrito enviado:", carret);
+            console.log("Carret enviat:", carret);
             console.log("Formulari correcte:", formulariCorrecte);
 
             formulari.submit();
@@ -280,27 +310,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 function total_guardat(total) {
     const STORAGE_KEY = "total_compra";
 
     try {
-        localStorage.setItem(STORAGE_KEY, total.toString());
+        setCookie(STORAGE_KEY, total.toString());
     } catch (error) {
         console.error("Error guardant el total:", error);
     }
 }
 
-
-//Mostrar tiquets per pantralla
 function obtenir_productes() {
-    const STORAGE_KEY = "carret"
+    const STORAGE_KEY = "carret";
 
     try {
-        const data = localStorage.getItem(STORAGE_KEY)
-        return data ? JSON.parse(data) : []
+        const data = getCookie(STORAGE_KEY);
+        return data ? JSON.parse(data) : [];
     } catch {
-        return []
+        return [];
     }
 }
 
@@ -313,16 +340,13 @@ function carregar_productes() {
         contenidor.innerHTML = '';
 
         productes.forEach(element => {
-            // Crear contenidor compacte per cada producte
             const itemDiv = document.createElement("div");
             itemDiv.className = "tiquet-item";
 
-            // Nom del producte
             const nomDiv = document.createElement("div");
             nomDiv.className = "tiquet-nom";
             nomDiv.textContent = element.name;
 
-            // Detalls compactes
             const detallsDiv = document.createElement("div");
             detallsDiv.className = "tiquet-esp";
             detallsDiv.innerHTML = `
@@ -330,24 +354,20 @@ function carregar_productes() {
                 <span>x${element.quantity}</span>
             `;
 
-            // Subtotal
             const subtotal = element.price * element.quantity;
             const subtotalDiv = document.createElement("div");
             subtotalDiv.className = "tiquet-subtotal";
             subtotalDiv.textContent = `${subtotal.toFixed(2)}€`;
 
-            // Afegir tot al item
             itemDiv.appendChild(nomDiv);
             itemDiv.appendChild(detallsDiv);
             itemDiv.appendChild(subtotalDiv);
 
-            // Afegir item al contenidor
             contenidor.appendChild(itemDiv);
 
             total += subtotal;
         });
 
-        // Total final
         const totalDiv = document.createElement("div");
         totalDiv.className = "tiquet-total";
         totalDiv.textContent = `TOTAL: ${total.toFixed(2)}€`;

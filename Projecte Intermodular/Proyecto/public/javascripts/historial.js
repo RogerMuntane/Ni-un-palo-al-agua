@@ -12,6 +12,41 @@ const imatgesDisponibles = [
     { nom: 'Per defecte', url: '../Images/default.png' }
 ];
 
+function ajaxRequest(url, method, data, successCallback, errorCallback) {
+    const xhr = new XMLHttpRequest();
+
+    xhr.open(method, url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                try {
+                    const response = JSON.parse(xhr.responseText);
+                    successCallback(response);
+                } catch (error) {
+                    console.error('Error parseig JSON:', error);
+                    if (errorCallback) errorCallback(error);
+                }
+            } else {
+                console.error('Error AJAX:', xhr.status, xhr.statusText);
+                if (errorCallback) errorCallback(xhr.statusText);
+            }
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error('Error de xarxa');
+        if (errorCallback) errorCallback('Error de xarxa');
+    };
+
+    if (method === 'POST' && data) {
+        xhr.send(JSON.stringify(data));
+    } else {
+        xhr.send();
+    }
+}
+
 //Funcio per afegir un tiquet al historial
 function afegirTiquet() {
     tiquetEditantIndex = null;
@@ -57,7 +92,6 @@ function crearSelectorImatges(imatgeActual = '../Images/default.png') {
 
 //Funcio que canvia la imatge quan es seleccionada
 function canviarImatge(select) {
-
     //Agafa el ancestre 'li' mes proxim
     const li = select.closest('li');
     const customInput = li.querySelector('.producte-imatge-custom');
@@ -159,20 +193,18 @@ function eliminarProducteForm(button) {
 function editarTiquet(index) {
     tiquetEditantIndex = index;
 
-    //Carrega les dades del tiquet desde el servidor
-    fetch('../php/gestionarTiquets.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            accio: 'obtenir',
-            usuari: usuariActual,
-            index: index
-        })
-    })
-        .then(response => response.json())
-        .then(data => {
+    const requestData = {
+        accio: 'obtenir',
+        usuari: usuariActual,
+        index: index
+    };
+
+    ajaxRequest(
+        '../php/gestionarTiquets.php',
+        'POST',
+        requestData,
+        function (data) {
+
             if (data.success) {
                 document.getElementById('modal-titol').textContent = 'Editar Tiquet #' + (index + 1);
                 document.getElementById('form-tiquet').reset();
@@ -191,41 +223,40 @@ function editarTiquet(index) {
             } else {
                 alert('Error al carregar el tiquet: ' + data.error);
             }
-        })
-        .catch(error => {
+        },
+        function (error) {
             console.error('Error:', error);
             alert('Error al carregar el tiquet');
-        });
+        }
+    );
 }
 
 //Funcio per eliminar un tiquet
 function eliminarTiquet(index) {
     if (confirm('Estàs segur que vols eliminar aquest tiquet?')) {
-        //Envia la peticio al servidor per eliminar
-        fetch('php/gestionarTiquets.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                accio: 'eliminar',
-                usuari: usuariActual,
-                index: index
-            })
-        })
-            .then(response => response.json())
-            .then(data => {
+        const requestData = {
+            accio: 'eliminar',
+            usuari: usuariActual,
+            index: index
+        };
+
+        ajaxRequest(
+            '../php/gestionarTiquets.php',
+            'POST',
+            requestData,
+            function (data) {
                 if (data.success) {
                     alert('Tiquet eliminat correctament');
                     location.reload();
                 } else {
                     alert('Error al eliminar el tiquet: ' + data.error);
                 }
-            })
-            .catch(error => {
+            },
+            function (error) {
                 console.error('Error:', error);
                 alert('Error al eliminar el tiquet');
-            });
+            }
+        );
     }
 }
 
@@ -260,7 +291,7 @@ document.getElementById('form-tiquet').addEventListener('submit', function (e) {
             productes.push({
                 id: nom.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
                 name: nom,
-                price: preu.toLowerCase().replace(/\s+/g, '-').replace(",", ".").replace(/[^\d.-]/g, ''),
+                price: parseFloat(preu),
                 quantity: quantitat,
                 image: imatge
             });
@@ -286,16 +317,12 @@ document.getElementById('form-tiquet').addEventListener('submit', function (e) {
         requestData.index = tiquetEditantIndex;
     }
 
-    //Ho enviem al servidor
-    fetch('../php/gestionarTiquets.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestData)
-    })
-        .then(response => response.json())
-        .then(data => {
+    ajaxRequest(
+        '../php/gestionarTiquets.php',
+        'POST',
+        requestData,
+        function (data) {
+
             if (data.success) {
                 alert(tiquetEditantIndex !== null ? 'Tiquet actualitzat correctament' : 'Tiquet guardat correctament');
                 tancarModal();
@@ -303,11 +330,12 @@ document.getElementById('form-tiquet').addEventListener('submit', function (e) {
             } else {
                 alert('Error al guardar el tiquet: ' + data.error);
             }
-        })
-        .catch(error => {
+        },
+        function (error) {
             console.error('Error:', error);
             alert('Error al guardar el tiquet');
-        });
+        }
+    );
 });
 
 //Funcio de busqueda

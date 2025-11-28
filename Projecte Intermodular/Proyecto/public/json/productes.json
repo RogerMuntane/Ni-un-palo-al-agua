@@ -2,292 +2,96 @@
     "xavierruizboix50@gmail.com": {
         "carret": [
             {
-                "id": "4",
-                "name": "Suc Natural",
-                "price": 2.5,
-                "image": "Images\/zumo-de-naranja.jpg",
-                "quantity": 1
-            },
-            {
-                "id": "entrepa-mixt",
-                "name": "Entrepa Mixt",
-                "price": 4,
-                "image": "..\/public\/Images\/bocadillo_mixt.jpg",
-                "quantity": 2
-            },
-            {
-                "id": "refresc",
-                "name": "Refresc",
-                "price": 2,
-                "image": "..\/public\/Images\/cocacola.jpg",
-                "quantity": 1
-            }
-        ],
-        "total": 17.5,
-        "ultima_actualizacion": "2025-11-27 19:51:35",
-        "historial": [
-            [
-                {
-                    "id": "sdsdd",
-                    "name": "sdsdd",
-                    "price": "3.000",
-                    "quantity": 1,
-                    "image": "Images\/default.png"
-                },
-                {
-                    "id": "fdsf",
-                    "name": "fdsf",
-                    "price": "343",
-                    "quantity": 1,
-                    "image": "Images\/default.png"
-                },
-                {
-                    "id": "43dsffdf",
-                    "name": "43dsffdf",
-                    "price": "443",
-                    "quantity": 1,
-                    "image": "Images\/default.png"
-                }
-            ],
-            [
-                {
-                    "id": "dfsdf",
-                    "name": "dfsdf",
-                    "price": "34343",
-                    "quantity": 1,
-                    "image": "Images\/default.png"
-                }
-            ]
-        ]
-    },
-    "roger@gmail.com": {
-        "carret": [
-            {
-                "id": "iogurt-natural",
-                "name": "Iogurt Natural",
-                "price": 1.5,
-                "image": "..\/Images\/iogurt.jpg",
-                "quantity": 4
-            },
-            {
                 "id": "entrep-de-butifarra",
                 "name": "Entrep\u00e0 de butifarra",
                 "price": 4.5,
                 "image": "..\/Images\/bocadillo_butifarra.jpg",
-                "quantity": 2
+                "quantity": 1
             },
             {
                 "id": "suc-natural",
                 "name": "Suc Natural",
                 "price": 2.5,
                 "image": "..\/Images\/zumo-de-naranja.jpg",
-                "quantity": 3
-            },
-            {
-                "id": "entrep-mixt",
-                "name": "Entrep\u00e0 Mixt",
-                "price": 4,
-                "image": "..\/Images\/bocadillo_mixt.jpg",
-                "quantity": 1
-            },
-            {
-                "id": "aigua-mineral",
-                "name": "Aigua Mineral",
-                "price": 1,
-                "image": "..\/Images\/solan2(1).jpg",
-                "quantity": 1
-            },
-            {
-                "id": "refresc",
-                "name": "Refresc",
-                "price": 2,
-                "image": "..\/Images\/cocacola.jpg",
-                "quantity": 1
-            },
-            {
-                "id": "pasts-de-xocolata",
-                "name": "Past\u00eds de Xocolata",
-                "price": 3,
-                "image": "..\/Images\/pastel.jpg",
-                "quantity": 1
-            },
-            {
-                "id": "fruit-del-dia",
-                "name": "Fruit del dia",
-                "price": 2,
-                "image": "..\/Images\/fruita.jpg",
-                "quantity": 1
-            },
-            {
-                "id": "kinder-bueno",
-                "name": "Kinder Bueno",
-                "price": 1.5,
-                "image": "..\/Images\/kinder.jpeg",
-                "quantity": 1
-            },
-            {
-                "id": "kit-kat",
-                "name": "Kit Kat",
-                "price": 1.5,
-                "image": "..\/Images\/kitkat.jpeg",
-                "quantity": 1
-            },
-            {
-                "id": "barreta-energetica",
-                "name": "Barreta energetica",
-                "price": 1,
-                "image": "..\/Images\/barreta.jpg",
                 "quantity": 1
             }
         ],
-        "total": 43.5,
-        "ultima_actualizacion": "2025-11-28 17:57:59",
+        "total": 12,
+        "ultima_actualizacion": "2025-11-28 21:06:52",
         "historial": [
             [
                 {
-                    "id": "fadfas",
-                    "name": "fadfas",
-                    "price": 4,
-                    "quantity": 1,
-                    "image": "Images\/default.png"
-                }
-            ],
-            [
-                {
-                    "id": "sasas",
-                    "name": "sasas",
+                    "id": "222",
+                    "name": "222",
                     "price": 2,
                     "quantity": 1,
-                    "image": "Images\/default.png"
+                    "image": "..\/Images\/default.png"
                 }
             ],
             [
                 {
-                    "id": "iogurt-natural",
-                    "name": "Iogurt Natural",
-                    "price": 1.5,
-                    "image": "..\/Images\/iogurt.jpg",
-                    "quantity": 4
-                },
+                    "id": "wew",
+                    "name": "wew",
+                    "price": 1,
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "wewe",
+                    "name": "wewe",
+                    "price": 3,
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+                }
+            ],
+            [
                 {
                     "id": "entrep-de-butifarra",
                     "name": "Entrep\u00e0 de butifarra",
                     "price": 4.5,
                     "image": "..\/Images\/bocadillo_butifarra.jpg",
-                    "quantity": 2
+                    "quantity": 1
                 },
                 {
                     "id": "suc-natural",
                     "name": "Suc Natural",
                     "price": 2.5,
                     "image": "..\/Images\/zumo-de-naranja.jpg",
-                    "quantity": 3
-                },
-                {
-                    "id": "entrep-mixt",
-                    "name": "Entrep\u00e0 Mixt",
-                    "price": 4,
-                    "image": "..\/Images\/bocadillo_mixt.jpg",
                     "quantity": 1
                 },
                 {
-                    "id": "aigua-mineral",
-                    "name": "Aigua Mineral",
-                    "price": 1,
-                    "image": "..\/Images\/solan2(1).jpg",
-                    "quantity": 1
-                },
-                {
-                    "id": "refresc",
-                    "name": "Refresc",
-                    "price": 2,
-                    "image": "..\/Images\/cocacola.jpg",
-                    "quantity": 1
-                },
-                {
-                    "id": "pasts-de-xocolata",
-                    "name": "Past\u00eds de Xocolata",
-                    "price": 3,
-                    "image": "..\/Images\/pastel.jpg",
-                    "quantity": 1
-                },
-                {
-                    "id": "fruit-del-dia",
-                    "name": "Fruit del dia",
-                    "price": 2,
-                    "image": "..\/Images\/fruita.jpg",
-                    "quantity": 1
-                },
-                {
-                    "id": "kinder-bueno",
-                    "name": "Kinder Bueno",
+                    "id": "iogurt-natural",
+                    "name": "Iogurt Natural",
                     "price": 1.5,
-                    "image": "..\/Images\/kinder.jpeg",
-                    "quantity": 1
-                },
-                {
-                    "id": "kit-kat",
-                    "name": "Kit Kat",
-                    "price": 1.5,
-                    "image": "..\/Images\/kitkat.jpeg",
-                    "quantity": 1
-                },
-                {
-                    "id": "barreta-energetica",
-                    "name": "Barreta energetica",
-                    "price": 1,
-                    "image": "..\/Images\/barreta.jpg",
+                    "image": "..\/Images\/iogurt.jpg",
                     "quantity": 1
                 }
             ],
             [
                 {
-                    "id": "rf",
-                    "name": "rf",
-                    "price": "3",
+                    "id": "entrep-de-butifarra332",
+                    "name": "Entrep\u00e0 de butifarra332",
+                    "price": 4.5,
                     "quantity": 1,
-                    "image": "..\/Images\/default.png"
-                }
-            ],
-            [
-                {
-                    "id": "433",
-                    "name": "433",
-                    "price": "33",
-                    "quantity": 1,
-                    "image": "..\/Images\/default.png"
+                    "image": "..\/Images\/bocadillo_butifarra.jpg"
                 },
                 {
-                    "id": "dsds",
-                    "name": "dsds",
-                    "price": "4",
+                    "id": "suc-natural",
+                    "name": "Suc Natural",
+                    "price": 2.5,
                     "quantity": 1,
-                    "image": "..\/Images\/default.png"
+                    "image": "..\/Images\/zumo-de-naranja.jpg"
                 }
             ],
             [
                 {
-                    "id": "dsa",
-                    "name": "dsa",
-                    "price": "3",
-                    "quantity": 12,
-                    "image": "..\/Images\/bocadillo_mixt.jpg"
-                }
-            ]
-        ]
-    },
-    "hola@gmail.com": {
-        "carret": [],
-        "total": 0,
-        "ultima_actualizacion": "2025-11-28 15:50:22",
-        "historial": [
-            [
-                {
-                    "id": "sadasdsa",
-                    "name": "sadasdsa",
-                    "price": "23",
+                    "id": "wwe",
+                    "name": "wwe",
+                    "price": 2,
                     "quantity": 1,
-                    "image": "Images\/default.png"
+                    "image": "..\/Images\/default.png"
                 }
             ]
         ]
