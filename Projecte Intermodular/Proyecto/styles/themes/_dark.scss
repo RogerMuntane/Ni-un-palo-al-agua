@@ -34,6 +34,7 @@
     --fondo-sidepanel: rgba(187, 148, 87, 0.75);
     --fondo-link-sidepanel: rgba(67, 40, 24, 0.75);
     --hover-sidepanel: #{$color-amarillo};
+    --carrusel-color: #{linear-gradient(135deg, $color-principal 0%, $color-naranja 100%)};
 
     // Carreto
     --fondo-carreto: #{$color-naranja};
@@ -78,6 +79,7 @@ body.dark-mode {
     --fondo-sidepanel: rgba(45, 24, 16, 0.95);
     --fondo-link-sidepanel: rgba(26, 15, 8, 0.9);
     --hover-sidepanel: #{$color-secundario};
+    --carrusel-color: #2b150d;
 
     // Carreto
     --fondo-carreto: #381e14;

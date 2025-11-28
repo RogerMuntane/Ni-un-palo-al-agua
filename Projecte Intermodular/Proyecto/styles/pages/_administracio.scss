@@ -140,6 +140,8 @@
                 border-radius: 8px;
                 margin-bottom: $espacio-s;
                 text-align: right;
+                color: var(--total-text);
+                font-weight: bold;
 
                 .total-text {
                     color: var(--total-text);
@@ -197,7 +199,7 @@
             margin: 0;
 
             span {
-                color: var(--texto-secundario);
+                color: var(--texto-secundario) !important;;
             }
         }
     }
@@ -605,6 +607,7 @@
 
         td {
             padding: 8px;
+            color: var(--texto-secundario);
 
             &.alineat-centre {
                 text-align: center;
@@ -614,6 +617,9 @@
             &.alineat-dreta {
                 text-align: right;
                 color: var(--texto-secundario);
+            }
+            span {
+                color: var(--texto-secundario) !important;
             }
         }
     }

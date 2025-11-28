@@ -279,7 +279,7 @@
     "hola@gmail.com": {
         "carret": [],
         "total": 0,
-        "ultima_actualizacion": "2025-11-28 15:50:22",
+        "ultima_actualizacion": "2025-11-28 20:07:34",
         "historial": [
             [
                 {
@@ -288,6 +288,24 @@
                     "price": "23",
                     "quantity": 1,
                     "image": "Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "asdas",
+                    "name": "asdas",
+                    "price": "23",
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "3123123",
+                    "name": "3123123",
+                    "price": "23",
+                    "quantity": 1,
+                    "image": "..\/Images\/default.png"
                 }
             ]
         ]

@@ -202,7 +202,7 @@ function editarTiquet(index) {
 function eliminarTiquet(index) {
     if (confirm('Estàs segur que vols eliminar aquest tiquet?')) {
         //Envia la peticio al servidor per eliminar
-        fetch('php/gestionarTiquets.php', {
+        fetch('../php/gestionarTiquets.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -260,7 +260,7 @@ document.getElementById('form-tiquet').addEventListener('submit', function (e) {
             productes.push({
                 id: nom.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
                 name: nom,
-                price: preu.toLowerCase().replace(/\s+/g, '-').replace(",", ".").replace(/[^\d.-]/g, ''),
+                price: parseFloat(preu),
                 quantity: quantitat,
                 image: imatge
             });
