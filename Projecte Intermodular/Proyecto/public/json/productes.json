@@ -14,10 +14,17 @@
                 "price": 2.5,
                 "image": "..\/Images\/zumo-de-naranja.jpg",
                 "quantity": 1
+            },
+            {
+                "id": "iogurt-natural",
+                "name": "Iogurt Natural",
+                "price": 1.5,
+                "image": "..\/Images\/iogurt.jpg",
+                "quantity": 1
             }
         ],
-        "total": 12,
-        "ultima_actualizacion": "2025-11-28 21:06:52",
+        "total": 13.5,
+        "ultima_actualizacion": "2025-11-28 21:21:53",
         "historial": [
             [
                 {
@@ -92,6 +99,29 @@
                     "price": 2,
                     "quantity": 1,
                     "image": "..\/Images\/default.png"
+                }
+            ],
+            [
+                {
+                    "id": "entrep-de-butifarra",
+                    "name": "Entrep\u00e0 de butifarra",
+                    "price": 4.5,
+                    "image": "..\/Images\/bocadillo_butifarra.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "suc-natural",
+                    "name": "Suc Natural",
+                    "price": 2.5,
+                    "image": "..\/Images\/zumo-de-naranja.jpg",
+                    "quantity": 1
+                },
+                {
+                    "id": "iogurt-natural",
+                    "name": "Iogurt Natural",
+                    "price": 1.5,
+                    "image": "..\/Images\/iogurt.jpg",
+                    "quantity": 1
                 }
             ]
         ]

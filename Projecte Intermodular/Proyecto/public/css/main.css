@@ -408,7 +408,7 @@ header .overlay-sidepanel.active {
   transition: width 1s ease, border-color 0.4s ease;
 }
 .header-tenda .buscador input {
-  color: var(--texto-secundario);
+  color: #FFE6A7;
   font-size: 14px;
   width: 100%;
   border: none;
@@ -419,23 +419,23 @@ header .overlay-sidepanel.active {
   transition: width 1s ease;
 }
 .header-tenda .buscador input::-webkit-input-placeholder {
-  color: var(--texto-secundario);
+  color: #FFE6A7;
   opacity: 0.5;
 }
 .header-tenda .buscador input::-moz-placeholder {
-  color: var(--texto-secundario);
+  color: #FFE6A7;
   opacity: 0.5;
 }
 .header-tenda .buscador input:-ms-input-placeholder {
-  color: var(--texto-secundario);
+  color: #FFE6A7;
   opacity: 0.5;
 }
 .header-tenda .buscador input::-ms-input-placeholder {
-  color: var(--texto-secundario);
+  color: #FFE6A7;
   opacity: 0.5;
 }
 .header-tenda .buscador input::placeholder {
-  color: var(--texto-secundario);
+  color: #FFE6A7;
   opacity: 0.5;
 }
 .header-tenda .buscador button {
@@ -459,7 +459,7 @@ header .overlay-sidepanel.active {
           transform: scale(0.95);
 }
 .header-tenda .buscador:has(input:focus) {
-  border-color: var(--borde-hover);
+  border-color: #FFE6A7;
 }
 .header-tenda .buscador.buscador-header {
   display: -webkit-box;
