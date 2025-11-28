@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="scriptLogin.js" defer></script>
+    <script src="../javascripts/scriptLogin.js" defer></script>
 </head>
 
 <body class="pagina-login">
@@ -28,7 +28,7 @@
             unset($_SESSION['error']);
         }
         ?>
-        <form method="post" action="../public/php/validarUsuari.php" id="login" novalidate>
+        <form method="post" action="../php/validarUsuari.php" id="login" novalidate>
             <div class="camps-texts">
                 <input type="email" name="email" id="email" required placeholder=" ">
                 <label for="email">Email</label>

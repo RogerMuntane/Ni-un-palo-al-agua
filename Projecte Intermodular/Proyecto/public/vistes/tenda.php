@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="tenda.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="scriptTemas.js" defer></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../javascripts/tenda.js" defer></script>
+    <script src="../javascripts/header.js" defer></script>
+    <script src="../javascripts/scriptTemas.js" defer></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
         <!-- Logo -->
         <a href="inici.html" class="logo-link">
-            <img src="Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false">
+            <img src="../Images/logo.png" alt="Ni Un Palo Al Agua" class="logo" draggable="false">
         </a>
 
         <!-- Barra Buscadora -->
@@ -30,14 +30,14 @@
         <ul class="nav-header">
             <li>
                 <button class="boto-rodo boton-tema" aria-label="Canviar tema">
-                    <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
-                    <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
+                    <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
+                    <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
                 </button>
             </li>
 
             <li>
                 <button class="boto-rodo boto-rodo-nav" onclick="location.href='login.php';">
-                    <img src="Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
+                    <img src="../Images/perfil.png" alt="Perfil" class="icone-perfil icones-nav" draggable="false">
                 </button>
             </li>
 
@@ -53,12 +53,12 @@
         <div id="sidepanel" class="sidepanel">
             <!-- Mode Fosc -->
             <button class="boto-rodo boton-tema lluna-sidepanel" aria-label="Canviar tema">
-                <img src="Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
-                <img src="Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
+                <img src="../Images/luna.png" alt="Mode Fosc" class="icones-nav icono-tema icono-luna" draggable="false">
+                <img src="../Images/sun.png" alt="Mode Clar" class="icones-nav icono-tema icono-sol" draggable="false" style="display: none;">
             </button>
             <!-- Perfil -->
             <button class="boto-rodo perfil-sidepanel" onclick="location.href='login.php'">
-                <img src="Images/perfil.png" alt="Pefil" class="icones-nav" draggable="false">
+                <img src="../Images/perfil.png" alt="Pefil" class="icones-nav" draggable="false">
             </button>
             <!-- Boto de Tancament -->
             <a href="javascript:void(0)" class="boto-tancar-sidepanel" onclick="tancarSidepanel()">×</a>
@@ -112,7 +112,7 @@
     <!-- Categories de Menjar -->
     <section class="tenda_categories">
         <?php
-        require_once __DIR__ . '/php/carregar_productes.php';
+        require_once __DIR__ . '../php/carregar_productes.php';
         ?>
 
 
@@ -121,7 +121,7 @@
 
     <footer>
         <div class="footer_imatge">
-            <img src="../public/Images/mini-logo.png" alt="Logo">
+            <img src="../Images/mini-logo.png" alt="Logo">
         </div>
 
         <div class="footer_informacio">

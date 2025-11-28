@@ -57,7 +57,7 @@
 
                 <div class="ticket-footer">
                     <p>Explora els nostres productes i afegeix-los al carret</p>
-                    <button class="btn-print" onclick="location.href='../tenda.html';">Tornar a la Botiga</button>
+                    <button class="btn-print" onclick="location.href='../vistes/tenda.php';">Tornar a la Botiga</button>
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@
 
                 <div class="ticket-footer">
                     <p>¡Gràcies per la teva compra!</p>
-                    <button class="btn-print" onclick="location.href='../inici.html';">Tornar al Inici</button>
+                    <button class="btn-print" onclick="location.href='../vistes/inici.html';">Tornar al Inici</button>
                 </div>
             </div>
         </div>

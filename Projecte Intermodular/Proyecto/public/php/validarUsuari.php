@@ -26,7 +26,7 @@ foreach ($infoJson as $dades => $sessio) {
             exit();
         } else {
             $_SESSION['error'] = "Contrasenya incorrecta";
-            header("Location: ../login.php");
+            header("Location: ../vistes/login.php");
             exit();
         }
         break;
@@ -44,6 +44,6 @@ if (!$usuari_trobat) {
 
     $_SESSION['usuari'] = $usuari;
     echo "Usuari registrat correctament";
-    header("Location: ../administracio.php");
+    header("Location: ../vistes/administracio.php");
     exit();
 }

@@ -32,4 +32,4 @@ if (!$existeix) {
 }
 
 
-header("Location: /../public/inici.html");
+header("Location: ../vistes/inici.html");
